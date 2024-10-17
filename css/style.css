@@ -302,7 +302,7 @@ body {
   font-family:'Roboto';
   font-weight:300;
   font-size:32px;
-  padding-top:40vh;
+  padding-top:3em;
   height:100vh;
   overflow:hidden;
 
@@ -320,11 +320,11 @@ body {
 
 .div:last-of-type {
   width:0px;
-  animation: reveal 7s forwards;
+  animation: reveal 10s forwards;
 }
 
 .div:last-of-type span {
-  animation: slidein 7s forwards;
+  animation: slidein 10s forwards;
 }
 
 @keyframes showup {
