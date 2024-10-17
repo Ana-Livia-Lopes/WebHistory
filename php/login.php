@@ -1,3 +1,26 @@
+<?php
+
+session_start();
+include 'conexao.php';
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $var_email = $_POST["email"];
+    $var_senha = md5($_POST["senha"]);
+
+    $query = "SELECT * FROM usuarios WHERE email_usuario = '$var_email' AND senha_usuario = '$var_senha'";
+
+    $result = mysqli_query($conexao, $query);
+
+    if($result->num_rows > 0) {
+        $usuario_logado = $result->fetch_assoc();
+        $_SESSION['nome'] = $usuario_logado['nome_usuario'];
+        $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
+        
+        header('Location: auxiliar.php');
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,10 +34,13 @@
         <form action="" method="POST">
             <label for="email">Email</label>
             <input type="email" name="email">
+
             <label for="senha">Senha</label>
             <input type="password" name="senha">
+
+            <button type="submit">Entrar</button>
+
             <p>Não tem uma conta? <a href="./cadastro.php">Cadastre-se!</a></p>
-            <p><a href="./index.php">Voltar para o início</a></p>
         </form>
     </div>
 </body>
