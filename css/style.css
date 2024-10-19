@@ -1,24 +1,21 @@
 /* pagina */
-*{
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    background: rgba(45, 68, 85, 0.93);
-    font-size:x-large;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-/* fim pagina */
-/* Início da navbar */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+body {
+    background: rgb(144, 145, 146);
+    font-size:x-large;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    
+}
+/* fim pagina */
+/* Início da navbar */
 
 #logo-nav{
     width: 120px;
@@ -48,7 +45,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 80px;
     background-color: rgb(49, 49, 49);
     padding: .4rem .8rem;
@@ -220,31 +217,91 @@ body {
 /* fim da navbar */
 /* seção 1 */
 #secao1{
-    background: url('../img/fundo.jpeg')
+    background: url('../img/fundo.jpg')
     no-repeat center center;
     background-size: cover;
-    height: 90vh;
     display: flow-root;
-    width: 100%;
-    
 }
+
+
 #secao1 h1{
-    text-align: center;
     color: white;
     font-size: 100px;
     font-family: Playfair Display SC;
     font-weight: 200;
-    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.685);
+    text-shadow: 2px 4px 5px black,
+    -0.9px -0.9px 0 black,  
+    0.9px -0.9px 0 black,
+    -0.9px 0.9px 0 black,
+    0.9px 0.9px 0 black;
     margin-top: 60px;
+    display: flex;          
+    justify-content: center;
+    align-items: center;   
+}
+#folha{
+    width: 90px;
+    border-top-left-radius: 40px;
+    margin-left: 5px;
     
 }
-#secao1 p{
-    text-align: center;
-    color: white;
-    font-family: Inter;
-    font-weight: 500;
-    font-size: 40px;
-    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.685);
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+#secao1 {
+  text-align:center;
+  color:#ffffff;
+  font-family:'Roboto';
+  font-weight:500;
+  font-size:32px;
+  padding-top:2em;
+  height:100vh;
+  overflow:hidden;
+  
+}
+
+.div {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    text-shadow: 
+    -1.5px -1.5px 0 black,  
+    1.5px -1.5px 0 black,
+    -1.5px 1.5px 0 black,
+    1.5px 1.5px 0 black;
+}
+
+.div:first-of-type, #secao1 h1:first-of-type{    
+  animation: showup 12s forwards;
+}
+
+.div:last-of-type {
+  width:0px;
+  animation: reveal 8s forwards;
+}
+
+.div:last-of-type span {
+  animation: slidein 8s forwards;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:-30px; }
+    100% { margin-left:-30px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:590px;}
+
+    100% {opacity:1;width:590px;}
 }
 
 /* fim seção 1 */
@@ -258,7 +315,7 @@ body {
     background: url('../img/sobre.png') no-repeat center center;
     background-size: cover;
     height: 600px;
-    width: 1300px;
+    width: 1100px;
     position: relative;
     border-radius: 20px;
     margin: 50px auto;
@@ -290,61 +347,100 @@ body {
     font-size: 30px;
 }
 /* fim sobre */
+/* seção 3 */
+
+
+
+
+.banner {
+	width: 46em;
+	background: rgb(255, 255, 255);
+	height: 10em;
+	display: flex;
+	justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.425);
+	cursor: pointer;
+	border-radius: 15px;
+	margin-top: 100px;
+    transition: 0.3s all linear;
+}
+.banner:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.733);
+}
+
+#img-banner {
+    height: 10em;
+    width: 23em;
+    object-fit: cover;
+    border-radius: 90px ;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.74) 30px 0px 4px;
+}
+
+.texto {
+    height: 10em;
+    width: 23em;
+    display: flex;               
+    justify-content: center;    
+    align-items: center; 
+}
+
+.texto h4 {
+    font-size: 40px;
+
+
+}
+
+
+/* fim seção 3 */
+/* secão 4 */
+.historia {
+	width: 46em;
+	background: rgb(255, 255, 255);
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	cursor: pointer;
+	border-radius: 15px;
+	margin-top: 100px;
+    transition: 0.3s all linear;
+}
+/* fim da seçao 4 */
 /* footer */
-
+footer{
+    margin-top: 70px;
+}
 /* fim footer */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
-
-#secao1 {
-  text-align:center;
-  background:linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
-  color:#555;
-  font-family:'Roboto';
-  font-weight:300;
-  font-size:32px;
-  padding-top:3em;
-  height:100vh;
-  overflow:hidden;
-
+/* responsividade */
+@media (max-width: 768px){
+    .sobre {
+        width: 300px;
+        height: 370px;
+        min-width: 45px;
+        right: 30px;
+    }
+    .sobre h1 {
+        font-size: 40px;
+    }
+    .sobre p {
+        font-size: 18px;
+    }
+    .imgSobre {
+        height: 500px;
+        width: 1100px;
+        position: relative;
+        min-width: 60px;
+    }
+    #secao1 h1{
+        font-size: 50px;
+    }
+    #folha{
+        width: 45px;
+    }
 }
-
-.div {
-  display:inline-block;
-  overflow:hidden;
-  white-space:nowrap;
-}
-
-.div:first-of-type {    
-  animation: showup 7s forwards;
-}
-
-.div:last-of-type {
-  width:0px;
-  animation: reveal 10s forwards;
-}
-
-.div:last-of-type span {
-  animation: slidein 10s forwards;
-}
-
-@keyframes showup {
-    0% {opacity:0;}
-    20% {opacity:1;}
-    80% {opacity:1;}
-}
-
-@keyframes slidein {
-    0% { margin-left:-800px; }
-    20% { margin-left:-800px; }
-    35% { margin-left:0px; }
-    100% { margin-left:0px; }
-}
-
-@keyframes reveal {
-    0% {opacity:0;width:0px;}
-    20% {opacity:1;width:0px;}
-    30% {width:555px;}
-    80% {opacity:1;}
-    100% {opacity:1;width:555px;}
-}
-
+/* fim responsividade */

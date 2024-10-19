@@ -8,3 +8,6 @@ butMenu.onclick = function() {
 }
 
 // Fim código sidebar
+// codgo index
+AOS.init();
+// fim codgo index
