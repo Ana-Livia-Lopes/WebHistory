@@ -77,7 +77,7 @@
     <section id="secao3">
         
 
-<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
 	<div class="div-img-banner" >
     <img src="img/banner1.jpg" id="img-banner">
 	</div>
@@ -88,7 +88,7 @@
 </div>
 
 
-<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
 	<div class="div-img-banner">
 		<img src="img/banner2.jpg" id="img-banner">
 	</div>
@@ -100,7 +100,7 @@
 
 
 
-<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
 	<div class="div-img-banner">
 		<img src="img/banner3.jpg" id="img-banner">
 	</div>
@@ -112,7 +112,7 @@
 
 
 
-<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
 	<div class="div-img-banner">
     <img src="img/banner4.jpg" id="img-banner">
 	</div>
@@ -124,7 +124,7 @@
 
 
 
-<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+<div class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
 	<div class="div-img-banner">
     <img src="img/banner5.jpg" id="img-banner">
 	</div>
@@ -135,9 +135,23 @@
 </div>
     </section>
     <section id="secao3">
-    <div class="historia">
-	
-</div>
+
+    <div id="historia-primitiva" class="historia">
+
+    </div>
+
+    <div id="historia-antiga" class="historia">
+    </div>
+
+    <div id="idade-media" class="historia">
+    </div>
+
+    <div id="idade-moderna" class="historia">
+    </div>
+
+    <div id="idade-comtemporanea" class="historia">
+    </div>
+    
     </section>
     <footer>
         
