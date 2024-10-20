@@ -7,7 +7,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-    background: rgb(144, 145, 146);
+    background: rgb(52,31,14);
+background: linear-gradient(0deg, rgba(52,31,14,1) 0%, rgba(75,44,23,1) 1%, rgba(153,109,56,1) 50%, rgba(186,147,93,1) 87%, rgba(180,142,93,1) 98%);
     font-size:x-large;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -299,9 +300,9 @@ body {
 @keyframes reveal {
     0% {opacity:0;width:0px;}
     20% {opacity:1;width:0px;}
-    30% {width:590px;}
+    30% {width:595px;}
 
-    100% {opacity:1;width:590px;}
+    100% {opacity:1;width:595px;}
 }
 
 /* fim seção 1 */
