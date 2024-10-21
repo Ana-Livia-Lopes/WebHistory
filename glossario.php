@@ -58,10 +58,33 @@ $glossario = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossário</title>
     <link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/glossario.css">
-    <script src="main.js"></script>
+    <script>
+    
+        function pesquisa(event) {
+            event.preventDefault(); 
+            const query = document.getElementById('input').value.toLowerCase().trim();
+            const sections = document.querySelectorAll('.section_gloss');
+            let found = false;
+
+            sections.forEach(section => {
+                const title = section.querySelector('h2').textContent.toLowerCase();
+
+                
+                if (title.includes(query)) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                    found = true; 
+                    return;
+                }
+            });
+            
+            if (found == false) {
+                alert('Termo não encontrado!'); 
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="sidebar_gloss">
@@ -78,60 +101,57 @@ $glossario = [
         </ul>
     </div>
 
+    
     <div class="content_gloss">
-        <!-- Seção 1 -->
+        <div class="div-pesquisa">
+            <form id="form" onsubmit="pesquisa(event)">
+                <input type="text" id="input" placeholder="Digite o termo que deseja buscar..." required>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        <!-- Seções existentes do glossário -->
         <div id="hominideos" class="section_gloss">
             <h2><?= $glossario['hominideos']['title'] ?></h2>
             <p><?= $glossario['hominideos']['text'] ?></p>
             <img src="<?= $glossario['hominideos']['image'] ?>" alt="<?= $glossario['hominideos']['title'] ?>">
             <p><em><?= $glossario['hominideos']['source'] ?></em></p>
         </div>
-        
         <div id="rupestre" class="section_gloss">
             <h2><?= $glossario['rupestre']['title'] ?></h2>
             <p><?= $glossario['rupestre']['text'] ?></p>
             <img src="<?= $glossario['rupestre']['image'] ?>" alt="<?= $glossario['rupestre']['title'] ?>">
             <p><em><?= $glossario['rupestre']['source'] ?></em></p>
         </div>
-
-        <!-- Seção 2 -->
         <div id="intemperes" class="section_gloss">
             <h2><?= $glossario['intemperes']['title'] ?></h2>
             <p><?= $glossario['intemperes']['text'] ?></p>
             <img src="<?= $glossario['intemperes']['image'] ?>" alt="<?= $glossario['intemperes']['title'] ?>">
             <p><em><?= $glossario['intemperes']['source'] ?></em></p>
         </div>
-        
         <div id="agricultura" class="section_gloss">
             <h2><?= $glossario['agricultura']['title'] ?></h2>
             <p><?= $glossario['agricultura']['text'] ?></p>
             <img src="<?= $glossario['agricultura']['image'] ?>" alt="<?= $glossario['agricultura']['title'] ?>">
             <p><em><?= $glossario['agricultura']['source'] ?></em></p>
         </div>
-
-        <!-- Seção 3 -->
         <div id="cuneiforme" class="section_gloss">
             <h2><?= $glossario['cuneiforme']['title'] ?></h2>
             <p><?= $glossario['cuneiforme']['text'] ?></p>
             <img src="<?= $glossario['cuneiforme']['image'] ?>" alt="<?= $glossario['cuneiforme']['title'] ?>">
             <p><em><?= $glossario['cuneiforme']['source'] ?></em></p>
         </div>
-        
         <div id="hieroglifica" class="section_gloss">
             <h2><?= $glossario['hieroglifica']['title'] ?></h2>
             <p><?= $glossario['hieroglifica']['text'] ?></p>
             <img src="<?= $glossario['hieroglifica']['image'] ?>" alt="<?= $glossario['hieroglifica']['title'] ?>">
             <p><em><?= $glossario['hieroglifica']['source'] ?></em></p>
         </div>
-
-        <!-- Seção 4 -->
         <div id="racionalismo" class="section_gloss">
             <h2><?= $glossario['racionalismo']['title'] ?></h2>
             <p><?= $glossario['racionalismo']['text'] ?></p>
             <img src="<?= $glossario['racionalismo']['image'] ?>" alt="<?= $glossario['racionalismo']['title'] ?>">
             <p><em><?= $glossario['racionalismo']['source'] ?></em></p>
         </div>
-        
         <div id="dinastias" class="section_gloss">
             <h2><?= $glossario['dinastias']['title'] ?></h2>
             <p><?= $glossario['dinastias']['text'] ?></p>
@@ -139,6 +159,5 @@ $glossario = [
             <p><em><?= $glossario['dinastias']['source'] ?></em></p>
         </div>
     </div>
-
 </body>
 </html>
