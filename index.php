@@ -50,7 +50,7 @@
 
         if ($_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
-            echo    "<img id='user-def-nav' src='img/user_default.jpg' alt=''>";
+            echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
