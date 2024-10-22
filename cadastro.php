@@ -4,14 +4,13 @@ include 'conexao.php';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $var_nome = $_POST["nome"];
     $var_email = $_POST["email"];
-    $var_tel = $_POST["tel"];
     $var_senha = md5($_POST["senha"]);
 
-    $sql_insercao = "INSERT INTO usuarios (nome_usuario, email_usuario, tel_usuario, senha_usuario, tipo_usuario) VALUES (?, ?, ?, ?, 'aluno')";
+    $sql_insercao = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, tipo_usuario) VALUES (?, ?, ?, 'aluno')";
     
     $stmt = $conexao->prepare($sql_insercao);
     
-    $stmt->bind_param("ssss", $var_nome, $var_email, $var_tel, $var_senha);
+    $stmt->bind_param("sss", $var_nome, $var_email, $var_senha);
     
     if ($stmt->execute()) {
         header("Location: index.php");
@@ -36,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <section id="secao1">
     <div id="box-login">
             <div id="box-img-login">
-                    <img id="img-login" src="img/login_img.avif" alt="">
+                    <img id="img-login" src="img/HW-icon.png" alt="">
                 </div>
         <form action="" method="POST">
         <h1>CADASTRO</h1>

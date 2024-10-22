@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./auxiliar.css">
@@ -11,10 +10,10 @@
         rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="./main.js" defer></script>
+    <title>Perfil</title>
 </head>
-
 <body>
-    <nav class="sidebar">
+<nav class="sidebar">
         <div>
             <div class="topo">
                 <div class="logo">
@@ -47,7 +46,7 @@
 
         if ($_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
-            echo    "<img id='user-def-nav' src='img/user_default.jpg' alt=''>";
+            echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
@@ -65,9 +64,5 @@
         }
         ?>
     </nav>
-    <main class="main-content">
-        
-    </main>
 </body>
-
 </html>

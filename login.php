@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['nome'] = $usuario_logado['nome_usuario'];
         $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
         
-        header('Location: auxiliar.php');
+        header('Location: index.php');
     } else {
         echo "<p style='color:red;'>Email ou senha incorretos</p>";
     }
@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <section id="secao1">
         <div id="box-login">
             <div id="box-img-login">
-                    <img id="img-login" src="img/login_img.avif" alt="">
+                    <img id="img-login" src="img/HW-icon.png" alt="">
                 </div>
                 <form action="" method="POST">
                 <h1>LOGIN</h1>
@@ -48,6 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button id="entrar" type="submit">Entrar</button>
 
                     <p>Não tem uma conta? <a href="./cadastro.php">Cadastre-se!</a></p>
+                    <p><a href="./index.php">Voltar para o início</a></p>
                 </form>
         </div>
     </section>

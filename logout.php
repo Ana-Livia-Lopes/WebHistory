@@ -1,7 +1,9 @@
 <?php
 session_start();
 session_unset();
-session_destroy();
-header('Location: auxiliar.php');
+// session_destroy();
+$_SESSION['nome'] = '';
+$_SESSION['tipo'] = '';
+header('Location: index.php');
 exit;
 ?>

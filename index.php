@@ -17,9 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="sidebar">
-            <div>
+<nav class="sidebar">
+        <div>
             <div class="topo">
                 <div class="logo">
                     <img id="logo-nav" src="img/HistWeb.png" alt="">
@@ -40,23 +39,35 @@
                     </a>
                 </li>
                 <li>
-                    <a href="login.php">
+                    <a href="#">
                         <i class="bx bx-cog"></i>
                         <span class="item-nav">Admin</span>
                     </a>
                 </li>
             </ul>
-            </div>
-            
-            <div class="usuario">
-                <img id="user-def-nav" src="img/user_default.jpg" alt="">
-                <div class="subclass-usuario">
-                    <p class="user-nome">
-                        
-                </div>
-            </div>
-        </nav>
-    </header>
+        </div>
+        <?php session_start();
+
+        if ($_SESSION['nome'] != '') {
+            echo "<div class='usuario'>";
+            echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
+            echo    "<div class='subclass-usuario'>";
+            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
+            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
+            echo    "</div>";
+            echo    "<div id='botao-acoes'>";
+            if ($_SESSION['nome'] != '') {
+                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
+            }
+            echo    "</div>";
+            echo "</div>";
+        }
+
+        if ($_SESSION['nome'] == '') {
+            echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
+        }
+        ?>
+    </nav>
     
 
     <section id="secao1">
@@ -484,11 +495,11 @@
                 <ul>
                     <li>
                         <h4>Características</h4>
-                        A Revolução Industrial ocorreu entre os séculos XVIII e XIX e envolveu transformações profundas na produção, economia e sociedade. A mecanização da produção, que substituiu as ferramentas manuais por máquinas, levou ao surgimento de fábricas e à produção em massa. Esse processo iniciou-se na Inglaterra, devido ao acúmulo de capital, mão de obra disponível e inovação tecnológica&#8203;:contentReference[oaicite:0]{index=0}&#8203;:contentReference[oaicite:1]{index=1}.
+                        A Revolução Industrial ocorreu entre os séculos XVIII e XIX e envolveu transformações profundas na produção, economia e sociedade. A mecanização da produção, que substituiu as ferramentas manuais por máquinas, levou ao surgimento de fábricas e à produção em massa. Esse processo iniciou-se na Inglaterra, devido ao acúmulo de capital, mão de obra disponível e inovação tecnológica.
                     </li>
                     <li>
                         <h4>Impactos Sociais</h4>
-                        A urbanização se intensificou, com um grande número de pessoas migrando para as cidades em busca de trabalho nas indústrias. Esse movimento gerou novos problemas sociais, como a exploração da classe trabalhadora, condições precárias de trabalho e o surgimento de movimentos operários&#8203;:contentReference[oaicite:2]{index=2}.
+                        A urbanização se intensificou, com um grande número de pessoas migrando para as cidades em busca de trabalho nas indústrias. Esse movimento gerou novos problemas sociais, como a exploração da classe trabalhadora, condições precárias de trabalho e o surgimento de movimentos operários.
                     </li>
                 </ul>
 
@@ -496,11 +507,11 @@
                 <ul>
                     <li>
                         <h4>Causas</h4>
-                        A Revolução Francesa começou em 1789, e teve suas causas em uma insatisfação com o Antigo Regime, a influência das ideias iluministas e crises financeiras. A convocação dos Estados Gerais e a formação da Assembleia Nacional marcaram o início do conflito&#8203;:contentReference[oaicite:3]{index=3}&#8203;:contentReference[oaicite:4]{index=4}.
+                        A Revolução Francesa começou em 1789, e teve suas causas em uma insatisfação com o Antigo Regime, a influência das ideias iluministas e crises financeiras. A convocação dos Estados Gerais e a formação da Assembleia Nacional marcaram o início do conflito.
                     </li>
                     <li>
                         <h4>Desdobramentos</h4>
-                        A queda da monarquia em 1792 e a execução de Luís XVI foram marcos significativos. O período do Terror (1793-1794) sob os jacobinos foi marcado por repressão e execuções em massa. O legado da Revolução Francesa inclui a promoção de direitos civis, igualdade e a ideia de soberania popular&#8203;:contentReference[oaicite:5]{index=5}&#8203;:contentReference[oaicite:6]{index=6}.
+                        A queda da monarquia em 1792 e a execução de Luís XVI foram marcos significativos. O período do Terror (1793-1794) sob os jacobinos foi marcado por repressão e execuções em massa. O legado da Revolução Francesa inclui a promoção de direitos civis, igualdade e a ideia de soberania popular.
                     </li>
                 </ul>
 
@@ -508,11 +519,11 @@
                 <ul>
                     <li>
                         <h4>Primeira Guerra Mundial</h4>
-                        Entre 1914 e 1918, a guerra foi impulsionada por rivalidades imperialistas, alianças militares e tensões nacionalistas. O Tratado de Versalhes, que encerrou o conflito, impôs reparações severas à Alemanha, criando um ambiente propício para a ascensão do nazismo&#8203;:contentReference[oaicite:7]{index=7}&#8203;:contentReference[oaicite:8]{index=8}.
+                        Entre 1914 e 1918, a guerra foi impulsionada por rivalidades imperialistas, alianças militares e tensões nacionalistas. O Tratado de Versalhes, que encerrou o conflito, impôs reparações severas à Alemanha, criando um ambiente propício para a ascensão do nazismo.
                     </li>
                     <li>
                         <h4>Segunda Guerra Mundial</h4>
-                        De 1939 a 1945, a guerra foi marcada por atrocidades como o Holocausto e confrontos em larga escala. O resultado foi a criação de uma nova ordem mundial, a divisão da Europa em blocos e o surgimento da Guerra Fria&#8203;:contentReference[oaicite:9]{index=9}&#8203;:contentReference[oaicite:10]{index=10}.
+                        De 1939 a 1945, a guerra foi marcada por atrocidades como o Holocausto e confrontos em larga escala. O resultado foi a criação de uma nova ordem mundial, a divisão da Europa em blocos e o surgimento da Guerra Fria.
                     </li>
                 </ul>
 
@@ -520,11 +531,11 @@
                 <ul>
                     <li>
                         <h4>Corrida Armamentista</h4>
-                        A Guerra Fria (1947-1991) foi caracterizada pela rivalidade entre os EUA e a URSS, com ambos os lados investindo pesadamente em armamentos nucleares, levando a um estado de tensão constante. Crises notáveis incluíram a Crise dos Mísseis de Cuba em 1962 e a construção do Muro de Berlim em 1961&#8203;:contentReference[oaicite:11]{index=11}&#8203;:contentReference[oaicite:12]{index=12}.
+                        A Guerra Fria (1947-1991) foi caracterizada pela rivalidade entre os EUA e a URSS, com ambos os lados investindo pesadamente em armamentos nucleares, levando a um estado de tensão constante. Crises notáveis incluíram a Crise dos Mísseis de Cuba em 1962 e a construção do Muro de Berlim em 1961.
                     </li>
                     <li>
                         <h4>Consequências</h4>
-                        O fim da Guerra Fria foi marcado pelo colapso da URSS em 1991, que resultou na independência de várias nações e na promoção da democracia em países anteriormente sob controle soviético&#8203;:contentReference[oaicite:13]{index=13}&#8203;:contentReference[oaicite:14]{index=14}.
+                        O fim da Guerra Fria foi marcado pelo colapso da URSS em 1991, que resultou na independência de várias nações e na promoção da democracia em países anteriormente sob controle soviético.
                     </li>
                 </ul>
 
@@ -532,11 +543,11 @@
                 <ul>
                     <li>
                         <h4>Estados Unidos</h4>
-                        Na década de 1960, o movimento liderado por Martin Luther King Jr. buscou acabar com a segregação racial e garantir os direitos civis para os afro-americanos. A aprovação da Lei dos Direitos Civis de 1964 foi uma vitória importante&#8203;:contentReference[oaicite:15]{index=15}&#8203;:contentReference[oaicite:16]{index=16}.
+                        Na década de 1960, o movimento liderado por Martin Luther King Jr. buscou acabar com a segregação racial e garantir os direitos civis para os afro-americanos. A aprovação da Lei dos Direitos Civis de 1964 foi uma vitória importante.
                     </li>
                     <li>
                         <h4>Descolonização</h4>
-                        Muitos países africanos e asiáticos lutaram pela independência do colonialismo europeu, resultando em uma onda de novos estados soberanos e um reordenamento geopolítico significativo&#8203;:contentReference[oaicite:17]{index=17}&#8203;:contentReference[oaicite:18]{index=18}.
+                        Muitos países africanos e asiáticos lutaram pela independência do colonialismo europeu, resultando em uma onda de novos estados soberanos e um reordenamento geopolítico significativo.
                     </li>
                 </ul>
 
@@ -544,11 +555,11 @@
                 <ul>
                     <li>
                         <h4>Avanços Tecnológicos</h4>
-                        A globalização, que se intensificou no final do século XX, refere-se à crescente interconexão entre países e culturas. A revolução digital, especialmente com a internet, transformou a economia global, permitindo um comércio mais dinâmico e uma troca cultural mais intensa&#8203;:contentReference[oaicite:19]{index=19}&#8203;:contentReference[oaicite:20]{index=20}.
+                        A globalização, que se intensificou no final do século XX, refere-se à crescente interconexão entre países e culturas. A revolução digital, especialmente com a internet, transformou a economia global, permitindo um comércio mais dinâmico e uma troca cultural mais intensa.
                     </li>
                     <li>
                         <h4>Impactos</h4>
-                        Embora a globalização tenha trazido oportunidades econômicas, também levantou preocupações sobre desigualdades sociais, perda de identidades culturais e desafios ambientais&#8203;:contentReference[oaicite:21]{index=21}&#8203;:contentReference[oaicite:22]{index=22}.
+                        Embora a globalização tenha trazido oportunidades econômicas, também levantou preocupações sobre desigualdades sociais, perda de identidades culturais e desafios ambientais.
                     </li>
                 </ul>
             </p>
@@ -630,7 +641,49 @@
 
     </section>
     <footer>
-        
-    </footer>
+    <div id="footer">
+
+        <div class="contato">
+            <h2>Informações de Contato</h2>
+            <p><strong>SESI Caçapava:</strong></p>
+            <p>Endereço: Av. Monsenhor Theodomiro Lobo, 100, Caçapava - SP, 12285-050</p>
+            <p>Telefone: (12) 3653-1943</p>
+            <p>E-mail: contato@sesi-cacapava.com.br</p>
+    
+            <p><strong>SENAI Taubaté:</strong></p>
+            <p>Endereço: Av. Independência, 846 - Independência, Taubaté - SP, 12031-001</p>
+            <p>Telefone: (12) 3609-5701</p>
+            <p>E-mail: senaitaubate@sp.senai.br</p>
+        </div>
+    
+        <div class="equipe">
+            <h2>Equipe Desenvolvedora</h2>
+            <ul>
+                <p>Ana Lívia dos Santos Lopes</p>
+                <li><a href="https://linktr.ee/analivialopess" target="_blank">Link para contato</a></li>
+    
+                <p>Gabriel Reis de Brito</p>
+                <li><a href="https://linktr.ee/gabrielreiss" target="_blank">Link para contato</a></li>
+    
+                <p>Isadora Gomes da Silva</p>
+                <li><a href="https://linktr.ee/isadoragomess" target="_blank">Link para contato</a></li>
+    
+                <p>Lucas Randal Abreu Balderrama</p>
+                <li><a href="https://linktr.ee/lucasbalderrama" target="_blank">Link para contato</a></li>
+            </ul>
+        </div>
+    
+        <div class="links-adicionais">
+            <h2>Links Adicionais</h2>
+            <ul>
+                <li><a href="termos.php">Termos de Uso</a></li>
+                <li><a href="privacidade.php">Política de Privacidade</a></li>
+            </ul>
+        </div>
+    
+        <div id="img-footer">
+        </div>
+    </div>
+ </footer> 
 </body>
 </html>
