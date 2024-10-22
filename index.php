@@ -33,14 +33,14 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="glossario.php"></i>
+                    <a href="glossario.php">
+                        <i class="bx bx-book"></i>
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="login.php"></i>
+                        <i class="bx bx-cog"></i>
                         <span class="item-nav">Admin</span>
                     </a>
                 </li>
