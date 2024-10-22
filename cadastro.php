@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <section id="secao1">
     <div id="box-login">
             <div id="box-img-login">
-                    <img id="img-login" src="img/login_img.avif" alt="">
+                    <img id="img-login" src="img/HW-icon.png" alt="">
                 </div>
         <form action="" method="POST">
         <h1>CADASTRO</h1>
