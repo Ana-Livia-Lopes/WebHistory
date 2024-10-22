@@ -13,7 +13,7 @@ background: linear-gradient(0deg, rgba(52,31,14,1) 0%, rgba(75,44,23,1) 1%, rgba
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    
+    margin-left: 80px;
 }
 /* fim pagina */
 /* Início da navbar */
@@ -43,7 +43,7 @@ background: linear-gradient(0deg, rgba(52,31,14,1) 0%, rgba(75,44,23,1) 1%, rgba
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -464,6 +464,12 @@ footer{
 /* fim footer */
 /* responsividade */
 @media (max-width: 768px){
+    body{
+        margin-left: 0;
+    }
+    #secao1,#secao2,#secao3,#secao4{
+        margin-left: 80px;
+    }
     .sobre {
         width: 300px;
         height: 370px;
@@ -491,9 +497,7 @@ footer{
     -1.4px 1.4px 0 black,
     1.4px 1.4px 0 black;
     }
-    #secao1{
-        margin-left: 80px;
-    }
+    
     .div{
         display: none;
     }
@@ -501,17 +505,17 @@ footer{
         width: 55px;
     }
     .banner {
-        width: 15em;
+        width: 10em;
         height: 7em;
     }
     
     #img-banner {
-        width: 5em;
+        width: 4em;
         height: 7em;
         box-shadow: rgba(0, 0, 0, 0.74) 20px 0px 28px;
     }
     .texto h4 {
-        font-size: 30px;
+        font-size: 15px;
     }
     .texto {
         height: 7em;
@@ -519,7 +523,7 @@ footer{
         padding: 20px;
     }
     .historia{
-        width: 15em;
+        width: 10em;
     }
     .pc{
         display: none;
@@ -534,11 +538,29 @@ footer{
     #pc{
         display: none
     }
-    #cel{
-        display: block;
+    #hr1{
+        width: 150px;
+    }
+    #hr2{
+        width: 150px;
+    }
+    #hr3{
+        width: 150px;
+    }
+    #hr4{
+        width: 150px;
+    }
+    #hr5{
+        width: 150px;
     }
 }
-#cel{
+@media (min-width: 769px){
+#celular{
+    margin-left: 50px;
     display: none;
+}
+.cel{
+    display: none;
+}
 }
 /* fim responsividade */

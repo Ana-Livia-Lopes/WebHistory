@@ -49,7 +49,7 @@
             <div class="subclass-usuario">
                 <p class="user-nome">
                     <?php session_start();
-                    if ($_SESSION['nome'] == "") {
+                    if ($_SESSION['nome'] == '') {
                         echo "teste";
                     } else {
                         echo $_SESSION['nome'];
@@ -61,14 +61,18 @@
                     } else {
                         echo $_SESSION['tipo'];
                     } ?></p>
+            </div>
+            <div id="botao-acoes">
                 <?php if ($_SESSION['nome'] == "") {
-                    echo "<a href='./php/login.php'><button id='nav-entrar'>Entrar</button></a>";
+                    echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
+                } else {
+                    echo "<a href='logout.php'><button id='nav-entrar'>Sair</button></a>";
                 } ?>
             </div>
         </div>
     </nav>
     <main class="main-content">
-        <a href="logout.php">Sair</a>
+        
     </main>
 </body>
 

@@ -84,7 +84,7 @@
         
 <!-- computador -->
  <div id="pc">
-     <div onclick="window.location='#historia-primitiva'" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+     <div onclick="banner1()" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
          <div class="div-img-banner" >
          <img src="img/banner1.jpg" id="img-banner">
          </div>
@@ -93,7 +93,7 @@
              <h4>História Primitiva</h4>
          </div>
      </div>
-     <div onclick="window.location='#historia-antiga'" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+     <div onclick="banner2()" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
          <div class="div-img-banner">
              <img src="img/banner2.jpg" id="img-banner">
          </div>
@@ -103,7 +103,7 @@
          </div>
      </div>
      
-     <div onclick="window.location='#idade-media'" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+     <div onclick="banner3()" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
          <div class="div-img-banner">
              <img src="img/banner3.jpg" id="img-banner">
          </div>
@@ -113,7 +113,7 @@
          </div>
      </div>
      
-     <div onclick="window.location='#idade-moderna'" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+     <div onclick="banner4()" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
          <div class="div-img-banner">
          <img src="img/banner4.jpg" id="img-banner">
          </div>
@@ -123,7 +123,7 @@
          </div>
      </div>
      
-     <div onclick="window.location='#idade-comtemporanea'" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+     <div onclick="banner5()" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
          <div class="div-img-banner">
          <img src="img/banner5.jpg" id="img-banner">
          </div>
@@ -189,7 +189,7 @@
 </div>
   <!-- fim celular -->
     </section>
-    <section id="secao3">
+    <section id="secao4">
 
     <div id="historia-primitiva" class="historia pc"> <!-- com texto -->
         <h2>História Primitiva</h2><hr id="hr1">
