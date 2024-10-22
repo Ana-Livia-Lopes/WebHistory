@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #dde8f1;
+    background-color: #ddf1e1;
     width: 350px;
     height: 450px;
     border-top-left-radius: 20px;
@@ -31,8 +31,8 @@
 }
 
 #img-login{
-    width: 535px;
-    height: 535px;
+    width: 330px;
+    height: 330px;
 }
 form{
     width: 360px;
@@ -53,7 +53,7 @@ h1{
     height: 35px;
     border: none;
     border-radius: 50px;
-    background-color: rgb(227, 227, 227);
+    background-color: rgb(204, 204, 204);
     margin-bottom: 10px;
     padding-left: 16px;
     font-family: Inter;
@@ -75,7 +75,7 @@ h1{
 }
 
 #entrar{
-    background-color: #75B0DD;
+    background-color: #518659;
     color: white;
     border: none;
     border-radius: 10px;
@@ -89,7 +89,7 @@ h1{
 }
 
 #entrar:hover{
-    background-color: #92c3e8;
+    background-color: #3d6642;
 }
 
 .flex{
