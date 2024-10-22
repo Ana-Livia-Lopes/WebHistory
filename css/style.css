@@ -321,7 +321,6 @@ background: linear-gradient(0deg, rgba(52,31,14,1) 0%, rgba(75,44,23,1) 1%, rgba
     border-radius: 20px;
     margin: 50px auto;
     max-width: 90%;
-    min-width: 600px;
 }
 
 .sobre {
@@ -336,7 +335,6 @@ background: linear-gradient(0deg, rgba(52,31,14,1) 0%, rgba(75,44,23,1) 1%, rgba
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 70%;
-    min-width: 450px;
 }
 
 .sobre h1 {
@@ -461,13 +459,54 @@ hr{
 footer{
     margin-top: 70px;
 }
+footer {
+    height: 100%;
+    width: 100%;
+    color: black;
+    background-color: white;
+}
+
+#footer {
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 20px;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p, footer a {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+footer a {
+    text-decoration: none;
+    color: #1e90ff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+ 
+
 /* fim footer */
 /* responsividade */
 @media (max-width: 768px){
     body{
         margin-left: 0;
     }
-    #secao1,#secao2,#secao3,#secao4{
+    #secao1{
         margin-left: 80px;
     }
     .sobre {
@@ -489,7 +528,7 @@ footer{
         min-width: 60px;
     }
     #secao1 h1{
-        font-size: 53px;
+        font-size: 40px;
         margin-top: 50%;
         text-shadow: 2px 4px 5px black,
     -1.4px -1.4px 0 black,  
@@ -505,12 +544,12 @@ footer{
         width: 55px;
     }
     .banner {
-        width: 10em;
+        width: 13em;
         height: 7em;
     }
     
     #img-banner {
-        width: 4em;
+        width: 5em;
         height: 7em;
         box-shadow: rgba(0, 0, 0, 0.74) 20px 0px 28px;
     }
@@ -523,7 +562,16 @@ footer{
         padding: 20px;
     }
     .historia{
-        width: 10em;
+        width: 13em;
+    }
+    .historia h2 {
+        font-size: 25px;
+    }
+    .historia h4 {
+        font-size: 20px;
+    }
+    .historia h3 {
+        font-size: 22px;
     }
     .pc{
         display: none;
@@ -550,9 +598,27 @@ footer{
     #hr4{
         width: 150px;
     }
-    #hr5{
+    #hr5{ 
         width: 150px;
     }
+    #hr6{
+        width: 150px;
+    }
+    .sidebar{
+        position: absolute;
+    }
+    #footer {
+        display: block;
+        overflow-wrap: break-word;
+        padding: 25px;
+    }
+    #footer h2{
+        font-size: 24px;
+    }
+    #footer p{
+        font-size: 13px;
+    }
+    
 }
 @media (min-width: 769px){
 #celular{
