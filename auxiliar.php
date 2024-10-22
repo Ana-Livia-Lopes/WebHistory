@@ -43,33 +43,27 @@
                 </li>
             </ul>
         </div>
+        <?php session_start();
 
-        <div class="usuario">
-            <img id="user-def-nav" src="img/user_default.jpg" alt="">
-            <div class="subclass-usuario">
-                <p class="user-nome">
-                    <?php session_start();
-                    if ($_SESSION['nome'] == '') {
-                        echo "teste";
-                    } else {
-                        echo $_SESSION['nome'];
-                    } ?>
-                </p>
-                <p id="user-nivel-acesso">
-                    <?php if ($_SESSION['tipo'] == "") {
-                        echo "teste";
-                    } else {
-                        echo $_SESSION['tipo'];
-                    } ?></p>
-            </div>
-            <div id="botao-acoes">
-                <?php if ($_SESSION['nome'] == "") {
-                    echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
-                } else {
-                    echo "<a href='logout.php'><button id='nav-entrar'>Sair</button></a>";
-                } ?>
-            </div>
-        </div>
+        if ($_SESSION['nome'] != '') {
+            echo "<div class='usuario'>";
+            echo    "<img id='user-def-nav' src='img/user_default.jpg' alt=''>";
+            echo    "<div class='subclass-usuario'>";
+            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
+            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
+            echo    "</div>";
+            echo    "<div id='botao-acoes'>";
+            if ($_SESSION['nome'] != '') {
+                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
+            }
+            echo    "</div>";
+            echo "</div>";
+        }
+
+        if ($_SESSION['nome'] == '') {
+            echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
+        }
+        ?>
     </nav>
     <main class="main-content">
         
