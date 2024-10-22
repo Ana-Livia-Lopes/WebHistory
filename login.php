@@ -28,22 +28,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>Login - História na Web</title>
 </head>
 <body>
-    <div>
-        <form action="" method="POST">
-            <label for="email">Email</label>
-            <input type="email" name="email">
+        <section id="secao1">
+        <div id="box-login">
+            <div id="box-img-login">
+                    <img id="img-login" src="img/login_img.avif" alt="">
+                </div>
+                <form action="" method="POST">
+                <h1>LOGIN</h1>
+                    <label for="email">Email</label>
+                    <input class="inserir" type="email" name="email">
 
-            <label for="senha">Senha</label>
-            <input type="password" name="senha">
+                    <label for="senha">Senha</label>
+                    <input class="inserir" type="password" name="senha">
 
-            <button type="submit">Entrar</button>
+                    <button id="entrar" type="submit">Entrar</button>
 
-            <p>Não tem uma conta? <a href="./cadastro.php">Cadastre-se!</a></p>
-        </form>
+                    <p>Não tem uma conta? <a href="./cadastro.php">Cadastre-se!</a></p>
+                </form>
+        </div>
+    </section>
     </div>
 </body>
 </html>

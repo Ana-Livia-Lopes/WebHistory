@@ -29,29 +29,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./cadastro.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>Cadastrar - História na Web</title>
 </head>
 <body>
-    <div>
+<section id="secao1">
+    <div id="box-login">
+            <div id="box-img-login">
+                    <img id="img-login" src="img/login_img.avif" alt="">
+                </div>
         <form action="" method="POST">
+        <h1>CADASTRO</h1>
             <label for="nome">Nome</label>
-            <input type="text" name="nome">
+            <input class="inserir" type="text" name="nome">
 
             <label for="email">Email</label>
-            <input type="email" name="email">
-
-            <label for="tel">Telefone (opcional)</label>
-            <input type="text" name="tel">
+            <input class="inserir" type="email" name="email">
 
             <label for="senha">Senha</label>
-            <input type="password" name="senha">
+            <input class="inserir" type="password" name="senha">
 
-            <button type="submit">Cadastrar</button>
+            <button id="entrar" type="submit">Cadastrar</button>
 
             <p>Já tem uma conta? <a href="./login.php">Entre!</a></p>
             <p><a href="./index.php">Voltar para o início</a></p>
         </form>
     </div>
+</section>
 </body>
 </html>
