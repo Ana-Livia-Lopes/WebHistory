@@ -69,6 +69,64 @@ $glossario = [
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/glossario.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+    <header>
+        <nav class="sidebar">
+            <div>
+            <div class="topo">
+                <div class="logo">
+                    <img id="logo-nav" src="img/HistWeb.png" alt="">
+                </div>
+                <i class="bx bx-menu" id="but-menu"></i>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.php">
+                        <i class="bx bx-home-alt"></i>
+                        <span class="item-nav">Início</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="glossario.php">
+                        <i class="bx bx-book"></i>
+                        <span class="item-nav">Glossário</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="sidebar_gloss">
+                        <select name="Selecione um conceito" id="selectGlossario" onchange="redirecionar()">
+                            <option value="">Selecione um conceito</option>
+                            <option value="#agricultura">Agricultura</option>
+                            <option value="#rupestre">Arte Rupestre</option>
+                            <option value="#cidade-estado">Cidade-estado</option>
+                            <option value="#dinastias">Dinastias</option>
+                            <option value="#cuneiforme">Escrita Cuneiforme</option>
+                            <option value="#hieroglifica">Escrita Hieroglífica</option>
+                            <option value="#hominideos">Hominídeos</option>
+                            <option value="#intemperes">Intempéries</option>
+                            <option value="#racionalismo">Racionalismo</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <a href="login.php">
+                        <i class="bx bx-cog"></i>
+                        <span class="item-nav">Admin</span>
+                    </a>
+                </li>
+            </ul>
+            </div>
+            
+            <div class="usuario">
+                <img id="user-def-nav" src="img/user_default.jpg" alt="">
+                <div class="subclass-usuario">
+                    <p class="user-nome">
+                        
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <script>
     
@@ -93,25 +151,18 @@ $glossario = [
                 alert('Termo não encontrado!'); 
             }
         }
-    </script>
-</head>
-<body>
-    <div class="sidebar_gloss">
-        <h4>Selecione um conceito</h4>
-        <ul>
-            <li><a href="#agricultura">Agricultura</a></li>
-            <li><a href="#rupestre">Arte Rupestre</a></li>
-            <li><a href="#cidade-estado">Cidade-estado</a></li>
-            <li><a href="#dinastias">Dinastias</a></li>
-            <li><a href="#cuneiforme">Escrita Cuneiforme</a></li>
-            <li><a href="#hieroglifica">Escrita Hieroglífica</a></li>
-            <li><a href="#hominideos">Hominídeos</a></li>
-            <li><a href="#intemperes">Intempéries</a></li>
-            <li><a href="#racionalismo">Racionalismo</a></li>
-        </ul>
-    </div>
 
-    
+        function redirecionar() {
+    const select = document.getElementById('selectGlossario');
+    const secao = select.value; // Pega o valor da opção selecionada
+
+    if (secao) {
+        window.location.href = secao; // Redireciona para a âncora correspondente
+    }
+}
+
+    </script>
+<body>  
     <div class="content_gloss">
         <div class="div-pesquisa">
             <form id="form" onsubmit="pesquisa(event)">
