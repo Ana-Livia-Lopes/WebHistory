@@ -61,6 +61,8 @@ $glossario = [
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/glossario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <script>
     
         function pesquisa(event) {
@@ -105,10 +107,11 @@ $glossario = [
     <div class="content_gloss">
         <div class="div-pesquisa">
             <form id="form" onsubmit="pesquisa(event)">
-                <input type="text" id="input" placeholder="Digite o termo que deseja buscar..." required>
+            <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="input" placeholder="Buscar..." required>
                 <button type="submit">Buscar</button>
             </form>
-        </div>
+        </div><br>
         <!-- Seções existentes do glossário -->
         <div id="hominideos" class="section_gloss">
             <h2><?= $glossario['hominideos']['title'] ?></h2>
