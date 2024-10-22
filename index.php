@@ -27,20 +27,20 @@
             </div>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="index.php">
                         <i class="bx bx-home-alt"></i>
                         <span class="item-nav">Início</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bx-book"></i>
+                        <i class="glossario.php"></i>
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bx bx-cog"></i>
+                        <i class="login.php"></i>
                         <span class="item-nav">Admin</span>
                     </a>
                 </li>
