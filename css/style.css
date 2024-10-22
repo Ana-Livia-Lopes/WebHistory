@@ -7,8 +7,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-    background: rgb(52,31,14);
-background: linear-gradient(0deg, rgba(52,31,14,1) 0%, rgba(75,44,23,1) 1%, rgba(153,109,56,1) 50%, rgba(186,147,93,1) 87%, rgba(180,142,93,1) 98%);
+    background-color: #f4f4f9;
     font-size:x-large;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -333,7 +332,7 @@ background: linear-gradient(0deg, rgba(52,31,14,1) 0%, rgba(75,44,23,1) 1%, rgba
     width: 500px;
     height: 420px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     max-width: 70%;
 }
 
@@ -425,7 +424,7 @@ hr{
     background: rgb(255, 255, 255);
     padding: 30px;
     margin: 0 auto;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
     border-radius: 15px;
     margin-top: 100px;
@@ -456,14 +455,11 @@ hr{
 }
 /* fim da seçao 4 */
 /* footer */
-footer{
-    margin-top: 70px;
-}
 footer {
     height: 100%;
+    background-color: white;
     width: 100%;
     color: black;
-    background-color: white;
 }
 
 #footer {
@@ -490,6 +486,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
+
 footer ul {
     list-style: none;
     padding: 0;
@@ -497,6 +494,10 @@ footer ul {
 
 footer ul li {
     margin-bottom: 8px;
+}
+ 
+.contato {
+    margin-top: 5px;
 }
  
 
@@ -551,7 +552,7 @@ footer ul li {
     #img-banner {
         width: 5em;
         height: 7em;
-        box-shadow: rgba(0, 0, 0, 0.74) 20px 0px 28px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .texto h4 {
         font-size: 15px;

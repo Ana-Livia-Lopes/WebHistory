@@ -649,16 +649,16 @@
             <h2>Equipe Desenvolvedora</h2>
             <ul>
                 <p>Ana Lívia dos Santos Lopes</p>
-                <li><a href="https://linktr.ee/analivialopess">Link para contato</a></li>
+                <li><a href="https://linktr.ee/analivialopess" target="_blank">Link para contato</a></li>
     
                 <p>Gabriel Reis de Brito</p>
-                <li><a href="https://linktr.ee/gabrielreiss">Link para contato</a></li>
+                <li><a href="https://linktr.ee/gabrielreiss" target="_blank">Link para contato</a></li>
     
                 <p>Isadora Gomes da Silva</p>
-                <li><a href="https://linktr.ee/isadoragomess">Link para contato</a></li>
+                <li><a href="https://linktr.ee/isadoragomess" target="_blank">Link para contato</a></li>
     
                 <p>Lucas Randal Abreu Balderrama</p>
-                <li><a href="https://linktr.ee/lucasbalderrama">Link para contato</a></li>
+                <li><a href="https://linktr.ee/lucasbalderrama" target="_blank">Link para contato</a></li>
             </ul>
         </div>
     
