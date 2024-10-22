@@ -17,9 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="sidebar">
-            <div>
+<nav class="sidebar">
+        <div>
             <div class="topo">
                 <div class="logo">
                     <img id="logo-nav" src="img/HistWeb.png" alt="">
@@ -28,35 +27,47 @@
             </div>
             <ul>
                 <li>
-                    <a href="index.php">
+                    <a href="#">
                         <i class="bx bx-home-alt"></i>
                         <span class="item-nav">Início</span>
                     </a>
                 </li>
                 <li>
-                    <a href="glossario.php">
+                    <a href="#">
                         <i class="bx bx-book"></i>
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
                 <li>
-                    <a href="login.php">
+                    <a href="#">
                         <i class="bx bx-cog"></i>
                         <span class="item-nav">Admin</span>
                     </a>
                 </li>
             </ul>
-            </div>
-            
-            <div class="usuario">
-                <img id="user-def-nav" src="img/user_default.jpg" alt="">
-                <div class="subclass-usuario">
-                    <p class="user-nome">
-                        
-                </div>
-            </div>
-        </nav>
-    </header>
+        </div>
+        <?php session_start();
+
+        if ($_SESSION['nome'] != '') {
+            echo "<div class='usuario'>";
+            echo    "<img id='user-def-nav' src='img/user_default.jpg' alt=''>";
+            echo    "<div class='subclass-usuario'>";
+            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
+            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
+            echo    "</div>";
+            echo    "<div id='botao-acoes'>";
+            if ($_SESSION['nome'] != '') {
+                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
+            }
+            echo    "</div>";
+            echo "</div>";
+        }
+
+        if ($_SESSION['nome'] == '') {
+            echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
+        }
+        ?>
+    </nav>
     
 
     <section id="secao1">
