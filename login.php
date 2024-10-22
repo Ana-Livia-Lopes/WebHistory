@@ -17,6 +17,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
         
         header('Location: auxiliar.php');
+    } else {
+        echo "<p style='color:red;'>Email ou senha incorretos</p>";
     }
 }
 ?>
