@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $var_email = $_POST["email"];
     $var_senha = md5($_POST["senha"]);
 
-    $sql_insercao = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, tipo_usuario) VALUES (?, ?, ?, 'aluno')";
+    $sql_insercao = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, imagem_usuario, tipo_usuario) VALUES (?, ?, ?, 'user_default.jpg', 'aluno')";
     
     $stmt = $conexao->prepare($sql_insercao);
     

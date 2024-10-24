@@ -15,6 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $usuario_logado = $result->fetch_assoc();
         $_SESSION['nome'] = $usuario_logado['nome_usuario'];
         $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
+        $_SESSION['imagem'] = $usuario_logado['imagem_usuario'];
         
         header('Location: index.php');
     } else {
