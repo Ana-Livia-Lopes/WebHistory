@@ -6,6 +6,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body{
+    height: 300vh;
+}
+
 #logo-nav{
     width: 120px;
     margin-left: 15px;
@@ -33,6 +37,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
