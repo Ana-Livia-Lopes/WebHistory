@@ -4,6 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
@@ -19,6 +20,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=sailing" />
 
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
@@ -54,9 +56,8 @@ session_start();
             </ul>
         </div>
         <?php 
-        
 
-        if ($_SESSION['nome'] != '') {
+        if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
@@ -64,14 +65,10 @@ session_start();
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
-            if ($_SESSION['nome'] != '') {
-                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
-            }
+            echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
             echo    "</div>";
             echo "</div>";
-        }
-
-        if ($_SESSION['nome'] == '') {
+        } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
         ?>
@@ -81,9 +78,9 @@ session_start();
         
         <section id="secao1">
             <h1>História na Web<img id="folha" src="img/HW-icon-folha.png" alt=""></h1>
-            <div class="div">História na Web,</div> 
+            <div class="div">Reviva o passado</div> 
             <div class="div"> 
-                <span>Reviva o passado e entenda o presente</span>
+                <span>e entenda o presente</span>
             </div>
         </section>
         <section id="secao2">
@@ -99,57 +96,143 @@ session_start();
                     <p>Bem-vindo ao História na Web! Aqui, você terá acesso a uma vasta gama de recursos de qualidade sobre os mais variados momentos da história, que contribuirão para o seu aprendizado.</p>
                 </div>
             </div>
+
+
+            <div class="container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <div class="card">
+            <div class="quadrado q1">
+                <div class="content">
+                <img src="./img/arco.png" id="arco">
+                    <h3>História Primitiva</h3>
+                    <h4>3.000.000 a.C.</h4>
+                </div>
+            </div>
+            <div class="quadrado q2">
+                <div class="content2">
+                    <p>foi a época compreendida entre o aparecimento do homem sobre a Terra e o uso da escrita</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="quadrado q1">
+                <div class="content">
+                <i class="fa-solid fa-landmark"></i>
+                    <h3>História Antiga</h3>
+                    <h4>3.500 a.C.</h4>
+                </div>
+            </div>
+            <div class="quadrado q2">
+                <div class="content2">
+                    <p>foi uma época histórica marcada pelo surgimento e desenvolvimento das primeiras civilizações</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="quadrado q1">
+                <div class="content">
+                <i class="fa-solid fa-house"></i>
+                    <h3>Idade Média</h3>
+                    <h4>476 d.C.</h>
+                </div>
+            </div>
+            <div class="quadrado q2">
+                <div class="content2">
+                    <p>Periodo que ficou marcado pelo feudalismo, pela influência da Igreja, e pelas Cruzadas e Inquisição</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="quadrado q1">
+                <div class="content">
+                <span class="material-symbols-outlined ">sailing</span>
+                    <h3>Idade Moderna</h3>
+                    <h4>1453 d.C.</h4>
+                </div>
+            </div>
+            <div class="quadrado q2">
+                <div class="content2">
+                    <p>A Idade Moderna foi a fase de transição do feudalismo ao capitalismo que se iniciou com o desenvolvimento do comércio por meio do mercantilismo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="quadrado q1">
+                <div class="content">
+                <i class="fa-solid fa-building"></i>
+                    <h3>Idade Contemporânea</h3>
+                    <h4>1800 d.C.</h4>
+                </div>
+            </div>
+            <div class="quadrado q2">
+                <div class="content2">
+                    <p>período histórico que começou na Revolução Francesa e se estende até os dias de hoje.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
         </section>
         <section id="secao3">
             
     <!-- computador -->
      <div id="pc">
-         <div onclick="window.location='hprimitiva.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+         <div onclick="window.location='hprimitiva.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner" >
              <img src="img/banner1.jpg" id="img-banner">
              </div>
                 <div class="ag-courses-item_bg"></div>
              <div class="texto">
                  <h4>História Primitiva <i class="fa-solid fa-arrow-right"></i></h4>
+                 
              </div>
          </div>
-         <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+         <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner">
                  <img src="img/banner2.jpg" id="img-banner">
              </div>
              <div class="ag-courses-item_bg"></div>
              <div class="texto">
                  <h4>História Antiga <i class="fa-solid fa-arrow-right"></i></h4>
+                 
              </div>
          </div>
          
-         <div onclick="window.location='imedia.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+         <div onclick="window.location='imedia.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner">
                  <img src="img/banner3.jpg" id="img-banner">
              </div>
              <div class="ag-courses-item_bg"></div>
              <div class="texto">
                  <h4>Idade Média <i class="fa-solid fa-arrow-right"></i></h4>
+                 
              </div>
          </div>
          
-         <div onclick="window.location='imoderna.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+         <div onclick="window.location='imoderna.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner">
              <img src="img/banner4.jpg" id="img-banner">
              </div>
              <div class="ag-courses-item_bg"></div>
              <div class="texto">
                  <h4>Idade Moderna <i class="fa-solid fa-arrow-right"></i></h4>
+                 
              </div>
          </div>
          
-         <div onclick="window.location='icontemporanea.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+         <div onclick="window.location='icontemporanea.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner">
              <img src="img/banner5.jpg" id="img-banner">
              </div>
              <div class="ag-courses-item_bg"></div>
              <div class="texto">
                  <h4>Idade Contemporânea <i class="fa-solid fa-arrow-right"></i></h4>
+                 
              </div>
          </div>
      </div>
@@ -246,8 +329,8 @@ session_start();
                 <div class="links-adicionais">
                     <h2>Links Adicionais</h2>
                     <ul>
-                        <li><a href="termos.php">Termos de Uso</a></li>
-                        <li><a href="privacidade.php">Política de Privacidade</a></li>
+                        <li><a href="termos.php" target="_blank">Termos de Uso</a></li>
+                        <li><a href="privacidade.php" target="_blank">Política de Privacidade</a></li>
                     </ul>
                 </div>
             </div>
