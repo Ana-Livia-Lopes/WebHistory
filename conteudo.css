@@ -247,11 +247,13 @@ body {
     margin-top: 60px;
     transition: 0.3s all linear;
     text-align: justify;
+    font-size: 1.2em;
 }
 
 .historia h3 {
     margin-top: 1.5em; 
-    margin-bottom: 0.5em; 
+    margin-bottom: 0.5em;
+    font-size: 2em;
 }
 
 .historia h3, .historia h4, .historia h2 {
@@ -259,13 +261,14 @@ body {
 }
 
 .historia p {
-    margin-bottom: 1.5em; 
+    margin-bottom: 1.5em;
 }
 
 .historia li {
     margin-left: 25px;
     margin-top: 20px;
     margin-bottom: 1.5em;
+    list-style-type:none;
 }
 .cel{
     display: none;
@@ -273,36 +276,45 @@ body {
 /* fim da seçao 4 */
 
 /*conteudos adicionais*/
-.video-card {
+.video-fr {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-iframe {
-    height: 100%;
-    width: 100%;
+#sug_video {
+    margin-top: 25px;
+    color: black;
 }
 
 .video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
-    padding: 20px;
 }
 
-.video-card:hover {
-    transform: scale(1.05); 
+iframe {
+    width: 400px;
+    height: 250px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+
+}
+
+.video-fr:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.389);
 }
 
 .banner {
     width: 22em; 
     background: rgb(255, 255, 255);
-    height: 8em; 
+    height: 6em; 
     display: flex;
     margin: 0 auto 0px -7px;
-    box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.425);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
     border-radius: 15px;
     margin-top: 30px; 
@@ -319,7 +331,7 @@ iframe {
 
 .banner:hover {
     transform: scale(1.03);
-    box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.733);
+    box-shadow: rgba(0, 0, 0, 0.537) 0px 5px 15px;
 }
 
 #img-banner {
@@ -327,7 +339,6 @@ iframe {
     width: 8em; 
     object-fit: cover;
     border-radius: 15px 0 0 15px; 
-    box-shadow: rgba(0, 0, 0, 0.74) 10px 0px 4px; 
 }
 
 .texto {
@@ -340,7 +351,7 @@ iframe {
 
 .texto h4 {
     font-size: 24px;
-    margin: 0;
+    margin-bottom: 1.5em;
 }
 
 a {
@@ -395,8 +406,6 @@ footer ul li {
 .contato {
     margin-top: 5px;
 }
- 
-
 /* fim footer */
 /* responsividade */
 @media (max-width: 768px){
@@ -448,7 +457,6 @@ footer ul li {
     #img-banner {
         width: 5em;
         height: 7em;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .texto h4 {
         font-size: 15px;

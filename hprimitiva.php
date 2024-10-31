@@ -48,24 +48,24 @@
         </div>
         <?php session_start();
 
-        if ($_SESSION['nome'] != '') {
-            echo "<div class='usuario'>";
-            echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
-            echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
-            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
-            echo    "</div>";
-            echo    "<div id='botao-acoes'>";
             if ($_SESSION['nome'] != '') {
-                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
+                echo "<div class='usuario'>";
+                echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
+                echo    "<div class='subclass-usuario'>";
+                echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
+                echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
+                echo    "</div>";
+                echo    "<div id='botao-acoes'>";
+                if ($_SESSION['nome'] != '') {
+                    echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
+                }
+                echo    "</div>";
+                echo "</div>";
             }
-            echo    "</div>";
-            echo "</div>";
-        }
 
-        if ($_SESSION['nome'] == '') {
-            echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
-        }
+            if ($_SESSION['nome'] == '') {
+                echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
+            }
         ?>
     </nav>
     
@@ -74,6 +74,8 @@
         <section id="secao4">
             <div id="historia-primitiva" class="historia pc"> <!-- com texto -->
                     <h2>História Primitiva</h2><hr id="hr1">
+                    <p>
+
                         <h3>Paleolítico </h3>
                         
                         Foi o primeiro período da Pré-História, quando os hominídeos eram nômades e tinham como práticas cotidianas a caça, pesca e colheita de frutos. Os primeiros grupos humanos procuravam adaptar-se ao ambiente em que viviam e buscavam a sobrevivência por meio da caça de animais, pesca de peixes nos rios e colheita de vegetais e frutos disponíveis por onde passavam. Os primeiros seres humanos eram nômades e estavam em constante deslocamento, fugindo das intempéries da natureza ou de animais selvagens, como também em busca de espaço que pudesse fornecer alimentos ou proteção para o momento. A principal transformação ocorrida nesse período foi a descoberta do fogo. 
@@ -119,47 +121,33 @@
                         <h3>Revolução Agrícola no Neolítico</h3>
                         <p>A revolução agrícola trouxe a prática do cultivo e domesticação de animais, aumentando a população e levando à formação de sociedades mais complexas e à criação de um Estado. Houve avanços nas técnicas agrícolas e no uso de ferramentas.</p>
                 </div>
+                    </p>
         </section>
+
+        <!-- partial:index.partial.html -->
+<!-- partial -->
 
         <section class="historia">
             <h2>Conteúdos adicionais</h2>
             <div class="video-grid">
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO1" title="Título do Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 1</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/Ce2cfR-g508?si=p5KHdQjDGbMAmReO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO2" title="Título do Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 2</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/jcb6VrYNxYc?si=wyHTmFMM2f9BDI3v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO3" title="Título do Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 3</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/h2h24Q_J7M8?si=YzExuYcASNGmHWr7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO4" title="Título do Vídeo 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 4</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/M1hzC3DcOSY?si=kfD3dnOLIdEUC5tt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO5" title="Título do Vídeo 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 5</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/trxtcdsbbFo?si=Km8_sqfozLPHJvcz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO6" title="Título do Vídeo 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 6</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/nDsr0Ge47nE?si=NrvIt1Vpq1rUyzeq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
         <section class="historia">
             <h2>Veja também</h2>
             <div class="banner-grid">
-                <a href="hantiga.php" target="_blank">
+                <a href="hantiga.php">
                     <div class="banner">
                         <div class="div-img-banner">
                             <img src="img/banner2.jpg" id="img-banner" alt="Imagem História Antiga">
@@ -170,7 +158,7 @@
                     </div>
                 </a>
     
-                <a href="imedia.php" target="_blank">
+                <a href="imedia.php">
                     <div class="banner">
                         <div class="div-img-banner">
                             <img src="img/banner3.jpg" id="img-banner" alt="Imagem Idade Média">
@@ -181,7 +169,7 @@
                     </div>
                 </a>
     
-                <a href="imoderna.php" target="_blank">
+                <a href="imoderna.php">
                     <div class="banner">
                         <div class="div-img-banner">
                             <img src="img/banner4.jpg" id="img-banner" alt="Imagem Idade Moderna">
@@ -192,7 +180,7 @@
                     </div>
                 </a>
     
-                <a href="icontemporanea.php" target="_blank">
+                <a href="icontemporanea.php">
                     <div class="banner">
                         <div class="div-img-banner">
                             <img src="img/banner5.jpg" id="img-banner" alt="Imagem Idade Contemporânea">
@@ -226,16 +214,16 @@
                         <h2>Equipe Desenvolvedora</h2>
                         <ul>
                             <p>Ana Lívia dos Santos Lopes</p>
-                            <li><a href="https://linktr.ee/analivialopess" target="_blank">Link para contato</a></li>
+                            <li><a href="https://linktr.ee/analivialopess">Link para contato</a></li>
                 
                             <p>Gabriel Reis de Brito</p>
-                            <li><a href="https://linktr.ee/gabrielreiss" target="_blank">Link para contato</a></li>
+                            <li><a href="https://linktr.ee/gabrielreiss">Link para contato</a></li>
                 
                             <p>Isadora Gomes da Silva</p>
-                            <li><a href="https://linktr.ee/isadoragomess" target="_blank">Link para contato</a></li>
+                            <li><a href="https://linktr.ee/isadoragomess">Link para contato</a></li>
                 
                             <p>Lucas Randal Abreu Balderrama</p>
-                            <li><a href="https://linktr.ee/lucasbalderrama" target="_blank">Link para contato</a></li>
+                            <li><a href="https://linktr.ee/lucasbalderrama">Link para contato</a></li>
                         </ul>
                     </div>
                 

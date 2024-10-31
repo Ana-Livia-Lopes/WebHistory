@@ -11,6 +11,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="./main.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
 
     
@@ -230,32 +231,26 @@
             <div class="video-grid">
                 <div class="video-card">
                     <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO1" title="Título do Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 1</div>
                 </div>
 
                 <div class="video-card">
                     <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO2" title="Título do Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 2</div>
                 </div>
 
                 <div class="video-card">
                     <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO3" title="Título do Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 3</div>
                 </div>
 
                 <div class="video-card">
                     <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO4" title="Título do Vídeo 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 4</div>
                 </div>
 
                 <div class="video-card">
                     <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO5" title="Título do Vídeo 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 5</div>
                 </div>
 
                 <div class="video-card">
                     <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO6" title="Título do Vídeo 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 6</div>
                 </div>
             </div>
         </section>
@@ -263,7 +258,7 @@
         <section class="historia">
             <h2>Veja também</h2>
             <div class="banner-grid">
-                <a href="hprimitiva.php" target="_blank">
+                <a href="hprimitiva.php">
                     <div class="banner">
                         <img src="img/banner1.jpg" id="img-banner" alt="Imagem História Primitiva">
                         <div class="texto">
@@ -272,7 +267,7 @@
                     </div>
                 </a>
     
-                <a href="hantiga.php" target="_blank">
+                <a href="hantiga.php">
                     <div class="banner">
                         <img src="img/banner2.jpg" id="img-banner" alt="Imagem História Antiga">
                         <div class="texto">
@@ -281,7 +276,7 @@
                     </div>
                 </a>
     
-                <a href="imedia.php" target="_blank">
+                <a href="imedia.php">
                     <div class="banner">
                         <img src="img/banner3.jpg" id="img-banner" alt="Imagem Idade Média">
                         <div class="texto">
@@ -290,7 +285,7 @@
                     </div>
                 </a>
     
-                <a href="imoderna.php" target="_blank">
+                <a href="imoderna.php">
                     <div class="banner">
                         <img src="img/banner4.jpg" id="img-banner" alt="Imagem Idade Moderna">
                         <div class="texto">
@@ -322,16 +317,16 @@
                     <h2>Equipe Desenvolvedora</h2>
                     <ul>
                         <p>Ana Lívia dos Santos Lopes</p>
-                        <li><a href="https://linktr.ee/analivialopess" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/analivialopess">Link para contato</a></li>
             
                         <p>Gabriel Reis de Brito</p>
-                        <li><a href="https://linktr.ee/gabrielreiss" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/gabrielreiss">Link para contato</a></li>
             
                         <p>Isadora Gomes da Silva</p>
-                        <li><a href="https://linktr.ee/isadoragomess" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/isadoragomess">Link para contato</a></li>
             
                         <p>Lucas Randal Abreu Balderrama</p>
-                        <li><a href="https://linktr.ee/lucasbalderrama" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/lucasbalderrama">Link para contato</a></li>
                     </ul>
                 </div>
             

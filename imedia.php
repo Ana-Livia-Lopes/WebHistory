@@ -11,7 +11,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="./main.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
 
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
@@ -214,42 +215,26 @@
         <section class="historia">
             <h2>Conteúdos adicionais</h2>
             <div class="video-grid">
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO1" title="Título do Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 1</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/q5pPTZ6lX7Y?si=bquv2N1dJu1Godt1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO2" title="Título do Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 2</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/q2V_9xzHiy8?si=Z3wkJXnDr4lbVxJX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO3" title="Título do Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 3</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/cQf8YHHWx_M?si=KNshV075WJu2JKK_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO4" title="Título do Vídeo 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 4</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/RuqsJQkp-D8?si=91eGN-L3zPa-UI2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO5" title="Título do Vídeo 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 5</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/EDZVqcvffgQ?si=c0lz_-0uOshx_Eu7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO6" title="Título do Vídeo 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 6</div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/YbR1bxtGnMo?si=TmSLxVPzvg_B9lQk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
                 </div>
-            </div>
+                <h4 id="sug_video">Veja mais:<a href="https://www.youtube.com/watch?v=a33K4Ut5Cbs" target="_blank"> QUEM FOI CARLOS MAGNO E O IMPÉRIO CAROLÍNGIO? - Lobo Conservador</a></h4>
         </section>
 
         <section class="historia">
             <h2>Veja também</h2>
             <div class="banner-grid">
-                <a href="hprimitiva.php" target="_blank">
+                <a href="hprimitiva.php">
                     <div class="banner">
                         <img src="img/banner1.jpg" id="img-banner" alt="Imagem História Primitiva">
                         <div class="texto">
@@ -258,7 +243,7 @@
                     </div>
                 </a>
     
-                <a href="hantiga.php" target="_blank">
+                <a href="hantiga.php">
                     <div class="banner">
                         <img src="img/banner2.jpg" id="img-banner" alt="Imagem História Antiga">
                         <div class="texto">
@@ -267,7 +252,7 @@
                     </div>
                 </a>
     
-                <a href="imoderna.php" target="_blank">
+                <a href="imoderna.php">
                     <div class="banner">
                         <img src="img/banner4.jpg" id="img-banner" alt="Imagem Idade Moderna">
                         <div class="texto">
@@ -276,7 +261,7 @@
                     </div>
                 </a>
     
-                <a href="icontemporanea.php" target="_blank">
+                <a href="icontemporanea.php">
                     <div class="banner">
                         <img src="img/banner5.jpg" id="img-banner" alt="Imagem Idade Contemporânea">
                         <div class="texto">
@@ -307,16 +292,16 @@
                     <h2>Equipe Desenvolvedora</h2>
                     <ul>
                         <p>Ana Lívia dos Santos Lopes</p>
-                        <li><a href="https://linktr.ee/analivialopess" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/analivialopess">Link para contato</a></li>
             
                         <p>Gabriel Reis de Brito</p>
-                        <li><a href="https://linktr.ee/gabrielreiss" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/gabrielreiss">Link para contato</a></li>
             
                         <p>Isadora Gomes da Silva</p>
-                        <li><a href="https://linktr.ee/isadoragomess" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/isadoragomess">Link para contato</a></li>
             
                         <p>Lucas Randal Abreu Balderrama</p>
-                        <li><a href="https://linktr.ee/lucasbalderrama" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/lucasbalderrama">Link para contato</a></li>
                     </ul>
                 </div>
             

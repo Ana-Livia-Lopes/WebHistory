@@ -130,35 +130,17 @@
         <section class="historia">
             <h2>Conteúdos adicionais</h2>
             <div class="video-grid">
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO1" title="Título do Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 1</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/ICqKQU42mjQ?si=Ql-KX-krKf1kGeXz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO2" title="Título do Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 2</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/-JLY_hoJUNE?si=Ml8fXHscZb2PzBDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO3" title="Título do Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 3</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/TNmwlPfSRR0?si=aiDTqA8qvsidVblH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO4" title="Título do Vídeo 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 4</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/qh7CKGQvTwY?si=-SRwMLk5pmxtHG6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO5" title="Título do Vídeo 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 5</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/fZ6tc3fvA3w?si=a2e_KtpV9AuVasQd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO6" title="Título do Vídeo 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="video-title">Título do Vídeo 6</div>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/SfoAgpJwF5g?si=lhACW1YuTixTysam" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
@@ -166,7 +148,7 @@
             <h2>Veja também</h2>
             <div class="banner-grid">
 
-                <a href="hprimitiva.php" target="_blank">
+                <a href="hprimitiva.php">
                     <div class="banner">
                         <img src="img/banner1.jpg" id="img-banner" alt="Imagem História Primitiva">
                         <div class="texto">
@@ -175,7 +157,7 @@
                     </div>
                 </a>
     
-                <a href="imedia.php" target="_blank">
+                <a href="imedia.php">
                     <div class="banner">
                         <img src="img/banner3.jpg" id="img-banner" alt="Imagem Idade Média">
                         <div class="texto">
@@ -184,7 +166,7 @@
                     </div>
                 </a>
     
-                <a href="imoderna.php" target="_blank">
+                <a href="imoderna.php">
                     <div class="banner">
                         <img src="img/banner4.jpg" id="img-banner" alt="Imagem Idade Moderna">
                         <div class="texto">
@@ -193,7 +175,7 @@
                     </div>
                 </a>
     
-                <a href="icontemporanea.php" target="_blank">
+                <a href="icontemporanea.php">
                     <div class="banner">
                         <img src="img/banner5.jpg" id="img-banner" alt="Imagem Idade Contemporânea">
                         <div class="texto">
@@ -225,16 +207,16 @@
                     <h2>Equipe Desenvolvedora</h2>
                     <ul>
                         <p>Ana Lívia dos Santos Lopes</p>
-                        <li><a href="https://linktr.ee/analivialopess" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/analivialopess">Link para contato</a></li>
             
                         <p>Gabriel Reis de Brito</p>
-                        <li><a href="https://linktr.ee/gabrielreiss" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/gabrielreiss">Link para contato</a></li>
             
                         <p>Isadora Gomes da Silva</p>
-                        <li><a href="https://linktr.ee/isadoragomess" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/isadoragomess">Link para contato</a></li>
             
                         <p>Lucas Randal Abreu Balderrama</p>
-                        <li><a href="https://linktr.ee/lucasbalderrama" target="_blank">Link para contato</a></li>
+                        <li><a href="https://linktr.ee/lucasbalderrama">Link para contato</a></li>
                     </ul>
                 </div>
             
