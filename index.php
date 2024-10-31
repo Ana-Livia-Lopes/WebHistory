@@ -1,7 +1,5 @@
 <?php
 session_start();
-$_SESSION['nome'] = '';
-$_SESSION['tipo'] = '';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
