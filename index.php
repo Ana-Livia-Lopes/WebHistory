@@ -98,7 +98,7 @@ session_start();
             </div>
 
 
-            <div class="container">
+            <div class="container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
         <div class="card">
             <div class="quadrado q1">
                 <div class="content">

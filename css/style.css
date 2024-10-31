@@ -394,7 +394,8 @@ body {
     transform: translateY(90px);
 }
 .card:hover .q1{
-    background: rgb(7, 70, 23);;
+    background: rgb(7, 70, 23);
+
     transform: translateY(0);
 }
 .q2{
@@ -405,7 +406,7 @@ body {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.511);
     transform: translateY(-90px);
 }
 .card:hover .q2{
@@ -485,13 +486,13 @@ span.material-symbols-outlined {
     font-size: 40px;
 }
 .banner:hover .ag-courses-item_bg {
-    transform: scale(33);
+    transform: scale(40);
 }
  
 .ag-courses-item_bg {
     height: 44px;
     width: 44px;
-    background-color: #063512bb;
+    background-color: #063512b1;
     z-index: 1;
     position: absolute;
     top: -75px;
