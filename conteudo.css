@@ -237,14 +237,14 @@ body {
 /* fim da navbar */
 
 .historia {
-    width: 46em;
+    width: 52em;
     background: rgb(255, 255, 255);
     padding: 30px;
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
     border-radius: 15px;
-    margin-top: 100px;
+    margin-top: 60px;
     transition: 0.3s all linear;
     text-align: justify;
 }
@@ -271,6 +271,84 @@ body {
     display: none;
 }
 /* fim da seçao 4 */
+
+/*conteudos adicionais*/
+.video-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.video-card:hover {
+    transform: scale(1.05); 
+}
+
+.banner {
+    width: 22em; 
+    background: rgb(255, 255, 255);
+    height: 8em; 
+    display: flex;
+    margin: 0 auto 0px -7px;
+    box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.425);
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 30px; 
+    transition: 0.3s all linear;
+    overflow: hidden; /
+}
+
+.banner-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:  20px 50px;
+    padding: 20px;
+}
+
+.banner:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.733);
+}
+
+#img-banner {
+    height: 8em; 
+    width: 8em; 
+    object-fit: cover;
+    border-radius: 15px 0 0 15px; 
+    box-shadow: rgba(0, 0, 0, 0.74) 10px 0px 4px; 
+}
+
+.texto {
+    height: 8em; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px; 
+}
+
+.texto h4 {
+    font-size: 24px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* fim conteudos adicionais*/
+
 /* footer */
 footer {
     height: 100%;

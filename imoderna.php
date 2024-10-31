@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <script src="js/index.js" defer></script>
-    <title>História na Web</title>
+    <title>Idade Moderna</title>
     <link rel="stylesheet" href="conteudo.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -121,6 +121,82 @@
                 <p>A Revolução Científica (século XVI) trouxe avanços como as teorias de Copérnico e Newton, enquanto o Iluminismo (século XVIII) enfatizou a razão, a ciência e os direitos individuais. Pensadores como Voltaire e Rousseau influenciaram as revoluções Americana e Francesa, promovendo liberdade e justiça social.</p>
             </div>
     
+        </section>
+
+        <section class="historia">
+            <h2>Conteúdos adicionais</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO1" title="Título do Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Título do Vídeo 1</div>
+                </div>
+
+                <div class="video-card">
+                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO2" title="Título do Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Título do Vídeo 2</div>
+                </div>
+
+                <div class="video-card">
+                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO3" title="Título do Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Título do Vídeo 3</div>
+                </div>
+
+                <div class="video-card">
+                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO4" title="Título do Vídeo 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Título do Vídeo 4</div>
+                </div>
+
+                <div class="video-card">
+                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO5" title="Título do Vídeo 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Título do Vídeo 5</div>
+                </div>
+
+                <div class="video-card">
+                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO6" title="Título do Vídeo 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Título do Vídeo 6</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="historia">
+            <h2>Veja também</h2>
+            <div class="banner-grid">
+                <a href="hprimitiva.php" target="_blank">
+                    <div class="banner">
+                        <img src="img/banner1.jpg" id="img-banner" alt="Imagem História Primitiva">
+                        <div class="texto">
+                            <h4>História Primitiva</h4>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="hantiga.php" target="_blank">
+                    <div class="banner">
+                        <img src="img/banner2.jpg" id="img-banner" alt="Imagem História Antiga">
+                        <div class="texto">
+                            <h4>História Antiga</h4>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="imedia.php" target="_blank">
+                    <div class="banner">
+                        <img src="img/banner3.jpg" id="img-banner" alt="Imagem Idade Média">
+                        <div class="texto">
+                            <h4>Idade Média</h4>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="icontemporanea.php" target="_blank">
+                    <div class="banner">
+                        <img src="img/banner5.jpg" id="img-banner" alt="Imagem Idade Contemporânea">
+                        <div class="texto">
+                            <h4>Idade Contemporânea</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </section>
 
         <footer>
