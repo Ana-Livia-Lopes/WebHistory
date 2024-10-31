@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['nome'] = '';
+$_SESSION['tipo'] = '';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,6 +17,7 @@
     <script src="./main.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
@@ -46,7 +52,8 @@
                 </li>
             </ul>
         </div>
-        <?php session_start();
+        <?php 
+        
 
         if ($_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
@@ -100,18 +107,18 @@
              <div class="div-img-banner" >
              <img src="img/banner1.jpg" id="img-banner">
              </div>
-             
+                <div class="ag-courses-item_bg"></div>
              <div class="texto">
-                 <h4>História Primitiva</h4>
+                 <h4>História Primitiva <i class="fa-solid fa-arrow-right"></i></h4>
              </div>
          </div>
          <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
              <div class="div-img-banner">
                  <img src="img/banner2.jpg" id="img-banner">
              </div>
-             
+             <div class="ag-courses-item_bg"></div>
              <div class="texto">
-                 <h4>História Antiga</h4>
+                 <h4>História Antiga <i class="fa-solid fa-arrow-right"></i></h4>
              </div>
          </div>
          
@@ -119,9 +126,9 @@
              <div class="div-img-banner">
                  <img src="img/banner3.jpg" id="img-banner">
              </div>
-             
+             <div class="ag-courses-item_bg"></div>
              <div class="texto">
-                 <h4>Idade Média</h4>
+                 <h4>Idade Média <i class="fa-solid fa-arrow-right"></i></h4>
              </div>
          </div>
          
@@ -129,9 +136,9 @@
              <div class="div-img-banner">
              <img src="img/banner4.jpg" id="img-banner">
              </div>
-             
+             <div class="ag-courses-item_bg"></div>
              <div class="texto">
-                 <h4>Idade Moderna</h4>
+                 <h4>Idade Moderna <i class="fa-solid fa-arrow-right"></i></h4>
              </div>
          </div>
          
@@ -139,9 +146,9 @@
              <div class="div-img-banner">
              <img src="img/banner5.jpg" id="img-banner">
              </div>
-             
+             <div class="ag-courses-item_bg"></div>
              <div class="texto">
-                 <h4>Idade Contemporânea</h4>
+                 <h4>Idade Contemporânea <i class="fa-solid fa-arrow-right"></i></h4>
              </div>
          </div>
      </div>
@@ -149,53 +156,53 @@
       <!-- celular -->
     <div id="celular">
     
-        <div onclick="window.location='hprimitiva.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="100">
+        <div onclick="window.location='hprimitiva.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="1">
             <div class="div-img-banner" >
             <img src="img/banner1.jpg" id="img-banner">
             </div>
-            
+            <div class="ag-courses-item_bg"></div>
             <div class="texto">
-                <h4>História Primitiva</h4>
+                <h4>História Primitiva <i class="fa-solid fa-arrow-right"></i></h4>
             </div>
         </div>
     
-        <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="100">
+        <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="1">
             <div class="div-img-banner">
                 <img src="img/banner2.jpg" id="img-banner">
             </div>
-            
+            <div class="ag-courses-item_bg"></div>
             <div class="texto">
-                <h4>História Antiga</h4>
+                <h4>História Antiga <i class="fa-solid fa-arrow-right"></i></h4>
             </div>
         </div>
     
-        <div onclick="window.location='imedia.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="100">
+        <div onclick="window.location='imedia.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="1">
             <div class="div-img-banner">
                 <img src="img/banner3.jpg" id="img-banner">
             </div>
-            
+            <div class="ag-courses-item_bg"></div>
             <div class="texto">
-                <h4>Idade Média</h4>
+                <h4>Idade Média <i class="fa-solid fa-arrow-right"></i></h4>
             </div>
         </div>
     
-        <div onclick="window.location='imoderna.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="100">
+        <div onclick="window.location='imoderna.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="1">
             <div class="div-img-banner">
             <img src="img/banner4.jpg" id="img-banner">
             </div>
-            
+            <div class="ag-courses-item_bg"></div>
             <div class="texto">
-                <h4>Idade Moderna</h4>
+                <h4>Idade Moderna <i class="fa-solid fa-arrow-right"></i></h4>
             </div>
         </div>
     
-        <div onclick="window.location='icontemporanea.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="100">
+        <div onclick="window.location='icontemporanea.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="1">
             <div class="div-img-banner">
             <img src="img/banner5.jpg" id="img-banner">
             </div>
-            
+            <div class="ag-courses-item_bg"></div>
             <div class="texto">
-                <h4>Idade Contemporânea</h4>
+                <h4>Idade Contemporânea <i class="fa-solid fa-arrow-right"></i></h4>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-    background-color: #f4f4f9;
+    background-color: #b1ada8;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -172,7 +172,7 @@ body {
 
 .main-content{
     position: relative;
-    background-color: white;
+    background-color: rgb(154, 154, 154);
     min-height: 100vh;
     top: 0;
     left: 80px;
@@ -372,17 +372,19 @@ body {
 /* fim sobre */
 /* seção 3 */
 .banner {
-	width: 46em;
+	width: 50em;
 	background: rgb(255, 255, 255);
 	height: 10em;
-	display: flex;
-	justify-content: center;
     margin: 0 auto;
     box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.425);
 	cursor: pointer;
-	border-radius: 15px;
+	border-radius: 30px;
 	margin-top: 100px;
     transition: 0.3s all linear;
+    overflow: hidden;
+    border-radius: 28px;
+  display: flex;
+  position: relative;
 }
 .banner:hover {
     transform: scale(1.03);
@@ -391,25 +393,51 @@ body {
 
 #img-banner {
     height: 10em;
-    width: 23em;
+    width: 50em;
     object-fit: cover;
-    border-radius: 90px ;
+    border-radius: 30px ;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.74) 30px 0px 4px;
+    display: flex;
+    filter: brightness(0.32) ;
+    
+    z-index: 1;
 }
 
 .texto {
     height: 10em;
-    width: 23em;
+    width: 50em;
     display: flex;               
     justify-content: center;    
     align-items: center; 
+    position: absolute;
+    z-index: 3;
+    
 }
 
 .texto h4 {
+    color: white;
     font-size: 40px;
-
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    
+}
+.banner:hover .ag-courses-item_bg {
+    transform: scale(33);
+}
+ 
+.ag-courses-item_bg {
+    height: 44px;
+    width: 44px;
+    background-color: #063512bb;
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+    border-radius: 50%;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
 }
 hr{
     height: 4px;
@@ -490,9 +518,6 @@ footer ul li {
     body{
         margin-left: 0;
     }
-    #secao1{
-        margin-left: 80px;
-    }
     .sobre {
         width: 300px;
         height: 370px;
@@ -528,21 +553,21 @@ footer ul li {
         width: 55px;
     }
     .banner {
-        width: 13em;
+        width: 18em;
         height: 7em;
     }
     
     #img-banner {
-        width: 5em;
+        width: 18em;
         height: 7em;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .texto h4 {
-        font-size: 15px;
+        font-size: 25px;
     }
     .texto {
         height: 7em;
-        width: 23em;
+        width: 18em;
         padding: 20px;
     }
     .historia{
@@ -589,7 +614,7 @@ footer ul li {
         width: 150px;
     }
     .sidebar{
-        position: absolute;
+        position: fixed;
     }
     #footer {
         display: block;
