@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="./main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -66,7 +67,47 @@
         ?>
     </nav>
     <main class="main-content">
-        
+    <div class="container">
+        <div class="card">
+            <div class="quadrado q1">
+                <div class="content">
+                <i class="fa-brands fa-html5"></i>
+                    <h3>html</h3>
+                </div>
+            </div>
+            <div class="quadrado q2">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="quadrado q1">
+                <div class="content">
+                <i class="fa-brands fa-php"></i>
+                    <h3>php</h3>
+                </div>
+            </div>
+            <div class="quadrado q2">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="quadrado q1">
+                <div class="content">
+                <i class="fa-brands fa-js"></i>
+                    <h3>js</h3>
+                </div>
+            </div>
+            <div class="quadrado q2">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     </main>
 </body>
 
