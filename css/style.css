@@ -172,7 +172,7 @@ body {
 
 .main-content{
     position: relative;
-    background-color: rgb(154, 154, 154);
+    background-color: rgb(217, 217, 217);
     min-height: 100vh;
     top: 0;
     left: 80px;
@@ -399,7 +399,7 @@ body {
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
     display: flex;
-    filter: brightness(0.32) ;
+    filter: brightness(0.52) ;
     
     z-index: 1;
 }
@@ -417,10 +417,8 @@ body {
 
 .texto h4 {
     color: white;
+    font-family: "Montserrat", sans-serif;
     font-size: 40px;
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: black;
-    
 }
 .banner:hover .ag-courses-item_bg {
     transform: scale(33);
@@ -466,7 +464,7 @@ hr{
 /* footer */
 footer {
     height: 100%;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     color: black;
     margin-top: 60px;
