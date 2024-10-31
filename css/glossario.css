@@ -160,6 +160,7 @@
 
 .main-content{
     position: relative;
+    display: flex;
     background-color: white;
     min-height: 100vh;
     top: 0;
@@ -216,14 +217,12 @@ body {
 }
 
 .sidebar_gloss {
-    padding: 20px;
-    color: #ecf0f1;
-}
-
-.sidebar_gloss h4 {
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    padding: 13px;
+    background-color: #063512;
+    border-radius: 4px;
+    margin-top: 15px;
+    position: fixed;
+    height: 160vh;
 }
 
 .sidebar_gloss ul {
@@ -232,7 +231,7 @@ body {
 }
 
 .sidebar_gloss ul li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .sidebar_gloss ul li a {
@@ -246,13 +245,31 @@ body {
 }
 
 .sidebar_gloss ul li a:hover {
-    background-color: #34495e;
+    background-color: rgba(255, 255, 255, 0.21);
 }
-
+.scroller{
+    width: 200px;
+    height: 110vh;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #063512;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 .content_gloss {
-    margin-left: 270px;
     padding: 40px;
-    background-color: #f4f4f9;
+    margin-left: 15%;
 }
 
 .section_gloss {
