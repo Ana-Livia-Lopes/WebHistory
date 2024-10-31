@@ -234,3 +234,44 @@ body{
     align-items: center;
 }
 /* fim da navbar */
+.container{
+    width: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.quadrado{
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+.q1{
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+.card:hover .q1{
+    background: rgb(7, 70, 23);;
+    transform: translateY(0);
+}
+.q2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+.card:hover .q2{
+    transform: translateY(0);
+}
+.fa-brands{
+    font-size: 50px;
+}
