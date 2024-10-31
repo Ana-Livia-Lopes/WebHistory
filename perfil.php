@@ -65,7 +65,28 @@
         ?>
     </nav>
     <main class="main-content">
-        
+        <div class="pagina-perfil">
+            <div id="fundo">
+                <img id="banner-histweb" src="img/HistWebWhite.svg" alt="">
+            </div>
+            <div class="informacoes">
+
+                <?php
+                echo "<img id='user-perfil' src='img/" . $_SESSION['imagem'] . "' alt=''>";
+                echo "<div class='info'>";
+                echo "<div class='nome-email'><p id='nome-acima'>NOME</p>";
+                echo "<h2>".$_SESSION['nome']."</h2>";
+                echo "<p id='nome-acima'>EMAIL</p>";
+                echo "<h2>email@gmail.com</h2></div>";
+                echo "<div class='botoes'>";
+                echo "<button class='editar-nome'>Editar</button>";
+                echo "<button class='editar-email'>Editar</button>";
+                echo "</div>";
+                echo "</div>";
+                ?>
+                
+            </div>
+        </div>
     </main>
 </body>
 </html>
