@@ -217,12 +217,12 @@ body {
 }
 
 .sidebar_gloss {
-    padding: 13px;
+    padding: 10px;
     background-color: #063512;
     border-radius: 4px;
     margin-top: 15px;
     position: fixed;
-    height: 160vh;
+    height: 130vh;
 }
 
 .sidebar_gloss ul {
@@ -257,7 +257,7 @@ body {
   }
   
   ::-webkit-scrollbar-track {
-    background: #063512;
+    background: #f4f4f9;
   }
   
   ::-webkit-scrollbar-thumb {
@@ -269,7 +269,7 @@ body {
   }
 .content_gloss {
     padding: 40px;
-    margin-left: 15%;
+    margin-left: 230px;
 }
 
 .section_gloss {
@@ -299,10 +299,10 @@ body {
     margin-top: 15px;
 }
 .section_gloss img {
-    max-width: 770px;
+    max-width: 700px;
     border-radius: 10px;
 }
-#agricultura img, #intemperes img, #rupestre img, #hominideos img, #hieroglifica img, #racionalismo img, #dinastias img, #cidade-estado img{
+.section_gloss img:not(#cuneiforme img, #república img){
     display: block;
     margin: auto;
 }
@@ -310,11 +310,20 @@ body {
     display: inline-block;
 }
 #cuneiforme img{
-    height: 500px;
+    height: 450px;
     margin-left: 4%;
 }
-#cuneiforme #img2{
-    max-width: 600px;
+#cuneiforme .img2{
+    width: 450px;
+}
+#república img{
+    margin-left: 4%;
+}
+#república .img2{
+    width: 290px;
+}
+#colonialismo img{
+    width: 1000px;
 }
 .div-pesquisa{
     background-color:#E8F0FE;
@@ -345,7 +354,7 @@ body {
     float:left;
     height:40px;
     border-radius:0 7px 7px 0;
-    width:70px;
+    width:69.5px;
     font-size: 14px;
     font-weight:bold;
     background:#5F9EA0;

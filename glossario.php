@@ -1,139 +1,5 @@
 <?php
-$glossario = [
-    'agricultura' => [
-        'title' => 'Agricultura',
-        'text' => 'Agricultura é o cultivo do solo, por meio de procedimentos, métodos e técnicas próprias, que buscam produzir alimentos para o consumo humano, ou, para serem usados como matérias-primas na indústria.',
-        'image' => 'https://images.pexels.com/photos/2131784/pexels-photo-2131784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        'source' => 'Fonte: Blog FieldView / Dicionário Aurélio'
-    ],
-    'rupestre' => [
-        'title' => 'Arte Rupestre',
-        'text' => 'A arte rupestre consiste em pinturas e gravuras feitas em rochas e cavernas, é a produção artística feita pelos hominídeos durante a Pré-História. Essa arte é uma das primeiras formas de expressão cultural da humanidade.',
-        'image' => 'https://img.freepik.com/fotos-gratis/pinturas-arqueologicas-em-cavernas_23-2151786685.jpg?t=st=1729461915~exp=1729465515~hmac=e755b9fd1c06acd8ed716b61b6b1474c298a07195bd4681a84da2088ccd9d1bb&w=826',
-        'source' => 'Fonte: História do mundo'
-    ],
-    'cidade-estado' => [
-        'title' => 'Cidade-estado',
-        'text' => 'Cidade-estado se refere a um país geralmente pequeno e independente. Ele consiste em uma única cidade em que o governo exerce total controle ou soberania sobre si e os demais territórios dentro de suas fronteiras.',
-        'image' => 'https://static.preparaenem.com/2024/03/acropole-de-atenas-em-pintura-de-leo-von-klenze-em-texto-sobre-a-sociedade-ateniense.jpg',
-        'source' => 'Fonte: Vestibulares'
-    ],
-    'colonialismo' => [
-        'title' => 'Colonialismo',
-        'text' => 'É uma prática na qual um território exerce domínio político, cultural ou religioso sobre um determinado povo. Geralmente visando a exploração de recursos e a imposição de uma cultura, governo e economia da potência dominante sobre o território colonizado.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte:  Educa Mais Brasil'
-    ],
-    'culminando' => [
-        'title' => 'Culminando',
-        'text' => 'Culminando se refere ao ponto mais alto ou ao momento de maior intensidade de um processo ou evento.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Dicionário Priberam da Língua Portuguesa'
-    ],
-    'democracia' => [
-        'title' => 'Democracia',
-        'text' => 'Forma de governo em que o poder é exercido pelo povo, direta ou indiretamente, geralmente por meio de representantes eleitos.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Michaelis Online'
-    ],
-    'dinastias' => [
-        'title' => 'Dinastias',
-        'text' => 'Dinastias é o período de sucessão, que reis e rainhas, pertencentes a uma mesma família, permanecem no poder, na dinastia o poder é transmitido por hereditariedade, podendo a mesma família permanecer no trono durante séculos. São comuns em monarquias, como as dinastias chinesas e europeias.',
-        'image' => 'https://img.freepik.com/fotos-gratis/retrato-dos-tres-sabios_23-2150972928.jpg?t=st=1729464241~exp=1729467841~hmac=6371120212139e24c28d6847ebadd2c2ed2c9f4d099f728e700b624596d83266&w=826',
-        'source' => 'Fonte: Significados'
-    ],
-    'emergiu' => [
-        'title' => 'Emergiu',
-        'text' => 'Surgiu ou apareceu; geralmente usado para indicar algo que se torna visível ou evidente após um período oculto ou de desenvolvimento.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Infopédia'
-    ],
-    'empírica' => [
-        'title' => 'Empírica',
-        'text' => 'Que se pauta ou resulta da experiência. Baseada em observação, experimentação ou experiência prática, em vez de teorias ou suposições abstratas.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Dicionário Online de Português'
-    ],
-    'cuneiforme' => [
-        'title' => 'Escrita Cuneiforme',
-        'text' => 'A escrita cuneiforme é uma das primeiras formas de escrita, criada pelos sumérios, caracterizada por sinais em forma de cunha gravados em tábuas de argila.',
-        'image' => 'https://images.pexels.com/photos/8349847/pexels-photo-8349847.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        'image2' => 'https://img.freepik.com/fotos-gratis/pedra-esculpida-com-sinais-antigos-achados-hititas-na-anatolia-turquia_181624-44188.jpg?t=st=1729596507~exp=1729600107~hmac=b5d912f09dc0ba79560c5f53e9c0971fd8c99037b280671e93b9f455483f8a0a&w=1060',
-        'source' => 'Fonte: Escola Kids'
-    ],
-    'hieroglifica' => [
-        'title' => 'Escrita Hieroglífica',
-        'text' => 'A escrita hieroglífica são os símbolos que os antigos egípcios utilizavam no seu sistema de escrita sagrado, que consiste em símbolos que representavam objetos, sons e ideias.',
-        'image' => 'https://images.pexels.com/photos/16386716/pexels-photo-16386716/free-photo-of-arte-parede-muro-historia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        'source' => 'Fonte: Brasil escola'
-    ],
-    'hominideos' => [
-        'title' => 'Hominídeos',
-        'text' => 'Hominídeos são os seres humanos e seus ancestrais extintos. O único representante vivo é o Homo sapiens sapiens. Este grupo encontra-se dentro da ordem dos primatas.',
-        'image' => 'https://super.abril.com.br/wp-content/uploads/2021/01/nova-especie_site.jpg?crop=1&resize=1212,909',
-        'source' => 'Fonte: Info Escola'
-    ],
-    'indulgências' => [
-        'title' => 'Indulgências',
-        'text' => 'O racionalismo é uma corrente filosófica que valoriza a razão  humana, ao passo que acredita que é dela que se obtém os conhecimentos, sendo desenvolvido principalmente por René Descartes.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Toda Matéria'
-    ],
-    'intemperes' => [
-        'title' => 'Intempéries',
-        'text' => 'Intempéries são mau tempo ou quaisquer condições climáticas intensas (vento forte, chuva torrencial, tempestade, furacão, seca, vendaval). É caracterizada por uma irregularidade das condições climatéricas.',
-        'image' => 'https://img.freepik.com/fotos-gratis/tempestade-sobre-a-cidade_23-2151750337.jpg?t=st=1729462096~exp=1729465696~hmac=854161c5cf4d08f0507a62c345e17f2f18f3a5d5aa50813bc9b5fd7a00aee63f&w=740',
-        'source' => 'Fonte: Significados'
-    ],
-    'magistrados' => [
-        'title' => 'Magistrados',
-        'text' => 'O racionalismo é uma corrente filosófica que valoriza a razão  humana, ao passo que acredita que é dela que se obtém os conhecimentos, sendo desenvolvido principalmente por René Descartes.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Toda Matéria'
-    ],
-    'mumificação' => [
-        'title' => 'Mumificação',
-        'text' => 'O racionalismo é uma corrente filosófica que valoriza a razão  humana, ao passo que acredita que é dela que se obtém os conhecimentos, sendo desenvolvido principalmente por René Descartes.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Toda Matéria'
-    ],
-    'primitivo' => [
-        'title' => 'Primitivo',
-        'text' => 'O racionalismo é uma corrente filosófica que valoriza a razão  humana, ao passo que acredita que é dela que se obtém os conhecimentos, sendo desenvolvido principalmente por René Descartes.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Toda Matéria'
-    ],
-    'protestantismo' => [
-        'title' => 'Protestantismo',
-        'text' => 'O racionalismo é uma corrente filosófica que valoriza a razão  humana, ao passo que acredita que é dela que se obtém os conhecimentos, sendo desenvolvido principalmente por René Descartes.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Toda Matéria'
-    ],
-    'racionalismo' => [
-        'title' => 'Racionalismo',
-        'text' => 'O racionalismo é uma corrente filosófica que valoriza a razão  humana, ao passo que acredita que é dela que se obtém os conhecimentos, sendo desenvolvido principalmente por René Descartes.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Toda Matéria'
-    ],
-    'religiosidade' => [
-        'title' => 'Religiosidade',
-        'text' => 'O racionalismo é uma corrente filosófica que valoriza a razão  humana, ao passo que acredita que é dela que se obtém os conhecimentos, sendo desenvolvido principalmente por René Descartes.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Toda Matéria'
-    ],
-    'república' => [
-        'title' => 'República',
-        'text' => 'O racionalismo é uma corrente filosófica que valoriza a razão  humana, ao passo que acredita que é dela que se obtém os conhecimentos, sendo desenvolvido principalmente por René Descartes.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Toda Matéria'
-    ],
-    'revolução' => [
-        'title' => 'Revolução',
-        'text' => 'O racionalismo é uma corrente filosófica que valoriza a razão  humana, ao passo que acredita que é dela que se obtém os conhecimentos, sendo desenvolvido principalmente por René Descartes.',
-        'image' => 'https://img.freepik.com/fotos-premium/elegante-com-lampada-brilhante-dentro-de-uma-cabeca-humana-de-alta-qualidade-de-alta-resolucao_1110519-20676.jpg?w=740',
-        'source' => 'Fonte: Toda Matéria'
-    ]
-];
+    include 'glossarioInfos.php';
 ?>
 
 <!DOCTYPE html>
@@ -290,7 +156,6 @@ $glossario = [
         <div id="culminando" class="section_gloss">
             <h2><?= $glossario['culminando']['title'] ?></h2>
             <p class="p1"><?= $glossario['culminando']['text'] ?></p>
-            <img src="<?= $glossario['culminando']['image'] ?>" alt="<?= $glossario['culminando']['title'] ?>">
             <p class="p2"><em><?= $glossario['culminando']['source'] ?></em></p>
         </div>
         <div id="democracia" class="section_gloss">
@@ -308,20 +173,18 @@ $glossario = [
         <div id="emergiu" class="section_gloss">
             <h2><?= $glossario['emergiu']['title'] ?></h2>
             <p class="p1"><?= $glossario['emergiu']['text'] ?></p>
-            <img src="<?= $glossario['emergiu']['image'] ?>" alt="<?= $glossario['emergiu']['title'] ?>">
             <p class="p2"><em><?= $glossario['emergiu']['source'] ?></em></p>
         </div>
         <div id="empírica" class="section_gloss">
             <h2><?= $glossario['empírica']['title'] ?></h2>
             <p class="p1"><?= $glossario['empírica']['text'] ?></p>
-            <img src="<?= $glossario['empírica']['image'] ?>" alt="<?= $glossario['empírica']['title'] ?>">
             <p class="p2"><em><?= $glossario['empírica']['source'] ?></em></p>
         </div>
         <div id="cuneiforme" class="section_gloss">
             <h2><?= $glossario['cuneiforme']['title'] ?></h2>
             <p class="p1"><?= $glossario['cuneiforme']['text'] ?></p>
             <img src="<?= $glossario['cuneiforme']['image'] ?>" alt="<?= $glossario['cuneiforme']['title'] ?>">
-            <img id="img2" src="<?= $glossario['cuneiforme']['image2'] ?>" alt="<?= $glossario['cuneiforme']['title'] ?>">
+            <img class="img2" src="<?= $glossario['cuneiforme']['image2'] ?>" alt="<?= $glossario['cuneiforme']['title'] ?>">
             <p class="p2"><em><?= $glossario['cuneiforme']['source'] ?></em></p>
         </div>
         <div id="hieroglifica" class="section_gloss">
@@ -363,7 +226,6 @@ $glossario = [
         <div id="primitivo" class="section_gloss">
             <h2><?= $glossario['primitivo']['title'] ?></h2>
             <p class="p1"><?= $glossario['primitivo']['text'] ?></p>
-            <img src="<?= $glossario['primitivo']['image'] ?>" alt="<?= $glossario['primitivo']['title'] ?>">
             <p class="p2"><em><?= $glossario['primitivo']['source'] ?></em></p>
         </div>
         <div id="protestantismo" class="section_gloss">
@@ -388,6 +250,7 @@ $glossario = [
             <h2><?= $glossario['república']['title'] ?></h2>
             <p class="p1"><?= $glossario['república']['text'] ?></p>
             <img src="<?= $glossario['república']['image'] ?>" alt="<?= $glossario['república']['title'] ?>">
+            <img class="img2" src="<?= $glossario['república']['image2'] ?>" alt="<?= $glossario['república']['title'] ?>">
             <p class="p2"><em><?= $glossario['república']['source'] ?></em></p>
         </div>
         <div id="revolução" class="section_gloss">
