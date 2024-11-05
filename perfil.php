@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="./main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Perfil</title>
 </head>
 <body>
@@ -79,13 +79,13 @@
                         echo "<p id='nome-acima'>EMAIL</p>";
                         echo "<h2>".$_SESSION['email']."</h2>";
                         echo "<p id='nome-acima'>SENHA</p>";
-                        echo "<a href=''><button id='editar-senha'>Editar senha</button></a>";
+                        echo "<button id='editar-senha'>Editar senha</button>";
                         echo "<p id='nome-acima'>EXCLUIR SUA CONTA</p>";
-                        echo "<button id='excluir-conta' onclick='alertaExcluir()'>Excluir conta</button>";
+                        echo "<button id='excluir-conta'>Excluir conta</button>";
                     echo "</div>";
                     echo "<div class='botoes'>";
-                        echo "<button class='editar-nome'>Editar</button>";
-                        echo "<button class='editar-email'>Editar</button>";
+                        echo "<button id='editar-nome'>Editar</button>";
+                        echo "<button id='editar-email'>Editar</button>";
                     echo "</div>";
                 echo "</div>";
                 ?>
@@ -93,5 +93,68 @@
             </div>
         </div>
     </main>
+    <script>
+        document.getElementById('editar-nome').addEventListener('click', function(){
+
+        })
+
+        document.getElementById('editar-email').addEventListener('click', function(){
+
+        })
+
+        document.getElementById('editar-senha').addEventListener('click', function(){
+            Swal.fire({
+                input: "password",
+                title: "Insira sua senha atual",
+                showCancelButton: true,
+                confirmButtonColor: "#438e4b",
+                cancelButtonColor: "#ff3232",
+                cancelButtonText: "Cancelar",
+                confirmButtonText: "Prosseguir"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        input: "password",
+                        title: "Insira sua nova senha",
+                        showCancelButton: true,
+                        confirmButtonColor: "#438e4b",
+                        cancelButtonColor: "#ff3232",
+                        cancelButtonText: "Cancelar",
+                        confirmButtonText: "Alterar senha"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                title: "Sucesso!",
+                                text: "Sua senha foi alterada",
+                                icon: "success",
+                                confirmButtonColor: "#438e4b"
+                            });
+                        }
+                    });
+                }
+            });
+        })
+
+        document.getElementById('excluir-conta').addEventListener('click', function(){
+            Swal.fire({
+                input: "password",
+                title: "Para prosseguir, insira sua senha",
+                showCancelButton: true,
+                confirmButtonColor: "#438e4b",
+                cancelButtonColor: "#ff3232",
+                cancelButtonText: "Cancelar",
+                confirmButtonText: "Prosseguir"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Sua conta foi deleteda!",
+                        text: 'Ao pressionar "OK" você será redirecionado(a) para a página inicial',
+                        icon: "success",
+                        confirmButtonColor: "#438e4b"
+                    });
+                }
+            });
+        })
+    </script>
 </body>
 </html>
