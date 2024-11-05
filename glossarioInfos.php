@@ -167,7 +167,7 @@ $glossario = [
     'servidao' => [
         'title' => 'Servidão',
         'text' => 'Condição em que uma pessoa ou grupo fica sujeita a obrigações para com outra, geralmente em um contexto de dependência econômica ou social. Costuma estender-se a todas as relações laborais precarizadas e informais que incluem a exploração do trabalhador. ',
-        'image' => 'https://lh3.googleusercontent.com/proxy/zhw5JRM5Sz5w4fzOZQ16ChCfUN3uJZ1fYINJesHTXlNaO1URJsDk9kslG0Fxs3dNTqllMn4FjREdbEGhKa77wAhjjjk6HbbMAniS1Ukiy76Fgyu6NroWP1b-TBfrVqGYH2bLJzAV9Yc',
+        'image' => 'https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sex-R4wCK_kNhYmPl18dfLs6_Y6EABQPZ2pIlGvnbZyao0RRKi_P-i_R0bhgxIHMLtqpYSdFDaPD5LXzt6YoGAedECVnoR1wXbaULpgq0-e2NXcZu-YV1vk84ARij5a1SWJ9UfoZZJSPQ1dLa7VJEnzpZP=s0-d',
         'source' => 'Fonte: Conceito de'
     ]
 ];
