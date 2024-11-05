@@ -69,6 +69,7 @@
         }
         ?>
     </nav>
+    <main class="main-content">
         </section>
         <section id="secao4">
     
