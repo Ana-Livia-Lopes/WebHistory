@@ -373,3 +373,53 @@ body {
     font-size: 19px;
     margin-left: 11px;
   }
+  @media (max-width: 768px){
+    .sidebar_gloss ul li a {
+        font-size: 10px;
+    }
+    .scroller{
+        display: none;
+    }
+    .content_gloss {
+        margin-left: 0;
+    }
+    .section_gloss {
+        max-width: 230px;
+    }
+    img{
+        width: 180px;
+    }
+    #servidao img, #retributiva img{
+        width: 180px;
+    }
+    #república .img2{
+        width: 180px;
+    }
+    #colonialismo img{
+        width: 180px;
+        
+    }
+    #servidao img, #retributiva img{
+        width: 180px;
+    }
+    #cuneiforme .img2{
+        width: 180px;
+        height: 100px;
+    }
+    #cuneiforme img{
+        width: 180px;
+        height: 180px;
+    }
+    .div-pesquisa{
+        width:203.9px;
+      }
+      
+      #input{
+        width:101px;
+      }
+      
+      button{
+        width:69.5px;
+        font-size: 12px;
+      }
+  }
