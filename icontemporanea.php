@@ -229,30 +229,19 @@
         <section class="historia">
             <h2>Conteúdos adicionais</h2>
             <div class="video-grid">
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO1" title="Título do Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/6Gi4_GJXO4I?si=Ud6m50iznSTWDjgy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/ceCcZooYDBo?si=ARh6DksZSkXHWIEq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO2" title="Título do Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/eDDGqU9OgAc?si=fSWmIs_f_le015OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO3" title="Título do Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO4" title="Título do Vídeo 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO5" title="Título do Vídeo 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-                <div class="video-card">
-                    <iframe class="video-frame" src="https://www.youtube.com/embed/ID_DO_VIDEO6" title="Título do Vídeo 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/QGvwWyP1S4o?si=3-2WSnvP6HBp8Ob2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/kCKuP2OqfEs?si=3_qhuwn4S8n-_uD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/4hEDjSdszSU?si=UE8jkJd1Ov_cwsbj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
+                <h4 id="sug_video">Veja mais:<a href="https://www.youtube.com/watch?v=CXtre0g9YUI" target="_blank"> Movimento pelos Direitos Civis nos EUA - Profa Anelize</a></h4>
         </section>
 
         <section class="historia">
@@ -340,5 +329,7 @@
             </div>
         </footer> 
     </main>
+
+    <a href="#" class="btn" id="scrollToTopButton"></a>
 </body>
 </html>

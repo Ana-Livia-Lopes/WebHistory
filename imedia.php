@@ -226,8 +226,7 @@
                 <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/EDZVqcvffgQ?si=c0lz_-0uOshx_Eu7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                 <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/YbR1bxtGnMo?si=TmSLxVPzvg_B9lQk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                
-                </div>
+            </div>
                 <h4 id="sug_video">Veja mais:<a href="https://www.youtube.com/watch?v=a33K4Ut5Cbs" target="_blank"> QUEM FOI CARLOS MAGNO E O IMPÉRIO CAROLÍNGIO? - Lobo Conservador</a></h4>
         </section>
 
@@ -315,5 +314,7 @@
             </div>
         </footer> 
     </main>
+
+    <a href="#" class="btn" id="scrollToTopButton"></a>
 </body>
 </html>

@@ -61,3 +61,23 @@ function alertaExcluir(){
 }
 
 // fim codigo perfil
+
+const scrollToTopButton = document.getElementById('scrollToTopButton');
+
+// Adiciona o evento de clique para rolar para o topo
+scrollToTopButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Evento de rolagem para exibir/ocultar o botão
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) { // Ajuste o valor conforme necessário
+        scrollToTopButton.classList.add('show'); // Mostra o botão
+    } else {
+        scrollToTopButton.classList.remove('show'); // Esconde o botão
+    }
+});
