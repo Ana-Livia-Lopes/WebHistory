@@ -242,6 +242,7 @@ body {
     padding: 10px;
     display: block;
     border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .sidebar_gloss ul li a:hover {
@@ -285,12 +286,14 @@ body {
     font-size: 2em;
     margin-bottom: 10px;
     color: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .section_gloss p {
     font-size: 1.1em;
     line-height: 1.6em;
     color: #7f8c8d;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .p1{
     margin-bottom: 15px;
@@ -422,4 +425,9 @@ body {
         width:69.5px;
         font-size: 12px;
       }
+      .section_gloss h2 {
+        font-size: 1.5em;
+ 
+    }
+    
   }

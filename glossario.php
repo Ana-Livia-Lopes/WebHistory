@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<nav class="sidebar">
+    <nav class="sidebar">
         <div>
             <div class="topo">
                 <div class="logo">
@@ -47,9 +47,8 @@
             </ul>
         </div>
         <?php 
-        
 
-        if ($_SESSION['nome'] != '') {
+        if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
@@ -57,14 +56,10 @@
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
-            if ($_SESSION['nome'] != '') {
-                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
-            }
+            echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
             echo    "</div>";
             echo "</div>";
-        }
-
-        if ($_SESSION['nome'] == '') {
+        } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
         ?>
