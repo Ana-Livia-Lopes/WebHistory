@@ -177,7 +177,7 @@
 }
 
 .subclass-usuario{
-    font-size: 2px;
+    font-size: 5px;
 }
 
 .sidebar.active .subclass-usuario{
@@ -190,7 +190,7 @@
 #nav-sair{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
-    background-color: #438e4b;
+    background-color: #41974a;
     color: white;
     border: none;
     width: 47px;
@@ -204,7 +204,7 @@
 #nav-entrar{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
-    background-color: #438e4b;
+    background-color: #41974a;
     color: white;
     border: none;
     width: 100%;
@@ -215,9 +215,12 @@
     margin-bottom: 20px;
 }
 
-#nav-sair, #nav-entrar:hover{
-    background-color: #5c9f63;
-    color: rgb(226, 226, 226);
+#nav-sair:hover{
+    background-color: #67b36f;
+}
+
+#nav-entrar:hover{
+    background-color: #67b36f;
 }
 
 .sidebar.active #nav-sair{
@@ -234,16 +237,17 @@
     background-color: rgba(231, 231, 231, 0.9);
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .pagina-perfil{
     display: flex;
-    
     flex-direction: column;
     background-color: rgb(54, 54, 54);
     color: white;
     border-radius: 7px;
     width: 700px;
+    height: 100%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -288,6 +292,7 @@
     border-radius: 10px;
     width: 630px;
     margin-top: 20px;
+    margin-bottom: 35px;
     padding: 20px;
     padding-bottom: 0;
 }
@@ -346,4 +351,41 @@ h2{
     margin-left: 40px;
     width: 340px;
     color: #528d58;
-    filter: brightness(0) saturate(100%) invert(64%) sepia(7%) saturate(1716%) hue-rotate(75deg) brightness(100%) contrast(84%);}
+    filter: brightness(0) saturate(100%) invert(64%) sepia(7%) saturate(1716%) hue-rotate(75deg) brightness(100%) contrast(84%);
+}
+
+#editar-senha{
+    background-color: #438e4b;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    height: 30px;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+#editar-senha:hover{
+    background-color: #67b36f;
+}
+
+#excluir-conta{
+    background-color: #ff3232;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    height: 30px;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#excluir-conta:hover{
+    background-color: #ff5c5c;
+}

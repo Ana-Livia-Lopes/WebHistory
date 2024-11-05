@@ -35,9 +35,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="bx bx-cog"></i>
-                        <span class="item-nav">Admin</span>
+                    <a href='perfil.php'>
+                        <i class="bx bx-user"></i>
+                        <span class="item-nav">Perfil</span>
                     </a>
                 </li>
             </ul>
@@ -46,9 +46,9 @@
 
         if ($_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
-            echo    "<a href='perfil.php'><img id='user-def-nav' src='img/" . $_SESSION['imagem'] . "' alt=''></a>";
+            echo    "<img id='user-def-nav' src='img/" . $_SESSION['imagem'] . "' alt=''>";
             echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
+            echo        "<p class='user-nome'>" . $_SESSION['nome'] ."</p>";
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
@@ -74,14 +74,19 @@
                 <?php
                 echo "<img id='user-perfil' src='img/" . $_SESSION['imagem'] . "' alt=''>";
                 echo "<div class='info'>";
-                echo "<div class='nome-email'><p id='nome-acima'>NOME</p>";
-                echo "<h2>".$_SESSION['nome']."</h2>";
-                echo "<p id='nome-acima'>EMAIL</p>";
-                echo "<h2>email@gmail.com</h2></div>";
-                echo "<div class='botoes'>";
-                echo "<button class='editar-nome'>Editar</button>";
-                echo "<button class='editar-email'>Editar</button>";
-                echo "</div>";
+                    echo "<div class='nome-email'><p id='nome-acima'>NOME</p>";
+                        echo "<h2>".$_SESSION['nome']." (".$_SESSION['tipo'].")</h2>";
+                        echo "<p id='nome-acima'>EMAIL</p>";
+                        echo "<h2>".$_SESSION['email']."</h2>";
+                        echo "<p id='nome-acima'>SENHA</p>";
+                        echo "<a href=''><button id='editar-senha'>Editar senha</button></a>";
+                        echo "<p id='nome-acima'>EXCLUIR SUA CONTA</p>";
+                        echo "<button id='excluir-conta' onclick='alertaExcluir()'>Excluir conta</button>";
+                    echo "</div>";
+                    echo "<div class='botoes'>";
+                        echo "<button class='editar-nome'>Editar</button>";
+                        echo "<button class='editar-email'>Editar</button>";
+                    echo "</div>";
                 echo "</div>";
                 ?>
                 
