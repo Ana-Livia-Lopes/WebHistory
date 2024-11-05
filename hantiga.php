@@ -230,5 +230,7 @@
             </div>
         </footer> 
     </main>
+
+    <a href="#" class="btn" id="scrollToTopButton"></a>
 </body>
 </html>

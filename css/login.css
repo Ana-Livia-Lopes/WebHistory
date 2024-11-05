@@ -2,108 +2,85 @@
     margin: 0;
 }
 
-#secao1{
+body{
+    background: url('../img/login-fundo.jpg');
+    background-size: cover;
+}
+#secao-login{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background-color: rgb(225, 225, 225);
+    justify-content:center;
 }
 #box-login{
-    display: flex;
-    background-color: white;
-    width: 720px;
+    background-color: rgba(255, 255, 255, 0.816);
+    width: 390px;
+    height: 570px;
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 30px;
+    margin-top: 5%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
-#box-img-login{
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ddf1e1;
-    width: 350px;
-    height: 450px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+#box-login p{
+    text-align: center;
+    margin-top: 7px;
+    font-size: 17px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
-
-#img-login{
-    width: 330px;
-    height: 330px;
-}
-form{
-    width: 360px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 h1{
-    font-family: Reem Kufi;
-    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 55px;
     margin-bottom: 30px;
+    color: #063512;
 }
+label{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+    color: #525151;
 
+}
+.cadastrar{
+    color: #438e4b;
+}
 .inserir{
-    width: 230px;
-    height: 35px;
+    width: 100%;
+    height: 38px;
     border: none;
-    border-radius: 50px;
-    background-color: rgb(204, 204, 204);
-    margin-bottom: 10px;
-    padding-left: 16px;
-    font-family: Inter;
-}
-
-#div-termos{
+    border-bottom: 2px solid #333;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.721);
+    color: #333;
+    border-radius: 5px;
     margin-top: 10px;
-    display: flex;
+    margin-bottom: 10px;
+    padding-left: 13px;
 }
-
-
-#termos{
-    font-family: Inter;
-    font-size: 14px;
-    margin-left: 8px;
-    margin-top: 2px;
-    font-weight: 500px;
-    color: gray;
+#entrar a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
-
 #entrar{
-    background-color: #518659;
+    background-color: #438e4b;
     color: white;
     border: none;
-    border-radius: 10px;
-    width: 200px;
-    height: 40px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-family: Reem Kufi;
-    font-size: 15px;
-    transition: background-color 0.2s;
-}
-
-#entrar:hover{
-    background-color: #3d6642;
-}
-
-.flex{
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 45px;
+    font-size: 15px;
 }
-.flex a, .flex p{
-    margin-left: 10px;
-    color:white;
-    font-weight: bolder;
-    font-family: "Inter", sans-serif;
-    font-size: 25px;
-}
-.flex p{
-    margin-top: 10px;
+#entrar:hover{
+    background-color: #063512;
 }
 
 @media (max-width: 768px) {

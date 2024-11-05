@@ -612,7 +612,7 @@ footer ul li {
         min-width: 60px;
     }
     #secao1 h1{
-        font-size: 40px;
+        font-size: 50px;
         margin-top: 50%;
         text-shadow: 2px 4px 5px black,
     -1.4px -1.4px 0 black,  
@@ -622,10 +622,24 @@ footer ul li {
     }
     
     .div{
-        display: none;
+        font-size: 17px;
+    }
+    @keyframes slidein {
+        0% { margin-left:-800px; }
+        20% { margin-left:-800px; }
+        35% { margin-left:-0px; }
+        100% { margin-left:-0px; }
+    }
+    @keyframes reveal {
+        0% {opacity:0;width:0px;}
+        20% {opacity:1;width:0px;}
+        30% {width:167px;}
+    
+        100% {opacity:1;width:167px;}
     }
     #folha{
         width: 55px;
+        display: none;
     }
     .banner {
         width: 18em;
@@ -638,6 +652,9 @@ footer ul li {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .texto h4 {
+        font-size: 24px;
+    }
+    .fa-arrow-right{
         font-size: 25px;
     }
     .texto {
@@ -702,7 +719,7 @@ footer ul li {
     #footer p{
         font-size: 13px;
     }
-    
+
 }
 @media (min-width: 769px){
 #celular{

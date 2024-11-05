@@ -30,27 +30,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/login.css">
     <title>Login - História na Web</title>
 </head>
 <body>
-        <section id="secao1">
+    <section id="secao-login">
         <div id="box-login">
-            <div id="box-img-login">
-                    <img id="img-login" src="img/HW-icon.png" alt="">
-                </div>
+                <h1>Entre na sua conta</h1>
                 <form action="" method="POST">
-                <h1>LOGIN</h1>
                     <label for="email">Email</label>
                     <input class="inserir" type="email" name="email">
 
                     <label for="senha">Senha</label>
                     <input class="inserir" type="password" name="senha">
 
-                    <button id="entrar" type="submit">Entrar</button>
+                    <button id="entrar" type="submit"><a href="./index.php">Entrar</a></button>
 
-                    <p>Não tem uma conta? <a href="./cadastro.php">Cadastre-se!</a></p>
-                    <p><a href="./index.php">Voltar para o início</a></p>
+                    <p>Não tem uma conta? <a class="cadastrar" href="./cadastro.php">Cadastre-se!</a></p>
+                    <p><a class="cadastrar" href="./index.php">Voltar para o início</a></p>
                 </form>
         </div>
     </section>
