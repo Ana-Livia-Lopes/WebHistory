@@ -97,17 +97,20 @@
     <div class="sidebar_gloss scroller">
         <ul> 
             <li><a href="#agricultura">Agricultura</a></li>
-            <li><a href="#arte-rupestre">Arte Rupestre</a></li>
+            <li><a href="#rupestre">Arte Rupestre</a></li>
             <li><a href="#cidade-estado">Cidade-estado</a></li>
+            <li><a href="#civilizacoes">Civilizações</a></li>
             <li><a href="#colonialismo">Colonialismo</a></li>
             <li><a href="#culminando">Culminando</a></li>
-            <li><a href="#cuneiforme">Escrita Cuneiforme</a></li>
             <li><a href="#democracia">Democracia</a></li>
             <li><a href="#dinastias">Dinastias</a></li>
+            <li><a href="#domesticados">Domesticados</a></li>
             <li><a href="#emergiu">Emergiu</a></li>
             <li><a href="#empírica">Empírica</a></li>
+            <li><a href="#cuneiforme">Escrita Cuneiforme</a></li>
             <li><a href="#hieroglifica">Escrita Hieroglífica</a></li>
             <li><a href="#hominideos">Hominídeos</a></li>
+            <li><a href="#heranca">Herança</a></li>
             <li><a href="#indulgências">Indulgências</a></li>
             <li><a href="#intemperies">Intempéries</a></li>
             <li><a href="#magistrados">Magistrados</a></li>
@@ -117,8 +120,11 @@
             <li><a href="#racionalismo">Racionalismo</a></li>
             <li><a href="#religiosidade">Religiosidade</a></li>
             <li><a href="#república">República</a></li>
+            <li><a href="#retributiva">Retributiva</a></li>
             <li><a href="#revolução">Revolução</a></li>
-        </ul>
+            <li><a href="#rituais">Rituais</a></li>
+            <li><a href="#servidao">Servidão</a></li>
+    </ul>
     </div> 
     <div class="content_gloss">
         <div class="div-pesquisa">
@@ -147,6 +153,11 @@
             <img src="<?= $glossario['cidade-estado']['image'] ?>" alt="<?= $glossario['cidade-estado']['title'] ?>">
             <p class="p2"><em><?= $glossario['cidade-estado']['source'] ?></em></p>
         </div>
+        <div id="civilizacoes" class="section_gloss">
+            <h2><?= $glossario['civilizacoes']['title'] ?></h2>
+            <p class="p1"><?= $glossario['civilizacoes']['text'] ?></p>
+            <p class="p2"><em><?= $glossario['civilizacoes']['source'] ?></em></p>
+        </div>
         <div id="colonialismo" class="section_gloss">
             <h2><?= $glossario['colonialismo']['title'] ?></h2>
             <p class="p1"><?= $glossario['colonialismo']['text'] ?></p>
@@ -169,6 +180,12 @@
             <p class="p1"><?= $glossario['dinastias']['text'] ?></p>
             <img src="<?= $glossario['dinastias']['image'] ?>" alt="<?= $glossario['dinastias']['title'] ?>">
             <p class="p2"><em><?= $glossario['dinastias']['source'] ?></em></p>
+        </div>
+        <div id="domesticados" class="section_gloss">
+            <h2><?= $glossario['domesticados']['title'] ?></h2>
+            <p class="p1"><?= $glossario['domesticados']['text'] ?></p>
+            <img src="<?= $glossario['domesticados']['image'] ?>" alt="<?= $glossario['domesticados']['title'] ?>">
+            <p class="p2"><em><?= $glossario['domesticados']['source'] ?></em></p>
         </div>
         <div id="emergiu" class="section_gloss">
             <h2><?= $glossario['emergiu']['title'] ?></h2>
@@ -199,17 +216,22 @@
             <img src="<?= $glossario['hominideos']['image'] ?>" alt="<?= $glossario['hominideos']['title'] ?>">
             <p class="p2"><em><?= $glossario['hominideos']['source'] ?></em></p>
         </div>
+        <div id="heranca" class="section_gloss">
+            <h2><?= $glossario['heranca']['title'] ?></h2>
+            <p class="p1"><?= $glossario['heranca']['text'] ?></p>
+            <p class="p2"><em><?= $glossario['heranca']['source'] ?></em></p>
+        </div>
         <div id="indulgências" class="section_gloss">
             <h2><?= $glossario['indulgências']['title'] ?></h2>
             <p class="p1"><?= $glossario['indulgências']['text'] ?></p>
             <img src="<?= $glossario['indulgências']['image'] ?>" alt="<?= $glossario['indulgências']['title'] ?>">
             <p class="p2"><em><?= $glossario['indulgências']['source'] ?></em></p>
         </div>
-        <div id="intemperes" class="section_gloss">
-            <h2><?= $glossario['intemperes']['title'] ?></h2>
-            <p class="p1"><?= $glossario['intemperes']['text'] ?></p>
-            <img src="<?= $glossario['intemperes']['image'] ?>" alt="<?= $glossario['intemperes']['title'] ?>">
-            <p class="p2"><em><?= $glossario['intemperes']['source'] ?></em></p>
+        <div id="intemperies" class="section_gloss">
+            <h2><?= $glossario['intemperies']['title'] ?></h2>
+            <p class="p1"><?= $glossario['intemperies']['text'] ?></p>
+            <img src="<?= $glossario['intemperies']['image'] ?>" alt="<?= $glossario['intemperies']['title'] ?>">
+            <p class="p2"><em><?= $glossario['intemperies']['source'] ?></em></p>
         </div>
         <div id="magistrados" class="section_gloss">
             <h2><?= $glossario['magistrados']['title'] ?></h2>
@@ -253,11 +275,29 @@
             <img class="img2" src="<?= $glossario['república']['image2'] ?>" alt="<?= $glossario['república']['title'] ?>">
             <p class="p2"><em><?= $glossario['república']['source'] ?></em></p>
         </div>
+        <div id="retributiva" class="section_gloss">
+            <h2><?= $glossario['retributiva']['title'] ?></h2>
+            <p class="p1"><?= $glossario['retributiva']['text'] ?></p>
+            <img src="<?= $glossario['retributiva']['image'] ?>" alt="<?= $glossario['retributiva']['title'] ?>">
+            <p class="p2"><em><?= $glossario['retributiva']['source'] ?></em></p>
+        </div>
         <div id="revolução" class="section_gloss">
             <h2><?= $glossario['revolução']['title'] ?></h2>
             <p class="p1"><?= $glossario['revolução']['text'] ?></p>
             <img src="<?= $glossario['revolução']['image'] ?>" alt="<?= $glossario['revolução']['title'] ?>">
             <p class="p2"><em><?= $glossario['revolução']['source'] ?></em></p>
+        </div>
+        <div id="rituais" class="section_gloss">
+            <h2><?= $glossario['rituais']['title'] ?></h2>
+            <p class="p1"><?= $glossario['rituais']['text'] ?></p>
+            <img src="<?= $glossario['rituais']['image'] ?>" alt="<?= $glossario['rituais']['title'] ?>">
+            <p class="p2"><em><?= $glossario['rituais']['source'] ?></em></p>
+        </div>
+        <div id="servidao" class="section_gloss">
+            <h2><?= $glossario['servidao']['title'] ?></h2>
+            <p class="p1"><?= $glossario['servidao']['text'] ?></p>
+            <img src="<?= $glossario['servidao']['image'] ?>" alt="<?= $glossario['servidao']['title'] ?>">
+            <p class="p2"><em><?= $glossario['servidao']['source'] ?></em></p>
         </div>
     </div>
     </main>

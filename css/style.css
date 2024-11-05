@@ -250,8 +250,7 @@ body {
 #secao1 h1{
     color: white;
     font-size: 100px;
-    font-family: Playfair Display SC;
-    font-weight: 200;
+    font-family: "Plus Jakarta Sans", sans-serif;
     text-shadow: 2px 4px 5px black,
     -0.9px -0.9px 0 black,  
     0.9px -0.9px 0 black,
@@ -273,7 +272,6 @@ body {
 #secao1 {
   text-align:center;
   color:#ffffff;
-  font-family:'Roboto';
   font-weight:500;
   font-size:32px;
   padding-top:2em;
@@ -294,16 +292,16 @@ body {
 }
 
 .div:first-of-type, #secao1 h1:first-of-type{    
-  animation: showup 12s forwards;
+    animation: showup 12s forwards;
 }
 
 .div:last-of-type {
-  width:0px;
-  animation: reveal 8s forwards;
+    width:0px;
+    animation: reveal 8s forwards;
 }
 
 .div:last-of-type span {
-  animation: slidein 8s forwards;
+    animation: slidein 8s forwards;
 }
 
 @keyframes showup {
@@ -362,11 +360,13 @@ body {
 .sobre h1 {
     font-size: 65px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .sobre p {
     margin-top: 20px;
     font-size: 30px;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 /* fim sobre */
 /* cards */
@@ -378,6 +378,11 @@ body {
     justify-content: space-evenly;
     margin: 70px 10%;
     flex-wrap: wrap;
+}
+.container .card p{
+    text-align: justify;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
 }
 .quadrado{
     width: 200px;
@@ -431,6 +436,11 @@ span.material-symbols-outlined {
 }
 .content h3{
     margin-top: 20px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+}
+.content h4{
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 /* fim cards */
 /* seção 3 */
@@ -544,11 +554,13 @@ footer {
 
 footer h2 {
     margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 footer p, footer a {
     font-size: 14px;
     line-height: 1.5;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 footer a {

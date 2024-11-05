@@ -18,6 +18,12 @@ $glossario = [
         'image' => 'https://static.preparaenem.com/2024/03/acropole-de-atenas-em-pintura-de-leo-von-klenze-em-texto-sobre-a-sociedade-ateniense.jpg',
         'source' => 'Fonte: Vestibulares'
     ],
+    'civilizacoes' => [
+        'title' => 'Civilizações',
+        'text' => 'Conjunto de sociedades humanas desenvolvidas em diferentes áreas, como economia, cultura, política e tecnologia, caracterizadas por estruturas sociais organizadas e avanços em escrita, arquitetura e governança.',
+        'image' => '',
+        'source' => 'Fonte: Enciclopédia da História Mundial'
+    ],
     'colonialismo' => [
         'title' => 'Colonialismo',
         'text' => 'É uma prática na qual um território exerce domínio político, cultural ou religioso sobre um determinado povo. Geralmente visando a exploração de recursos e a imposição de uma cultura, governo e economia da potência dominante sobre o território colonizado.',
@@ -41,6 +47,12 @@ $glossario = [
         'text' => 'Dinastias é o período de sucessão, que reis e rainhas, pertencentes a uma mesma família, permanecem no poder, na dinastia o poder é transmitido por hereditariedade, podendo a mesma família permanecer no trono durante séculos. São comuns em monarquias, como as dinastias chinesas e europeias.',
         'image' => 'https://img.freepik.com/fotos-gratis/retrato-dos-tres-sabios_23-2150972928.jpg?t=st=1729464241~exp=1729467841~hmac=6371120212139e24c28d6847ebadd2c2ed2c9f4d099f728e700b624596d83266&w=826',
         'source' => 'Fonte: Significados'
+    ],
+    'domesticados' => [
+        'title' => 'Domesticados',
+        'text' => ' Refere-se a animais ou plantas que passaram por um processo de adaptação para conviver com humanos e serem utilizados para trabalho, alimento ou companhia, como cães, gatos, etc.',
+        'image' => 'https://cobasiblog.blob.core.windows.net/production-ofc/2021/06/Design-sem-nome-76.png',
+        'source' => 'Fonte: Dicionário Priberam da Língua Portuguesa'
     ],
     'emergiu' => [
         'title' => 'Emergiu',
@@ -73,13 +85,19 @@ $glossario = [
         'image' => 'https://super.abril.com.br/wp-content/uploads/2021/01/nova-especie_site.jpg?crop=1&resize=1212,909',
         'source' => 'Fonte: Info Escola'
     ],
+    'heranca' => [
+        'title' => 'Herança',
+        'text' => 'Conjunto de bens, direitos, conhecimentos, cultura e tradições que são transmitidos de uma geração para outra, podendo ser tanto materiais quanto imateriais.',
+        'image' => '',
+        'source' => 'Fonte: Normas Legais'
+    ],
     'indulgências' => [
         'title' => 'Indulgências',
         'text' => 'Prática da Igreja Católica medieval, que envolvia a concessão do perdão dos pecados em troca de penitências, esmolas ou ações específicas. Em termos sociais, um indivíduo indulgente seria aquele que é capaz de agir com bondade e tolerância em relação às ações e particularidades de outros, além de perdoar as diferenças.',
         'image' => 'https://r2.padrepauloricardo.org/uploads/post/share_image/2352/o-minimo-a-saber-sobre-indulgencias-frame.jpg',
         'source' => 'Fonte: Quero Bolsa'
     ],
-    'intemperes' => [
+    'intemperies' => [
         'title' => 'Intempéries',
         'text' => 'Intempéries são mau tempo ou quaisquer condições climáticas intensas (vento forte, chuva torrencial, tempestade, furacão, seca, vendaval). É caracterizada por uma irregularidade das condições climatéricas.',
         'image' => 'https://img.freepik.com/fotos-gratis/tempestade-sobre-a-cidade_23-2151750337.jpg?t=st=1729462096~exp=1729465696~hmac=854161c5cf4d08f0507a62c345e17f2f18f3a5d5aa50813bc9b5fd7a00aee63f&w=740',
@@ -128,11 +146,29 @@ $glossario = [
         'image2' => 'https://static.todamateria.com.br/upload/br/as/brasaodarepublica-cke.jpg',
         'source' => 'Fonte: Toda Matéria'
     ],
+    'retributiva' => [
+        'title' => 'Retributiva',
+        'text' => 'Que é dado como retribuição. Relacionada a compensação, especialmente em contextos de justiça, onde uma ação busca dar uma resposta proporcional a um ato.',
+        'image' => 'https://dhg1h5j42swfq.cloudfront.net/2021/05/06102838/lei-penal.png',
+        'source' => 'Fonte: Dicionário Priberam da Língua Portuguesa'
+    ],
     'revolução' => [
         'title' => 'Revolução',
         'text' => 'Ação de revolucionar, de incitar uma revolta; rebelião, de causar mudança profunda, geralmente relacionada a transformações sociais, políticas, econômicas ou culturais que alteram significativamente a estrutura da sociedade.',
         'image' => 'https://static.historiadomundo.com.br/2021/05/revolucao-francesa.jpg',
         'source' => 'Fonte: Dicionário Online de Português'
+    ],
+    'rituais' => [
+        'title' => 'Rituais',
+        'text' => 'Conjunto de práticas e cerimônias que seguem uma sequência e simbolizam aspectos religiosos, culturais ou sociais, como casamentos, funerais ou celebrações festivas.',
+        'image' => 'https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/nationalgeographic2515788.jpg?w=1600&h=900',
+        'source' => 'Fonte: Dicionário Online de Português'
+    ],
+    'servidao' => [
+        'title' => 'Servidão',
+        'text' => 'Condição em que uma pessoa ou grupo fica sujeita a obrigações para com outra, geralmente em um contexto de dependência econômica ou social. Costuma estender-se a todas as relações laborais precarizadas e informais que incluem a exploração do trabalhador. ',
+        'image' => 'https://lh3.googleusercontent.com/proxy/zhw5JRM5Sz5w4fzOZQ16ChCfUN3uJZ1fYINJesHTXlNaO1URJsDk9kslG0Fxs3dNTqllMn4FjREdbEGhKa77wAhjjjk6HbbMAniS1Ukiy76Fgyu6NroWP1b-TBfrVqGYH2bLJzAV9Yc',
+        'source' => 'Fonte: Conceito de'
     ]
 ];
 ?>

@@ -92,7 +92,7 @@ session_start();
             </div>
             <div class="cel imgSobre" data-aos="fade" data-aos-duration="1000" data-aos-delay="200">
                 <div class="sobre">
-                    <h1>Sobre:</h1>
+                    <h1>Sobre</h1>
                     <p>Bem-vindo ao História na Web! Aqui, você terá acesso a uma vasta gama de recursos de qualidade sobre os mais variados momentos da história, que contribuirão para o seu aprendizado.</p>
                 </div>
             </div>
@@ -109,7 +109,7 @@ session_start();
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>foi a época compreendida entre o aparecimento do homem sobre a Terra e o uso da escrita</p>
+                    <p>Foi a época compreendida entre o aparecimento do homem sobre a Terra e o uso da escrita</p>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@ session_start();
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>foi uma época histórica marcada pelo surgimento e desenvolvimento das primeiras civilizações</p>
+                    <p>Época histórica marcada pelo surgimento e desenvolvimento das primeiras civilizações</p>
                 </div>
             </div>
         </div>
@@ -141,7 +141,7 @@ session_start();
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>Periodo que ficou marcado pelo feudalismo, pela influência da Igreja, e pelas Cruzadas e Inquisição</p>
+                    <p>Período que ficou marcado pelo feudalismo, pela influência da Igreja, e pelas Cruzadas e Inquisição</p>
                 </div>
             </div>
         </div>
@@ -156,7 +156,7 @@ session_start();
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>A Idade Moderna foi a fase de transição do feudalismo ao capitalismo que se iniciou com o desenvolvimento do comércio por meio do mercantilismo</p>
+                    <p>Fase de transição do feudalismo ao capitalismo que se iniciou com o desenvolvimento do comércio por meio do mercantilismo</p>
                 </div>
             </div>
         </div>
@@ -171,7 +171,7 @@ session_start();
             </div>
             <div class="quadrado q2">
                 <div class="content2">
-                    <p>período histórico que começou na Revolução Francesa e se estende até os dias de hoje.</p>
+                    <p>Período histórico que começou na Revolução Francesa e se estende até os dias de hoje.</p>
                 </div>
             </div>
         </div>

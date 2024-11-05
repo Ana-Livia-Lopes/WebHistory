@@ -249,7 +249,7 @@ body {
 }
 .scroller{
     width: 200px;
-    height: 110vh;
+    height: 90vh;
     overflow-y: scroll;
 }
 ::-webkit-scrollbar {
@@ -324,6 +324,9 @@ body {
 }
 #colonialismo img{
     width: 1000px;
+}
+#servidao img, #retributiva img{
+    width: 600px;
 }
 .div-pesquisa{
     background-color:#E8F0FE;
