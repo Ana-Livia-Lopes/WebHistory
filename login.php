@@ -35,6 +35,7 @@
 
                             if($result->num_rows > 0) {
                                 $usuario_logado = $result->fetch_assoc();
+                                $_SESSION['id'] = $usuario_logado['id_usuario'];
                                 $_SESSION['nome'] = $usuario_logado['nome_usuario'];
                                 $_SESSION['email'] = $usuario_logado['email_usuario'];
                                 $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];

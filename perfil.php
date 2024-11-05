@@ -1,3 +1,14 @@
+<?php include './conexao.php';
+$sql = "SELECT * FROM usuarios";
+$result = $conexao ->query($sql);
+$result -> num_rows == 1;
+$linha = $result->fetch_assoc();
+
+if (isset($_GET['id'])){
+    
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,6 +21,7 @@
         rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./main.js" defer></script>
     <title>Perfil</title>
 </head>
 <body>
@@ -42,7 +54,8 @@
                 </li>
             </ul>
         </div>
-        <?php session_start();
+        <?php
+        session_start();
 
         if ($_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
@@ -70,91 +83,47 @@
                 <img id="banner-histweb" src="img/HistWebWhite.svg" alt="">
             </div>
             <div class="informacoes">
+                <img id='user-perfil' src='img/<?php echo $_SESSION['imagem']; ?>' alt=''>
+                <div class='info'>
+                    <div class='nome-email'>
 
-                <?php
-                echo "<img id='user-perfil' src='img/" . $_SESSION['imagem'] . "' alt=''>";
-                echo "<div class='info'>";
-                    echo "<div class='nome-email'><p id='nome-acima'>NOME</p>";
-                        echo "<h2>".$_SESSION['nome']." (".$_SESSION['tipo'].")</h2>";
-                        echo "<p id='nome-acima'>EMAIL</p>";
-                        echo "<h2>".$_SESSION['email']."</h2>";
-                        echo "<p id='nome-acima'>SENHA</p>";
-                        echo "<button id='editar-senha'>Editar senha</button>";
-                        echo "<p id='nome-acima'>EXCLUIR SUA CONTA</p>";
-                        echo "<button id='excluir-conta'>Excluir conta</button>";
-                    echo "</div>";
-                    echo "<div class='botoes'>";
-                        echo "<button id='editar-nome'>Editar</button>";
-                        echo "<button id='editar-email'>Editar</button>";
-                    echo "</div>";
-                echo "</div>";
-                ?>
+                        <p class='nome-acima'>NOME</p>
+                        <input id='campo-nome' type='text' value='<?php echo $_SESSION['nome']; ?>'>
+
+                        <p class='nome-acima'>EMAIL</p>
+                        <input id='campo-email' type='email' value='<?php echo $_SESSION['email']; ?>'>
+
+                        <p class='nome-acima'>SENHA</p>
+                        <input id='campo-senha' type='password' value='<?php echo $linha['senha_usuario']; ?>'>
+
+                        <div id='mostrar'>
+                            <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
+                        </div>
+
+                        <p class='nome-acima'>EXCLUIR SUA CONTA</p>
+                        <button id='excluir-conta'>Excluir conta</button>
+
+                    </div>
+                    <div class='botoes'>
+                        <button class='editar-nome'>Alterar</button>
+                        <button class='editar-nome'>Alterar</button>
+                        <button class='editar-nome'>Alterar</button>
+                    </div>
+                </div>
+
+                <script>
+                    function mostrarSenha() {
+                        var x = document.getElementById("campo-senha");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }
+                </script>
                 
             </div>
         </div>
     </main>
-    <script>
-        document.getElementById('editar-nome').addEventListener('click', function(){
-
-        })
-
-        document.getElementById('editar-email').addEventListener('click', function(){
-
-        })
-
-        document.getElementById('editar-senha').addEventListener('click', function(){
-            Swal.fire({
-                input: "password",
-                title: "Insira sua senha atual",
-                showCancelButton: true,
-                confirmButtonColor: "#438e4b",
-                cancelButtonColor: "#ff3232",
-                cancelButtonText: "Cancelar",
-                confirmButtonText: "Prosseguir"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        input: "password",
-                        title: "Insira sua nova senha",
-                        showCancelButton: true,
-                        confirmButtonColor: "#438e4b",
-                        cancelButtonColor: "#ff3232",
-                        cancelButtonText: "Cancelar",
-                        confirmButtonText: "Alterar senha"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            Swal.fire({
-                                title: "Sucesso!",
-                                text: "Sua senha foi alterada",
-                                icon: "success",
-                                confirmButtonColor: "#438e4b"
-                            });
-                        }
-                    });
-                }
-            });
-        })
-
-        document.getElementById('excluir-conta').addEventListener('click', function(){
-            Swal.fire({
-                input: "password",
-                title: "Para prosseguir, insira sua senha",
-                showCancelButton: true,
-                confirmButtonColor: "#438e4b",
-                cancelButtonColor: "#ff3232",
-                cancelButtonText: "Cancelar",
-                confirmButtonText: "Prosseguir"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "Sua conta foi deleteda!",
-                        text: 'Ao pressionar "OK" você será redirecionado(a) para a página inicial',
-                        icon: "success",
-                        confirmButtonColor: "#438e4b"
-                    });
-                }
-            });
-        })
-    </script>
 </body>
 </html>

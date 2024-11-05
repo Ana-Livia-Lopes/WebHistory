@@ -270,7 +270,7 @@
     border: 5px solid rgb(54, 54, 54);
 }
 
-#nome-acima{
+.nome-acima{
     color: rgba(255, 255, 255, 0.599);
     float: left;
     margin-right: 10px;
@@ -301,23 +301,12 @@
     float: right;
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
+    height: 200px;
+    margin-top: 30px;
+    justify-content: space-between;
 }
 
-#editar-nome{
-    background-color:rgb(107, 107, 107);
-    border: none;
-    width: 80px;
-    border-radius: 5px;
-    height: 30px;
-    color: white;
-    font-weight: 500;
-    margin-bottom: 40px;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-#editar-email{
+.editar-nome{
     background-color:rgb(107, 107, 107);
     border: none;
     width: 80px;
@@ -329,22 +318,12 @@
     cursor: pointer;
 }
 
-#editar-nome:hover{
-    background-color:rgb(135, 135, 135);
-}
-
-#editar-email:hover{
+.editar-nome:hover{
     background-color:rgb(135, 135, 135);
 }
 
 .informacoes{
     margin-left: 35px;
-}
-
-h2{
-    font-weight: 500;
-    font-size: 20px;
-    margin-bottom: 25px;
 }
 
 #banner-histweb{
@@ -388,4 +367,47 @@ h2{
 
 #excluir-conta:hover{
     background-color: #ff5c5c;
+}
+
+#campo-nome{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(47, 47, 47);
+    color: rgba(255, 255, 255, 0.803);
+    height: 40px;
+    width: 500px;
+    padding-left: 10px;
+    font-size: 18px;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+#campo-email{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(47, 47, 47);
+    color: rgba(255, 255, 255, 0.803);
+    height: 40px;
+    width: 500px;
+    padding-left: 10px;
+    font-size: 18px;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+#campo-senha{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(47, 47, 47);
+    color: rgba(255, 255, 255, 0.803);
+    height: 40px;
+    width: 500px;
+    padding-left: 10px;
+    font-size: 18px;
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+
+#mostrar{
+    margin-bottom: 20px;
 }
