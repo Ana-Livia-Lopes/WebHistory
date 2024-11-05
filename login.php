@@ -1,30 +1,3 @@
-<?php
-
-session_start();
-include 'conexao.php';
-
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $var_email = $_POST["email"];
-    $var_senha = md5($_POST["senha"]);
-
-    $query = "SELECT * FROM usuarios WHERE email_usuario = '$var_email' AND senha_usuario = '$var_senha'";
-
-    $result = mysqli_query($conexao, $query);
-
-    if($result->num_rows > 0) {
-        $usuario_logado = $result->fetch_assoc();
-        $_SESSION['nome'] = $usuario_logado['nome_usuario'];
-        $_SESSION['email'] = $usuario_logado['email_usuario'];
-        $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
-        $_SESSION['imagem'] = $usuario_logado['imagem_usuario'];
-        
-        header('Location: index.php');
-    } else {
-        echo "<p style='color:red;'>Email ou senha incorretos</p>";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -47,11 +20,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="senha">Senha</label>
                     <input class="inserir" type="password" name="senha">
 
-                    <button id="entrar" type="submit"><a href="./index.php">Entrar</a></button>
+                    <?php
 
-                    <p>Não tem uma conta? <a class="cadastrar" href="./cadastro.php">Cadastre-se!</a></p>
-                    <p><a class="cadastrar" href="./index.php">Voltar para o início</a></p>
+                        session_start();
+                        include 'conexao.php';
+
+                        if($_SERVER["REQUEST_METHOD"] == "POST") {
+                            $var_email = $_POST["email"];
+                            $var_senha = md5($_POST["senha"]);
+
+                            $query = "SELECT * FROM usuarios WHERE email_usuario = '$var_email' AND senha_usuario = '$var_senha'";
+
+                            $result = mysqli_query($conexao, $query);
+
+                            if($result->num_rows > 0) {
+                                $usuario_logado = $result->fetch_assoc();
+                                $_SESSION['nome'] = $usuario_logado['nome_usuario'];
+                                $_SESSION['email'] = $usuario_logado['email_usuario'];
+                                $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
+                                $_SESSION['imagem'] = $usuario_logado['imagem_usuario'];
+                                
+                                header('Location: index.php');
+                            } else {
+                                echo "<p style='color:red;'>Email ou senha incorretos</p>";
+                            }
+                        }
+                        ?>
+
+                    <button id="entrar" type="submit"><a href="./index.php">Entrar</a></button>
+                    <p><a class="voltar" href="./index.php">Voltar para o início</a></p>
                 </form>
+        </div>
+        <div id="box-welcome">
+            <h2>Não tem uma conta?</h2>
+            <p>Entre com seus dados pessoais e comece sua jornada conosco</p>
+            <button id="cadastrar-button" class type="submit"><a href="./cadastro.php">Cadastre-se</a></button>
         </div>
     </section>
     </div>
