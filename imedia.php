@@ -230,6 +230,58 @@
                 <h4 id="sug_video">Veja mais:<a href="https://www.youtube.com/watch?v=a33K4Ut5Cbs" target="_blank"> QUEM FOI CARLOS MAGNO E O IMPÉRIO CAROLÍNGIO? - Lobo Conservador</a></h4>
         </section>
 
+        <<section class="historia">
+    <h2>H.W. Quiz - Idade Média</h2>
+    <div id="quiz-container">
+        <form id="quizForm">
+            <div class="question" id="question1">
+                <p>1. Qual foi uma das causas do surgimento do feudalismo?</p>
+                <label><input type="radio" name="q11" value="Aumento da população urbana"> Aumento da população urbana</label><br>
+                <label><input type="radio" name="q11" value="Invasões bárbaras e insegurança"> Invasões bárbaras e insegurança</label><br>
+                <label><input type="radio" name="q11" value="Estabelecimento de comércio internacional"> Estabelecimento de comércio internacional</label><br>
+                <label><input type="radio" name="q11" value="Descoberta de novas rotas marítimas" id="end_options"> Descoberta de novas rotas marítimas</label>
+            </div>
+
+            <div class="question" id="question2">
+                <p>2. Qual civilização é conhecida por ter estabelecido o Califado de Córdoba na Península Ibérica?</p>
+                <label><input type="radio" name="q12" value="Romanos"> Romanos</label><br>
+                <label><input type="radio" name="q12" value="Vikings"> Vikings</label><br>
+                <label><input type="radio" name="q12" value="Árabes"> Árabes</label><br>
+                <label><input type="radio" name="q12" value="Francos" id="end_options"> Francos</label>
+            </div>
+
+            <div class="question" id="question3">
+                <p>3. Qual foi o impacto das Cruzadas na Europa?</p>
+                <label><input type="radio" name="q13" value="Causaram a destruição total de Jerusalém"> Causaram a destruição total de Jerusalém</label><br>
+                <label><input type="radio" name="q13" value="Fortaleceram o isolamento cultural europeu"> Fortaleceram o isolamento cultural europeu</label><br>
+                <label><input type="radio" name="q13" value="Promoveram troca cultural e comercial com a Ásia"> Promoveram troca cultural e comercial com a Ásia</label><br>
+                <label><input type="radio" name="q13" value="Diminuíram o poder da Igreja Católica" id="end_options"> Diminuíram o poder da Igreja Católica</label>
+            </div>
+
+            <div class="question" id="question4">
+                <p>4. Qual foi o impacto da Peste Negra na economia europeia?</p>
+                <label><input type="radio" name="q14" value="Causou um aumento na mão de obra disponível"> Causou um aumento na mão de obra disponível</label><br>
+                <label><input type="radio" name="q14" value="Reduziu o valor dos salários devido ao excesso de trabalhadores"> Reduziu o valor dos salários devido ao excesso de trabalhadores</label><br>
+                <label><input type="radio" name="q14" value="Levou à valorização dos salários devido à escassez de trabalhadores"> Levou à valorização dos salários devido à escassez de trabalhadores</label><br>
+                <label><input type="radio" name="q14" value="Teve pouco impacto na economia, sendo apenas uma crise de saúde" id="end_options"> Teve pouco impacto na economia, sendo apenas uma crise de saúde</label>
+            </div>
+
+            <div class="question" id="question5">
+                <p>5. Qual foi o evento que resultou na divisão da Igreja Cristã entre Católica e Ortodoxa?</p>
+                <label><input type="radio" name="q15" value="Cruzadas"> Cruzadas</label><br>
+                <label><input type="radio" name="q15" value="Renascimento Carolíngio"> Renascimento Carolíngio</label><br>
+                <label><input type="radio" name="q15" value="Cisma do Oriente"> Cisma do Oriente</label><br>
+                <label><input type="radio" name="q15" value="Queda do Império Romano do Ocidente" id="end_options"> Queda do Império Romano do Ocidente</label>
+            </div>
+
+            <button id="button-quiz" type="button" onclick="checkAnswers('quizForm', 'result')">Enviar</button>
+            <button id="button-quiz" type="button" onclick="resetQuiz('quizForm', 'result')">Resetar</button>
+        </form>
+
+        <p id="result"></p>
+    </div>
+</section>
+
         <section class="historia">
             <h2>Veja também</h2>
             <div class="banner-grid">
@@ -316,5 +368,59 @@
     </main>
 
     <a href="#" class="btn" id="scrollToTopButton"></a>
+
+    <script>
+    const correctAnswers = {
+        q11: "Invasões bárbaras e insegurança",
+        q12: "Árabes",
+        q13: "Promoveram troca cultural e comercial com a Ásia",
+        q14: "Levou à valorização dos salários devido à escassez de trabalhadores",
+        q15: "Cisma do Oriente"
+    };
+
+    function checkAnswers(formId, resultDisplayId) {
+        console.log("checkAnswers chamada"); // Adicionado para verificar se a função está sendo chamada
+        let score = 0;
+        const form = document.getElementById(formId);
+        const resultDisplay = document.getElementById(resultDisplayId);
+
+        for (let question in correctAnswers) {
+            const userAnswer = form[question] ? form[question].value : "";
+            const questionDiv = document.getElementById(`question${question.slice(1)}`);
+
+            questionDiv.classList.remove('correct', 'incorrect');
+
+            if (userAnswer === correctAnswers[question]) {
+                score++;
+                questionDiv.classList.add('correct');
+            } else {
+                questionDiv.classList.add('incorrect');
+
+                const correctAnswerText = document.createElement('p');
+                correctAnswerText.classList.add('correct-answer'); 
+                correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
+                questionDiv.appendChild(correctAnswerText);
+            }
+        }
+        
+        resultDisplay.textContent = `Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.`;
+    }
+
+    function resetQuiz(formId, resultDisplayId) {
+        document.getElementById(formId).reset();
+        document.getElementById(resultDisplayId).textContent = '';
+
+        document.querySelectorAll('.question').forEach(questionDiv => {
+            questionDiv.classList.remove('correct', 'incorrect');
+
+            const correctAnswerText = questionDiv.querySelector('.correct-answer');
+            if (correctAnswerText) {
+                questionDiv.removeChild(correctAnswerText);
+            }
+        });
+    }
+</script>
+
+
 </body>
 </html>

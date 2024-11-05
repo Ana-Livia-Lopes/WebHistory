@@ -40,7 +40,6 @@ function banner5() {
 
 const scrollToTopButton = document.getElementById('scrollToTopButton');
 
-// Adiciona o evento de clique para rolar para o topo
 scrollToTopButton.addEventListener('click', (event) => {
     event.preventDefault();
     window.scrollTo({
@@ -49,11 +48,10 @@ scrollToTopButton.addEventListener('click', (event) => {
     });
 });
 
-// Evento de rolagem para exibir/ocultar o botão
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) { // Ajuste o valor conforme necessário
-        scrollToTopButton.classList.add('show'); // Mostra o botão
+    if (window.scrollY > 100) { 
+        scrollToTopButton.classList.add('show'); 
     } else {
-        scrollToTopButton.classList.remove('show'); // Esconde o botão
+        scrollToTopButton.classList.remove('show'); 
     }
 });
