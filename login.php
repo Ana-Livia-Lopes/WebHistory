@@ -14,6 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($result->num_rows > 0) {
         $usuario_logado = $result->fetch_assoc();
         $_SESSION['nome'] = $usuario_logado['nome_usuario'];
+        $_SESSION['email'] = $usuario_logado['email_usuario'];
         $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
         $_SESSION['imagem'] = $usuario_logado['imagem_usuario'];
         
