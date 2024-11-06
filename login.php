@@ -27,28 +27,33 @@
 
                         if($_SERVER["REQUEST_METHOD"] == "POST") {
                             $var_email = $_POST["email"];
-                            $var_senha = md5($_POST["senha"]);
+                            $var_senha = $_POST["senha"];
 
-                            $query = "SELECT * FROM usuarios WHERE email_usuario = '$var_email' AND senha_usuario = '$var_senha'";
+                            $query = "SELECT * FROM usuarios WHERE email_usuario = '$var_email'";
 
                             $result = mysqli_query($conexao, $query);
 
                             if($result->num_rows > 0) {
                                 $usuario_logado = $result->fetch_assoc();
-                                $_SESSION['id'] = $usuario_logado['id_usuario'];
-                                $_SESSION['nome'] = $usuario_logado['nome_usuario'];
-                                $_SESSION['email'] = $usuario_logado['email_usuario'];
-                                $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
-                                $_SESSION['imagem'] = $usuario_logado['imagem_usuario'];
-                                
-                                header('Location: index.php');
+
+                                if (password_verify($var_senha, $usuario_logado['senha_usuario'])){
+                                    $_SESSION['id'] = $usuario_logado['id_usuario'];
+                                    $_SESSION['nome'] = $usuario_logado['nome_usuario'];
+                                    $_SESSION['email'] = $usuario_logado['email_usuario'];
+                                    $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
+                                    $_SESSION['imagem'] = $usuario_logado['imagem_usuario'];
+                                    
+                                    header('Location: index.php');
+                                } else {
+                                    echo "<p style='color:red;'>Senha incorreta</p>";
+                                }
                             } else {
-                                echo "<p style='color:red;'>Email ou senha incorretos</p>";
+                                echo "<p style='color:red;'>Email incorreto</p>";
                             }
                         }
-                        ?>
+                    ?>
 
-                    <button id="entrar" type="submit"><a href="./index.php">Entrar</a></button>
+                    <button id="entrar" type="submit">Entrar</button>
                     <p class="celular">Não tem uma conta? <a href="./cadastro.php">Cadastre-se!</a></p>
                     <p><a class="voltar" href="./index.php">Voltar para o início</a></p>
                 </form>
@@ -56,7 +61,7 @@
         <div id="box-welcome">
             <h2>Não tem uma conta?</h2>
             <p>Entre com seus dados pessoais e comece sua jornada conosco</p>
-            <button id="cadastrar-button" class type="submit"><a href="./cadastro.php">Cadastre-se</a></button>
+            <button id="cadastrar-button"><a href="./cadastro.php">Cadastre-se</a></button>
         </div>
     </div>
 </section>

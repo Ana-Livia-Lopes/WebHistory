@@ -4,13 +4,15 @@ include 'conexao.php';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $var_nome = $_POST["nome"];
     $var_email = $_POST["email"];
-    $var_senha = md5($_POST["senha"]);
+    $var_senha = $_POST["senha"];
+
+    $senha_hashed = password_hash($var_senha, PASSWORD_DEFAULT);
 
     $sql_insercao = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, imagem_usuario, tipo_usuario) VALUES (?, ?, ?, 'user_default.jpg', 'aluno')";
     
     $stmt = $conexao->prepare($sql_insercao);
     
-    $stmt->bind_param("sss", $var_nome, $var_email, $var_senha);
+    $stmt->bind_param("sss", $var_nome, $var_email, $senha_hashed);
     
     if ($stmt->execute()) {
         header("Location: index.php");
@@ -49,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <label for="senha">Senha</label>
             <input class="campo-inserir" type="password" name="senha" required>
             
-            <button id="botao-cadastrar" type="submit"><a href="./index.php">Cadastrar</a></button>
+            <button id="botao-cadastrar" type="submit">Cadastrar</button>
             <p class="celular">Já tem uma conta? <a href="./login.php" id="entre">Entre!</a></p>
             <p><a class="voltar" href="./index.php">Voltar para o início</a></p>
         </form>
@@ -57,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="box-bemvindo">
         <h2>Já tem uma conta?</h2>
         <p>Para continuar sua jornada conosco, entre com suas credenciais.</p>
-        <button id="botao-entrar" type="submit"><a href="./login.php">Entrar</a></button>
+        <button id="botao-entrar"><a href="./login.php">Entrar</a></button>
     </div>
 </section>
 </body>
