@@ -1,11 +1,21 @@
 <?php include './conexao.php';
-$sql = "SELECT * FROM usuarios";
-$result = $conexao ->query($sql);
-$result -> num_rows == 1;
-$linha = $result->fetch_assoc();
 
 if (isset($_GET['id'])){
-    
+    $id = $_GET['id'];
+
+    $sql = "SELECT * FROM usuarios WHERE id_usuario = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if($result->num_rows == 1){
+        $usuario = $result->fetch_assoc();
+    } else {
+        die("Usuário não encontrado.");
+    }
+} else {
+    die("ID do usuário não especificado.");
 }
 ?>
 
@@ -59,10 +69,10 @@ if (isset($_GET['id'])){
 
         if ($_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
-            echo    "<img id='user-def-nav' src='img/" . $_SESSION['imagem'] . "' alt=''>";
+            echo    "<img id='user-def-nav' src='img/" . $usuario['imagem_usuario'] . "' alt=''>";
             echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $_SESSION['nome'] ."</p>";
-            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
+            echo        "<p class='user-nome'>" . $usuario['nome_usuario'] ."</p>";
+            echo        "<p id='user-nivel-acesso'>" . $usuario['tipo_usuario'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
             if ($_SESSION['nome'] != '') {
@@ -82,48 +92,68 @@ if (isset($_GET['id'])){
             <div id="fundo">
                 <img id="banner-histweb" src="img/HistWebWhite.svg" alt="">
             </div>
-            <div class="informacoes">
-                <img id='user-perfil' src='img/<?php echo $_SESSION['imagem']; ?>' alt=''>
+            <form class="informacoes" action="" method="POST">
+                <img id='user-perfil' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''>
+                <input type="file" name="imagem">
                 <div class='info'>
                     <div class='nome-email'>
 
-                        <p class='nome-acima'>NOME</p>
-                        <input id='campo-nome' type='text' value='<?php echo $_SESSION['nome']; ?>'>
+                        <input type="hidden" name="id" value="<?php echo $usuario['id_usuario']; ?>">
 
-                        <p class='nome-acima'>EMAIL</p>
-                        <input id='campo-email' type='email' value='<?php echo $_SESSION['email']; ?>'>
+                        <label class='nome-acima'>NOME</label>
+                        <input id='campo-nome' name="nome" type='text' value='<?php echo $usuario['nome_usuario']; ?>'>
 
-                        <p class='nome-acima'>SENHA</p>
-                        <input id='campo-senha' type='password' value='<?php echo $linha['senha_usuario']; ?>'>
+                        <label class='nome-acima'>EMAIL</label>
+                        <input id='campo-email' name="email" type='email' value='<?php echo $usuario['email_usuario']; ?>'>
+
+                        <label class='nome-acima'>SENHA</label>
+                        <input id='campo-senha' name="senha" type='password' value='<?php echo $usuario['senha_usuario']; ?>'>
 
                         <div id='mostrar'>
                             <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
                         </div>
 
-                        <p class='nome-acima'>EXCLUIR SUA CONTA</p>
-                        <button id='excluir-conta'>Excluir conta</button>
+                        <button type="submit" id="confirma">Confirmar alterações</button>
 
-                    </div>
-                    <div class='botoes'>
-                        <button class='editar-nome'>Alterar</button>
-                        <button class='editar-nome'>Alterar</button>
-                        <button class='editar-nome'>Alterar</button>
                     </div>
                 </div>
+            </form>
 
-                <script>
-                    function mostrarSenha() {
-                        var x = document.getElementById("campo-senha");
-                        if (x.type === "password") {
-                            x.type = "text";
-                        } else {
-                            x.type = "password";
-                        }
-                    }
-                </script>
-                
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $nome = $_POST["nome"];
+                $email = $_POST["email"];
+                $senha = $_POST["senha"];
+
+                $sql = "UPDATE usuarios SET nome_usuario = ?, email_usuario = ?, senha_usuario = ? WHERE id_usuario = ?";
+                $stmt = $conexao->prepare($sql);
+                $stmt->bind_param("sssi", $nome, $email, $senha, $id);
+
+                if ($stmt->execute()) {
+                    header("Location: perfil.php");
+                } else {
+                    echo "Erro ao atualizar informações: " . $conexao->error;
+                }
+                $stmt->close();
+            }
+            ?>
+
+            <div class="exclusao">
+                <p class='nome-acima'>EXCLUIR SUA CONTA</p>
+                <button id='excluir-conta'>Excluir conta</button>
             </div>
+
         </div>
     </main>
+    <script>
+        function mostrarSenha() {
+            var x = document.getElementById("campo-senha");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>
