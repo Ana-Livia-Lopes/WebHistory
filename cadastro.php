@@ -41,16 +41,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <form action="" method="POST">
             <h1>Cadastro</h1>
             <label for="nome">Nome</label>
-            <input class="campo-inserir" type="text" name="nome">
+            <input class="campo-inserir" type="text" name="nome" required>
             
             <label for="email">Email</label>
-            <input class="campo-inserir" type="email" name="email">
+            <input class="campo-inserir" type="email" name="email" required>
             
             <label for="senha">Senha</label>
-            <input class="campo-inserir" type="password" name="senha">
+            <input class="campo-inserir" type="password" name="senha" required>
             
             <button id="botao-cadastrar" type="submit"><a href="./index.php">Cadastrar</a></button>
-            
+            <p class="celular">Já tem uma conta? <a href="./login.php" id="entre">Entre!</a></p>
             <p><a class="voltar" href="./index.php">Voltar para o início</a></p>
         </form>
     </div>

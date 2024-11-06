@@ -15,10 +15,10 @@
                 <h1>Entre na sua conta</h1>
                 <form action="" method="POST">
                     <label for="email">Email</label>
-                    <input class="inserir" type="email" name="email">
+                    <input class="inserir" type="email" name="email" required>
 
                     <label for="senha">Senha</label>
-                    <input class="inserir" type="password" name="senha">
+                    <input class="inserir" type="password" name="senha" required>
 
                     <?php
 
@@ -49,6 +49,7 @@
                         ?>
 
                     <button id="entrar" type="submit"><a href="./index.php">Entrar</a></button>
+                    <p class="celular">Não tem uma conta? <a href="./cadastro.php">Cadastre-se!</a></p>
                     <p><a class="voltar" href="./index.php">Voltar para o início</a></p>
                 </form>
         </div>
@@ -57,7 +58,7 @@
             <p>Entre com seus dados pessoais e comece sua jornada conosco</p>
             <button id="cadastrar-button" class type="submit"><a href="./cadastro.php">Cadastre-se</a></button>
         </div>
-    </section>
     </div>
+</section>
 </body>
 </html>
