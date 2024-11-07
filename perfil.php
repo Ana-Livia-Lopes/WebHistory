@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
-    $id = $_POST["imagem_usuario"];
 
 
     if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] == 0) {
