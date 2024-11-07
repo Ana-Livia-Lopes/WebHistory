@@ -1,5 +1,6 @@
 <?php
     include 'glossarioInfos.php';
+    include './id_verify.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav class="sidebar">
+<nav class="sidebar">
         <div>
             <div class="topo">
                 <div class="logo">
@@ -36,12 +37,6 @@
                     <a href="glossario.php">
                         <i class="bx bx-book"></i>
                         <span class="item-nav">Glossário</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-cog"></i>
-                        <span class="item-nav">Admin</span>
                     </a>
                 </li>
             </ul>

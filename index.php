@@ -47,12 +47,6 @@ session_start();
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-cog"></i>
-                        <span class="item-nav">Admin</span>
-                    </a>
-                </li>
             </ul>
         </div>
         <?php 
