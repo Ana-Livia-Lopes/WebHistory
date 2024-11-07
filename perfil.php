@@ -1,5 +1,7 @@
 <?php
 include './conexao.php';
+include './id_verify.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST["nome"];
@@ -47,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     if ($stmt->execute()) {
-        header("Location: perfil.php?id=" . $id);
+        header("Location: perfil.php?id=".$id);
         exit;
     } else {
         echo "Erro ao atualizar informações: " . $conexao->error;
@@ -70,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Perfil</title>
 </head>
 <body>
-    <nav class="sidebar">
+<nav class="sidebar">
         <div>
             <div class="topo">
                 <div class="logo">
@@ -80,45 +82,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
             <ul>
                 <li>
-                    <a href="index.php?id=<?php echo $_SESSION['id'] ?>">
+                    <a href="index.php">
                         <i class="bx bx-home-alt"></i>
                         <span class="item-nav">Início</span>
                     </a>
                 </li>
                 <li>
-                    <a href="glossario.php?id=<?php echo $_SESSION['id'] ?>">
+                    <a href="glossario.php">
                         <i class="bx bx-book"></i>
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
-                <li>
-                    <a href='perfil.php?id=<?php echo $_SESSION['id'] ?>'>
-                        <i class="bx bx-user"></i>
-                        <span class="item-nav">Perfil</span>
-                    </a>
-                </li>
             </ul>
         </div>
-        <?php
-        session_start();
-        include './id_verify.php';
+        <?php 
 
-        if ($_SESSION['nome'] != '') {
+        if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
-            echo    "<img id='user-def-nav' src='img/" . $usuario['imagem_usuario'] . "' alt=''>";
+            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $usuario['nome_usuario'] ."</p>";
-            echo        "<p id='user-nivel-acesso'>" . $usuario['tipo_usuario'] . "</p>";
+            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
+            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
-            if ($_SESSION['nome'] != '') {
-                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
-            }
+            echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
             echo    "</div>";
             echo "</div>";
-        }
-
-        if ($_SESSION['nome'] == '') {
+        } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
         ?>

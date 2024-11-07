@@ -77,25 +77,44 @@ include './id_verify.php';
             </div>
 
             <?php
-
-            if ($_SERVER["REQUEST_METHOD"] === "POST"){
+            if (!isset($_SESSION['id'])) {
+                header('Location: login.php');
+                exit();
+            }
+            
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $senha_inserida = $_POST["senha"];
+                $id_usuario = $_SESSION['id'];
 
                 $query = "SELECT * FROM usuarios WHERE id_usuario = ?";
-
-                $result = mysqli_query($conexao, $query);
+                $stmt = mysqli_prepare($conexao, $query);
+                mysqli_stmt_bind_param($stmt, "i", $id_usuario);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
                 
-                if($result->num_rows > 0) {
-                    $usuario_logado = $result->fetch_assoc();
+                if ($result->num_rows > 0) {
+                    $usuario = mysqli_fetch_assoc($result);
             
-                    if (password_verify($senha_inserida, $usuario_logado['senha_usuario'])){
-                        header('Location: index.php');
+                    if (password_verify($senha_inserida, $usuario['senha_usuario'])) {
+                        $query = "DELETE FROM usuarios WHERE id_usuario= ?"; 
+                        $stmt = $conexao->prepare($query);
+                        $stmt->bind_param("i", $id);
+
+                        if ($stmt->execute()) {
+                            header('Location: logout.php?exc=1');
+                        } else {
+                            echo "Erro ao excluir usuário: ".$conexao->error;
+                        }
+
+                        $stmt->close();
+
                     } else {
-                        echo "<p style='color:red;'>Senha incorreta</p>";
+                        echo "<p style='color: red;'>Senha incorreta</p>";
                     }
+                } else {
+                    echo "<p style='color: red;'>Usuário não encontrado</p>";
                 }
             }
-
             ?>
 
             <div id="div-exclusao">
@@ -157,7 +176,6 @@ include './id_verify.php';
     }
     #checkbox{
         color: white;
-        margin-bottom: 17px;
     }
     #confirmar{
         background-color: #ff3232;
@@ -171,6 +189,7 @@ include './id_verify.php';
         transition: all 0.3s;
         cursor: pointer;
         margin-bottom: 15px;
+        margin-top: 17px;
     }
 
     #confirmar:hover{
