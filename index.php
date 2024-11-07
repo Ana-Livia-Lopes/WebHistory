@@ -21,7 +21,7 @@ session_start();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=sailing" />
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
@@ -52,7 +52,6 @@ session_start();
         <?php 
 
         if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
-            include './id_verify.php';
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
@@ -65,6 +64,17 @@ session_start();
             echo "</div>";
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
+        }
+
+        if(isset($_GET['exc'])) {
+            echo("<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'sua conta foi excluida',
+                text: 'tente criar uma nova conta',
+            });
+        }
+        </script>");
         }
         ?>
     </nav>
@@ -331,5 +341,57 @@ session_start();
             </div>
         </footer> 
     </main>
+    <a href="#" class="btn" id="scrollToTopButton"></a>
+
+    <script>
+        const correctAnswers = {
+            q1: "Descoberta do fogo",
+            q2: "Vida nômade com caça, pesca e coleta",
+            q3: "Sangue de animais, folhas e flores",
+            q4: "Sedentarização e prática da agricultura",
+            q5: "O domínio da agricultura e criação de animais",
+        };
+
+        function checkAnswers(formId, resultDisplayId) {
+            let score = 0;
+            const form = document.getElementById(formId);
+            const resultDisplay = document.getElementById(resultDisplayId);
+
+            for (let question in correctAnswers) {
+                const userAnswer = form[question] ? form[question].value : ""; 
+                const questionDiv = document.getElementById(`question${question.slice(1)}`);
+
+                questionDiv.classList.remove('correct', 'incorrect'); 
+
+                if (userAnswer === correctAnswers[question]) {
+                    score++;
+                    questionDiv.classList.add('correct');
+                } else {
+                    questionDiv.classList.add('incorrect'); 
+
+                    const correctAnswerText = document.createElement('p');
+                    correctAnswerText.classList.add('correct-answer'); 
+                    correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
+                    questionDiv.appendChild(correctAnswerText); 
+                }
+            }
+            
+            resultDisplay.textContent = `Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.`; 
+        }
+
+        function resetQuiz(formId, resultDisplayId) {
+            document.getElementById(formId).reset(); 
+            document.getElementById(resultDisplayId).textContent = ''; 
+            
+            document.querySelectorAll('.question').forEach(questionDiv => {
+                questionDiv.classList.remove('correct', 'incorrect');
+
+                const correctAnswerText = questionDiv.querySelector('.correct-answer');
+                if (correctAnswerText) {
+                    questionDiv.removeChild(correctAnswerText); 
+                }
+            });
+        }
+    </script>
 </body>
 </html>
