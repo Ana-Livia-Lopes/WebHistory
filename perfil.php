@@ -93,8 +93,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
+                <li>
+                    <a id="conteudo-select">
+                        <i class="bx bx-hourglass" type='solid'></i>
+                        <select id="select-nav" class="item-nav" onchange="changePag()">
+                            <option value="">Períodos</option>
+                            <option value="hprimitiva.php">História Primitiva</option>
+                            <option value="hantiga.php">História Antiga</option>
+                            <option value="imedia.php">Idade Média</option>
+                            <option value="imoderna.php">Idade Moderna</option>
+                            <option value="icontemporanea.php">Idade Contemporânea</option>
+                        </select>
+                    </a>
+                </li>
             </ul>
         </div>
+        <script>       
+            function changePag() {
+                const dropdown = document.getElementById("select-nav");
+                const pagina = dropdown.value;
+
+                if (pagina) { 
+                    window.location.href = pagina; 
+                }
+            }
+        </script>
         <?php 
 
         if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {

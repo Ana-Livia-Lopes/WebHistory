@@ -139,7 +139,7 @@
     transition: background-color 0.3s ease;
 }
 
-.sidebar ul li a:hover{
+.sidebar ul li a:hover:not(#conteudo-select){
     background-color: rgba(255, 255, 255, 0.21);
 }
 
@@ -231,6 +231,18 @@
 #botao-acoes{
     display: flex;
     align-items: center;
+}
+#select-nav {
+    background-color: rgb(49, 49, 49); 
+    color: rgb(202, 202, 202); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    border: none; 
+    padding: 4px;
+    width: 110px;
+    border-radius: 5px;
+    left: -2px;
+    font-size: 16px;
 }
 /* fim da navbar */
 
@@ -407,6 +419,8 @@ input[type="file"] {
     margin-top: 7px;
     margin-bottom: 20px;
 }
+
+
 
 @media (max-width: 768px){
     .pagina-perfil{
