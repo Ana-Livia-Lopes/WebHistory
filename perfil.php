@@ -127,6 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <input id="upload" type="file" name="imagem" accept="image/*">
                     <label class='nome-acima'>NOME</label>
                     <input id='campo-nome' name="nome" type='text' value='<?php echo $usuario['nome_usuario']; ?>'>
+                    <p id="aviso">O novo nome é visível na barra lateral apenas após o usuário sair da conta e entrar novamente</p>
                     <label class='nome-acima'>EMAIL</label>
                     <input id='campo-email' name="email" type='email' value='<?php echo $usuario['email_usuario']; ?>'>
                     <label class='nome-acima'>SENHA</label>
