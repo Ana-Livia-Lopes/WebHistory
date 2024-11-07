@@ -99,7 +99,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
-            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
+            ?>
+            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''>
+            <?php 
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
@@ -120,6 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         <form class="informacoes" action="perfil.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
             <img id='user-perfil' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''>
+            
             <div class='info'>
                 <div class='nome-email'>
                     <input type="hidden" name="id" value="<?php echo $usuario['id_usuario']; ?>">
@@ -127,7 +130,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <input id="upload" type="file" name="imagem" accept="image/*">
                     <label class='nome-acima'>NOME</label>
                     <input id='campo-nome' name="nome" type='text' value='<?php echo $usuario['nome_usuario']; ?>'>
-                    <p id="aviso">O novo nome é visível na barra lateral apenas após o usuário sair da conta e entrar novamente</p>
                     <label class='nome-acima'>EMAIL</label>
                     <input id='campo-email' name="email" type='email' value='<?php echo $usuario['email_usuario']; ?>'>
                     <label class='nome-acima'>SENHA</label>
@@ -136,6 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
                     </div>
                     
+                    <p id="aviso">As alterações são visíveis na barra lateral apenas após o usuário sair da conta e entrar novamente</p>
                     <button type="submit" id="confirma">Confirmar alterações</button>
                 </div>
             </div>
