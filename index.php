@@ -311,7 +311,7 @@ session_start();
                     <p>Endereço: Av. Independência, 846 - Independência, Taubaté - SP, 12031-001</p>
                     <p>Telefone: (12) 3609-5701</p>
                     <p>E-mail: senaitaubate@sp.senai.br</p>
-                </div>
+                </div> 
             
                 <div class="equipe">
                     <h2>Equipe Desenvolvedora</h2>
