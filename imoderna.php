@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav class="sidebar">
+    <nav class="sidebar">
         <div>
             <div class="topo">
                 <div class="logo">
@@ -39,32 +39,22 @@
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-cog"></i>
-                        <span class="item-nav">Admin</span>
-                    </a>
-                </li>
             </ul>
         </div>
-        <?php session_start();
+        <?php 
 
-        if ($_SESSION['nome'] != '') {
+        if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
             echo "<div class='usuario'>";
-            echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
+            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
-            if ($_SESSION['nome'] != '') {
-                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
-            }
+            echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
             echo    "</div>";
             echo "</div>";
-        }
-
-        if ($_SESSION['nome'] == '') {
+        } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
         ?>
@@ -77,27 +67,27 @@
                 <h2>Idade Moderna</h2> <hr id="hr4">
                 
                 <p><h3>Renascimento</h3> 
-    
+                <img class="img-conteudo" src="img/renascimento.jfif" width="400" height="300" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                 O Renascimento foi um movimento cultural que emergiu na Europa entre os séculos XIV e XVI, caracterizado pela redescoberta do conhecimento clássico da Grécia e Roma. Este período trouxe um foco intenso no humanismo, que enfatizava a dignidade e o potencial humano. Artistas e pensadores como Leonardo da Vinci, Michelangelo e Galileu Galilei foram figuras proeminentes, promovendo inovações nas artes e nas ciências. A arte renascentista, com seu uso da perspectiva e representação realista, mudou para sempre o cenário artístico europeu. Além disso, o Renascimento também incentivou o desenvolvimento das ciências naturais e o pensamento crítico, estabelecendo as bases para a Revolução Científica que se seguiria. 
     
                 <h3>Reforma Protestante</h3> 
-    
+                <img class="img-conteudo" src="img/reforma-protestante.jfif" width="400" height="300" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                 A Reforma Protestante, iniciada no século XVI, foi um movimento religioso que desafiou a autoridade da Igreja Católica. Martinho Lutero, com suas 95 Teses em 1517, criticou práticas como a venda de indulgências. O movimento rapidamente se espalhou pela Europa, resultando no surgimento de várias denominações cristãs, como o luteranismo e o calvinismo. Este processo também gerou uma reação da Igreja Católica, conhecida como Contrarreforma, que buscou revitalizar a Igreja e combater a disseminação do protestantismo. A Reforma teve um impacto profundo na religião, na política e na sociedade, promovendo a liberdade de interpretação das escrituras e uma nova relação entre o indivíduo e Deus. 
     
                 <h3>Descobrimentos</h3> 
-    
+                <img class="img-conteudo" src="img/descobrimentos.jfif" width="400" height="300" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                 A Era dos Descobrimentos, que se estendeu do final do século XV até o século XVII, foi marcada por grandes navegações e a expansão marítima europeia, especialmente por nações como Portugal e Espanha. A expedição de Cristóvão Colombo em 1492, que resultou na descoberta das Américas, e a viagem de Vasco da Gama à Índia foram eventos-chave. Esse período de exploração levou ao contato entre diferentes culturas e à colonização de novas terras, estabelecendo rotas comerciais que mudaram o comércio global. Os europeus trouxeram novas culturas e tecnologias para as Américas, mas também causaram devastação nas populações indígenas. 
     
                 <h3>Colonização</h3> 
-    
+                <img class="img-conteudo" src="img/colonizacao.jfif" width="400" height="300" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                 A colonização foi o processo pelo qual as potências europeias estabeleceram impérios coloniais na América, na África e na Ásia. Este fenômeno foi impulsionado pelo desejo de riquezas e pela expansão territorial. As colônias eram frequentemente exploradas economicamente, com recursos sendo extraídos para beneficiar as metrópoles europeias. O sistema colonial era rigidamente controlado, com monopólios comerciais que favoreciam os interesses das potências colonizadoras. Além disso, a colonização levou à escravidão e ao deslocamento de milhões de pessoas, com impactos sociais, culturais e econômicos duradouros. 
     
                 <h3>Absolutismo</h3> 
-    
+                <img class="img-conteudo" src="img/absolutismo.jfif" width="400" height="300" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                 O absolutismo foi um sistema político que predominou na Idade Moderna, onde o poder estava centralizado nas mãos de monarcas absolutos, como Luís XIV da França, conhecido como o "Rei Sol". Este sistema era justificado pela ideia da "predestinação divina", que considerava o rei como um representante de Deus na Terra. As monarquias absolutistas buscavam controlar todas as esferas da vida, incluindo a economia, a religião e a justiça. O absolutismo, embora eficaz em unificar o poder, eventualmente enfrentou resistência que levaria a revoluções e a um movimento em direção a governos mais representativos.
     
                 <h3>Revoluções Científicas e Iluminismo</h3> 
-    
+                <img class="img-conteudo" src="img/iluminismo.webp" width="400" height="300" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                 A Revolução Científica, que começou no século XVI, trouxe avanços significativos no entendimento do mundo natural, com figuras como Copérnico, Kepler e Newton desafiando as visões tradicionais e promovendo a observação empírica. O Iluminismo, que se seguiu no século XVIII, foi um movimento intelectual que enfatizou a razão, a ciência e os direitos individuais. Pensadores como Voltaire, Rousseau e Montesquieu questionaram a autoridade e os dogmas, defendendo a liberdade e a igualdade. O impacto do Iluminismo foi profundo, influenciando revoluções políticas, incluindo a Revolução Americana e a Revolução Francesa, que buscavam implementar os princípios da razão e da justiça social nas estruturas de governo. </p>
             </div>
     

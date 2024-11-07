@@ -67,15 +67,14 @@ session_start();
         }
 
         if(isset($_GET['exc'])) {
-            echo("<script>
+            echo"<script>
             Swal.fire({
                 icon: 'error',
                 title: 'sua conta foi excluida',
                 text: 'tente criar uma nova conta',
             });
-        }
-        </script>");
-        }
+            </script>";
+            }
         ?>
     </nav>
     
@@ -343,55 +342,6 @@ session_start();
     </main>
     <a href="#" class="btn" id="scrollToTopButton"></a>
 
-    <script>
-        const correctAnswers = {
-            q1: "Descoberta do fogo",
-            q2: "Vida nômade com caça, pesca e coleta",
-            q3: "Sangue de animais, folhas e flores",
-            q4: "Sedentarização e prática da agricultura",
-            q5: "O domínio da agricultura e criação de animais",
-        };
-
-        function checkAnswers(formId, resultDisplayId) {
-            let score = 0;
-            const form = document.getElementById(formId);
-            const resultDisplay = document.getElementById(resultDisplayId);
-
-            for (let question in correctAnswers) {
-                const userAnswer = form[question] ? form[question].value : ""; 
-                const questionDiv = document.getElementById(`question${question.slice(1)}`);
-
-                questionDiv.classList.remove('correct', 'incorrect'); 
-
-                if (userAnswer === correctAnswers[question]) {
-                    score++;
-                    questionDiv.classList.add('correct');
-                } else {
-                    questionDiv.classList.add('incorrect'); 
-
-                    const correctAnswerText = document.createElement('p');
-                    correctAnswerText.classList.add('correct-answer'); 
-                    correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
-                    questionDiv.appendChild(correctAnswerText); 
-                }
-            }
-            
-            resultDisplay.textContent = `Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.`; 
-        }
-
-        function resetQuiz(formId, resultDisplayId) {
-            document.getElementById(formId).reset(); 
-            document.getElementById(resultDisplayId).textContent = ''; 
-            
-            document.querySelectorAll('.question').forEach(questionDiv => {
-                questionDiv.classList.remove('correct', 'incorrect');
-
-                const correctAnswerText = questionDiv.querySelector('.correct-answer');
-                if (correctAnswerText) {
-                    questionDiv.removeChild(correctAnswerText); 
-                }
-            });
-        }
-    </script>
+    
 </body>
 </html>

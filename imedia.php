@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav class="sidebar">
+    <nav class="sidebar">
         <div>
             <div class="topo">
                 <div class="logo">
@@ -39,32 +39,22 @@
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-cog"></i>
-                        <span class="item-nav">Admin</span>
-                    </a>
-                </li>
             </ul>
         </div>
-        <?php session_start();
+        <?php 
 
-        if ($_SESSION['nome'] != '') {
+        if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
             echo "<div class='usuario'>";
-            echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
+            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
-            if ($_SESSION['nome'] != '') {
-                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
-            }
+            echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
             echo    "</div>";
             echo "</div>";
-        }
-
-        if ($_SESSION['nome'] == '') {
+        } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
         ?>
@@ -78,7 +68,7 @@
                 <h2>Idade Média</h2><hr id="hr3">
                     <p>
                         <h3>Alta Idade Média</h3>
-    
+                        <img class="img-conteudo" src="img/alta-imedia.jfif" width="400" height="300" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                         A Alta Idade Média começou em 476 d.C., com a queda do Império Romano do Ocidente, e se estendeu até aproximadamente 1000 d.C. Esse período é marcado pela desintegração das estruturas de poder romano e o surgimento de novos reinos germânicos, liderados por grupos como os visigodos, ostrogodos e francos. As invasões bárbaras provocaram a migração de populações e a instabilidade política. 
     
                         <ul>
@@ -91,7 +81,7 @@
                         </ul>
     
                         <h3>Baixa Idade Média</h3>
-    
+                        <img class="img-conteudo" src="img/baixa-imedia.jfif" width="400" height="300" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                         A Baixa Idade Média (c. 1000-1500 d.C.) é caracterizada pelo crescimento do comércio, o surgimento de cidades e a ascensão da Igreja Católica como uma instituição poderosa. Este período também inclui a realização das Cruzadas. 
                         <ul>
                             <li>
@@ -101,7 +91,7 @@
                         
     
                         <h3>Feudalismo</h3>
-    
+                        <img class="img-conteudo" src="img/feudalismo.jfif" width="400" height="300" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                         O feudalismo foi um sistema político, econômico e social que dominou a Europa durante a Idade Média. Ele era caracterizado por: 
                         <ul>
                             <li>
@@ -115,7 +105,7 @@
                         
     
                         <h3>Expansão Islâmica</h3>
-    
+                        <img class="img-conteudo" src="img/expansao_islamica.jfif" width="400" height="300" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                         A expansão islâmica começou após a morte de Maomé, em 632 d.C. Os muçulmanos se expandiram rapidamente, conquistando vastas áreas da Ásia, África e parte da Europa. 
                         <ul>
                             <li>
@@ -129,7 +119,7 @@
                         
     
                         <h3>Império Bizantino</h3>
-    
+                        <img class="img-conteudo" src="img/imp_bizantino.jfif" width="400" height="300" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                         O Império Bizantino foi a continuação do Império Romano no Oriente, com Constantinopla como capital. Destacou-se por sua cultura rica, suas inovações legais e sua religião predominante, o cristianismo ortodoxo. 
     
                         <ul>
@@ -143,7 +133,7 @@
                         </ul>
     
                         <h3>Cruzadas</h3>
-    
+                        <img class="img-conteudo" src="img/cruzadas.jfif" width="400" height="300" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                         As Cruzadas foram campanhas militares impulsionadas pela religião, cujo objetivo principal era recuperar Jerusalém e outros lugares sagrados da Palestina. 
                         <ul>
                             <li>
@@ -154,13 +144,13 @@
                                 <h4>Impacto Cultural:</h4> As Cruzadas tiveram um impacto significativo na relação entre cristãos e muçulmanos, e na troca cultural, incluindo a introdução de novas ideias e produtos da Ásia na Europa. 
                             </li>
                         </ul>
-    
+                    
                         <h3>Renascimento Carolíngio</h3>
-    
+                        <img class="img-conteudo" src="img/renasci-carolingio.jfif" width="300" height="200" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                         O Renascimento Carolíngio, sob o reinado de Carlos Magno (768-814), foi um período de revitalização cultural e intelectual. Carlos Magno promoveu a educação, a arte e a religião, unificando uma grande parte da Europa Ocidental sob um único império e fortalecendo a Igreja Católica como um poder político.
-    
-                        <h3>Peste Negra </h3>
-    
+                            
+                        <h3>Peste Negra</h3>
+                        <img class="img-conteudo" src="img/peste-negra.jfif" width="400" height="250" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                         A Peste Negra, que devastou a Europa entre 1347 e 1351, resultou na morte de cerca de um terço da população europeia. 
     
                         <ul>
