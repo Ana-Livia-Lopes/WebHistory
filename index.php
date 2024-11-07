@@ -182,7 +182,6 @@ session_start();
             
     <!-- computador -->
      <div id="pc">
-         <div onclick="window.location='hprimitiva.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
          <div onclick="window.location='hprimitiva.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="500" data-aos-delay="50">
              <div class="div-img-banner" >
              <img src="img/banner1.jpg" id="img-banner">
@@ -193,7 +192,6 @@ session_start();
                  
              </div>
          </div>
-         <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
          <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="500" data-aos-delay="50">
              <div class="div-img-banner">
                  <img src="img/banner2.jpg" id="img-banner">
@@ -205,7 +203,6 @@ session_start();
              </div>
          </div>
          
-         <div onclick="window.location='imedia.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
          <div onclick="window.location='imedia.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="500" data-aos-delay="50">
              <div class="div-img-banner">
                  <img src="img/banner3.jpg" id="img-banner">
@@ -217,7 +214,6 @@ session_start();
              </div>
          </div>
          
-         <div onclick="window.location='imoderna.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
          <div onclick="window.location='imoderna.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="500" data-aos-delay="50">
              <div class="div-img-banner">
              <img src="img/banner4.jpg" id="img-banner">
@@ -229,7 +225,6 @@ session_start();
              </div>
          </div>
          
-         <div onclick="window.location='icontemporanea.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
          <div onclick="window.location='icontemporanea.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="500" data-aos-delay="50">
              <div class="div-img-banner">
              <img src="img/banner5.jpg" id="img-banner">
