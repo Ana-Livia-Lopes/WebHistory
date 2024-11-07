@@ -121,8 +121,8 @@
                 <h3>Revoluções Científicas e Iluminismo</h3>
                 <p>A Revolução Científica (século XVI) trouxe avanços como as teorias de Copérnico e Newton, enquanto o Iluminismo (século XVIII) enfatizou a razão, a ciência e os direitos individuais. Pensadores como Voltaire e Rousseau influenciaram as revoluções Americana e Francesa, promovendo liberdade e justiça social.</p>
             </div>
-    
         </section>
+
         <section class="historia">
             <h2>Conteúdos adicionais</h2>
             <div class="video-grid">
@@ -149,6 +149,58 @@
                 <div class="video-card">
                 <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/1IChUwbKsOg?si=OnYLsB9gonDOvDkR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+            </div>
+        </section>
+
+        <section class="historia">
+            <h2>H.W. Quiz - Idade Moderna</h2>
+            <div id="quiz-container">
+                <form id="quizForm">
+                    <div class="question" id="question16">
+                        <p>1. Quem foi uma figura proeminente do Renascimento?</p>
+                        <label><input type="radio" name="q16" value="Martinho Lutero"> Martinho Lutero</label><br>
+                        <label><input type="radio" name="q16" value="Leonardo da Vinci"> Leonardo da Vinci</label><br>
+                        <label><input type="radio" name="q16" value="Vasco da Gama"> Vasco da Gama</label><br>
+                        <label><input type="radio" name="q16" value="Luís XIV" id="end_options"> Luís XIV</label>
+                    </div>
+
+                    <div class="question" id="question17">
+                        <p>2. Qual evento é considerado o início da Reforma Protestante?</p>
+                        <label><input type="radio" name="q17" value="Descobrimento das Américas"> Descobrimento das Américas</label><br>
+                        <label><input type="radio" name="q17" value="Publicação das 95 Teses de Lutero"> Publicação das 95 Teses de Lutero</label><br>
+                        <label><input type="radio" name="q17" value="Revolução Francesa"> Revolução Francesa</label><br>
+                        <label><input type="radio" name="q17" value="Início do Iluminismo" id="end_options"> Início do Iluminismo</label>
+                    </div>
+
+                    <div class="question" id="question18">
+                        <p>3. Qual foi uma consequência das Grandes Navegações?</p>
+                        <label><input type="radio" name="q18" value="Início do Renascimento"> Início do Renascimento</label><br>
+                        <label><input type="radio" name="q18" value="Publicação das 95 Teses"> Publicação das 95 Teses</label><br>
+                        <label><input type="radio" name="q18" value="Contato entre diferentes culturas e colonização"> Contato entre diferentes culturas e colonização</label><br>
+                        <label><input type="radio" name="q18" value="Declínio do absolutismo" id="end_options"> Declínio do absolutismo</label>
+                    </div>
+
+                    <div class="question" id="question19">
+                        <p>4. Qual das seguintes características é associada ao absolutismo?</p>
+                        <label><input type="radio" name="q19" value="Divisão de poderes"> Divisão de poderes</label><br>
+                        <label><input type="radio" name="q19" value="Controle total do monarca"> Controle total do monarca</label><br>
+                        <label><input type="radio" name="q19" value="Liberdade religiosa"> Liberdade religiosa</label><br>
+                        <label><input type="radio" name="q19" value="Democracia direta" id="end_options"> Democracia direta</label>
+                    </div>
+
+                    <div class="question" id="question20">
+                        <p>5. O que foi um objetivo do Iluminismo?</p>
+                        <label><input type="radio" name="q20" value="Fortalecer o poder do rei"> Fortalecer o poder do rei</label><br>
+                        <label><input type="radio" name="q20" value="Expandir o poder da Igreja Católica"> Expandir o poder da Igreja Católica</label><br>
+                        <label><input type="radio" name="q20" value="Promover a razão e os direitos individuais"> Promover a razão e os direitos individuais</label><br>
+                        <label><input type="radio" name="q20" value="Iniciar a colonização da América" id="end_options"> Iniciar a colonização da América</label>
+                    </div>
+
+                    <button id="button-quiz" type="button" onclick="checkAnswers('quizForm', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="resetQuiz('quizForm', 'result')">Resetar</button>
+                </form>
+
+                <p id="result"></p>
             </div>
         </section>
 
@@ -236,7 +288,66 @@
             </div>
         </footer> 
     </main>
-
     <a href="#" class="btn" id="scrollToTopButton"></a>
+
+    <script>
+        const correctAnswers = {
+            q16: "Leonardo da Vinci",
+            q17: "Publicação das 95 Teses de Lutero",
+            q18: "Contato entre diferentes culturas e colonização",
+            q19: "Controle total do monarca",
+            q20: "Promover a razão e os direitos individuais"
+        };
+
+        function checkAnswers(formId, resultDisplayId) {
+            let score = 0;
+            const form = document.getElementById(formId);
+            const resultDisplay = document.getElementById(resultDisplayId);
+
+            document.querySelectorAll('.question .correct-answer').forEach(answer => answer.remove());
+            document.querySelectorAll('.question').forEach(div => div.classList.remove('correct', 'incorrect'));
+
+            for (let question in correctAnswers) {
+                const userAnswer = form[question] ? form[question].value : "";
+                const questionDiv = document.getElementById(`question${question.slice(1)}`);
+
+                if (userAnswer === correctAnswers[question]) {
+                    score++;
+                    questionDiv.classList.add('correct');
+                } else {
+                    questionDiv.classList.add('incorrect'); 
+                    
+                    const correctAnswerText = document.createElement('p');
+                    correctAnswerText.classList.add('correct-answer');
+                    correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
+                    questionDiv.appendChild(correctAnswerText);
+                }
+            }
+            
+            resultDisplay.textContent = `Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.`;
+        }
+
+        function resetQuiz(formId, resultDisplayId) {
+
+            const form = document.getElementById(formId);
+            const resultDisplay = document.getElementById(resultDisplayId);
+
+            if (!form || !resultDisplay) {
+                console.error("Erro: Formulário ou elemento de resultado não encontrados.");
+                return;
+            }
+
+            form.reset();
+            resultDisplay.textContent = '';
+
+            document.querySelectorAll('.question').forEach(questionDiv => {
+                questionDiv.classList.remove('correct', 'incorrect');
+                const correctAnswerText = questionDiv.querySelector('.correct-answer');
+                if (correctAnswerText) {
+                    questionDiv.removeChild(correctAnswerText);
+                }
+            });
+        }
+    </script>
 </body>
 </html>

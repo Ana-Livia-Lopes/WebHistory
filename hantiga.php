@@ -289,7 +289,6 @@
     <a href="#" class="btn" id="scrollToTopButton"></a>
 
     <script>
-        // Respostas corretas para ambos os quizzes
         const correctAnswers = {
             q6: "Sumérios",
             q7: "Babilônios",
@@ -303,24 +302,22 @@
             const form = document.getElementById(formId);
             const resultDisplay = document.getElementById(resultDisplayId);
 
-            // Itera sobre as respostas corretas
             for (let question in correctAnswers) {
-                const userAnswer = form[question] ? form[question].value : ""; // Verifica se a pergunta existe no formulário
-                const questionDiv = document.getElementById(`question${question.slice(1)}`); // Acessa a div da pergunta
+                const userAnswer = form[question] ? form[question].value : ""; 
+                const questionDiv = document.getElementById(`question${question.slice(1)}`); 
 
-                questionDiv.classList.remove('correct', 'incorrect'); // Remove classes anteriores
+                questionDiv.classList.remove('correct', 'incorrect'); 
 
-                // Verifica se a resposta do usuário está correta
                 if (userAnswer === correctAnswers[question]) {
                     score++;
                     questionDiv.classList.add('correct');
                 } else {
-                    questionDiv.classList.add('incorrect'); // Adiciona classe de resposta incorreta
+                    questionDiv.classList.add('incorrect');
 
                     const correctAnswerText = document.createElement('p');
                     correctAnswerText.classList.add('correct-answer'); 
                     correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
-                    questionDiv.appendChild(correctAnswerText); // Mostra a resposta correta
+                    questionDiv.appendChild(correctAnswerText); 
                 }
             }
             
@@ -328,16 +325,15 @@
         }
 
         function resetQuiz(formId, resultDisplayId) {
-            document.getElementById(formId).reset(); // Reseta o formulário
-            document.getElementById(resultDisplayId).textContent = ''; // Limpa o resultado
+            document.getElementById(formId).reset(); 
+            document.getElementById(resultDisplayId).textContent = ''; 
             
-            // Remove as classes de respostas corretas e incorretas
             document.querySelectorAll('.question').forEach(questionDiv => {
                 questionDiv.classList.remove('correct', 'incorrect');
 
                 const correctAnswerText = questionDiv.querySelector('.correct-answer');
                 if (correctAnswerText) {
-                    questionDiv.removeChild(correctAnswerText); // Remove o texto da resposta correta
+                    questionDiv.removeChild(correctAnswerText); 
                 }
             });
         }

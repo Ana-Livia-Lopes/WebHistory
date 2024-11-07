@@ -84,7 +84,7 @@ session_start();
             </div>
         </section>
         <section id="secao2">
-            <div class=" pc imgSobre" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <div class=" pc imgSobre" data-aos="fade" data-aos-duration="1000" data-aos-delay="200">
                 <div class="sobre">
                     <h1>Sobre:</h1>
                     <p>Bem-vindo ao História na Web! Aqui, você terá acesso a uma vasta gama de recursos de qualidade sobre os mais variados momentos da história, que contribuirão para o seu aprendizado.</p>
@@ -182,7 +182,7 @@ session_start();
             
     <!-- computador -->
      <div id="pc">
-         <div onclick="window.location='hprimitiva.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
+         <div onclick="window.location='hprimitiva.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner" >
              <img src="img/banner1.jpg" id="img-banner">
              </div>
@@ -192,7 +192,7 @@ session_start();
                  
              </div>
          </div>
-         <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
+         <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner">
                  <img src="img/banner2.jpg" id="img-banner">
              </div>
@@ -203,7 +203,7 @@ session_start();
              </div>
          </div>
          
-         <div onclick="window.location='imedia.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
+         <div onclick="window.location='imedia.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner">
                  <img src="img/banner3.jpg" id="img-banner">
              </div>
@@ -214,7 +214,7 @@ session_start();
              </div>
          </div>
          
-         <div onclick="window.location='imoderna.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
+         <div onclick="window.location='imoderna.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner">
              <img src="img/banner4.jpg" id="img-banner">
              </div>
@@ -225,7 +225,7 @@ session_start();
              </div>
          </div>
          
-         <div onclick="window.location='icontemporanea.php'" target="_blank" class="banner" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">
+         <div onclick="window.location='icontemporanea.php'" target="_blank" class="banner" data-aos="fade" data-aos-duration="1000" data-aos-delay="50">
              <div class="div-img-banner">
              <img src="img/banner5.jpg" id="img-banner">
              </div>

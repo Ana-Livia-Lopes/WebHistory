@@ -246,6 +246,58 @@
         </section>
 
         <section class="historia">
+            <h2>H.W. Quiz - Idade Contemporânea</h2>
+            <div id="quiz-container">
+                <form id="quizForm">
+                    <div class="question" id="question21">
+                        <p>1. Qual país foi o berço da Revolução Industrial?</p>
+                        <label><input type="radio" name="q21" value="França"> França</label><br>
+                        <label><input type="radio" name="q21" value="Alemanha"> Alemanha</label><br>
+                        <label><input type="radio" name="q21" value="Inglaterra"> Inglaterra</label><br>
+                        <label><input type="radio" name="q21" value="Estados Unidos" id="end_options"> Estados Unidos</label>
+                    </div>
+
+                    <div class="question" id="question22">
+                        <p>2. Qual evento marcou o início da Revolução Francesa?</p>
+                        <label><input type="radio" name="q22" value="Formação da Assembleia Nacional"> Formação da Assembleia Nacional</label><br>
+                        <label><input type="radio" name="q22" value="Execução de Luís XVI"> Execução de Luís XVI</label><br>
+                        <label><input type="radio" name="q22" value="Construção do Muro de Berlim"> Construção do Muro de Berlim</label><br>
+                        <label><input type="radio" name="q22" value="Tratado de Versalhes" id="end_options"> Tratado de Versalhes</label>
+                    </div>
+
+                    <div class="question" id="question23">
+                        <p>3. O Tratado de Versalhes foi assinado após qual guerra?</p>
+                        <label><input type="radio" name="q23" value="Primeira Guerra Mundial"> Primeira Guerra Mundial</label><br>
+                        <label><input type="radio" name="q23" value="Segunda Guerra Mundial"> Segunda Guerra Mundial</label><br>
+                        <label><input type="radio" name="q23" value="Guerra Fria"> Guerra Fria</label><br>
+                        <label><input type="radio" name="q23" value="Guerra do Vietnã" id="end_options"> Guerra do Vietnã</label>
+                    </div>
+
+                    <div class="question" id="question24">
+                        <p>4. Qual evento ocorreu durante a Guerra Fria e aumentou as tensões entre EUA e URSS?</p>
+                        <label><input type="radio" name="q24" value="A Queda do Muro de Berlim"> A Queda do Muro de Berlim</label><br>
+                        <label><input type="radio" name="q24" value="A Crise dos Mísseis de Cuba"> A Crise dos Mísseis de Cuba</label><br>
+                        <label><input type="radio" name="q24" value="A Lei dos Direitos Civis de 1964"> A Lei dos Direitos Civis de 1964</label><br>
+                        <label><input type="radio" name="q24" value="Início da Revolução Industrial" id="end_options"> Início da Revolução Industrial</label>
+                    </div>
+
+                    <div class="question" id="question25">
+                        <p>5. Qual dos seguintes avanços tecnológicos impulsionou a Globalização no século XX?</p>
+                        <label><input type="radio" name="q25" value="A invenção do telescópio"> A invenção do telescópio</label><br>
+                        <label><input type="radio" name="q25" value="A invenção da televisão"> A invenção da televisão</label><br>
+                        <label><input type="radio" name="q25" value="A internet"> A internet</label><br>
+                        <label><input type="radio" name="q25" value="O primeiro voo humano" id="end_options"> O primeiro voo humano</label>
+                    </div>
+
+                    <button id="button-quiz" type="button" onclick="checkAnswers('quizForm', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="resetQuiz('quizForm', 'result')">Resetar</button>
+                </form>
+
+                <p id="result"></p>
+            </div>
+        </section>
+
+        <section class="historia">
             <h2>Veja também</h2>
             <div class="banner-grid">
                 <a href="hprimitiva.php">
@@ -332,5 +384,64 @@
     </main>
 
     <a href="#" class="btn" id="scrollToTopButton"></a>
+
+    <script>
+        const correctAnswers = {
+            q21: "Inglaterra",
+            q22: "Formação da Assembleia Nacional",
+            q23: "Primeira Guerra Mundial",
+            q24: "A Crise dos Mísseis de Cuba",
+            q25: "A internet"
+        };
+
+        function checkAnswers(formId, resultDisplayId) {
+            let score = 0;
+            const form = document.getElementById(formId);
+            const resultDisplay = document.getElementById(resultDisplayId);
+
+            document.querySelectorAll('.question .correct-answer').forEach(answer => answer.remove());
+            document.querySelectorAll('.question').forEach(div => div.classList.remove('correct', 'incorrect'));
+
+            for (let question in correctAnswers) {
+                const userAnswer = form[question] ? form[question].value : "";
+                const questionDiv = document.getElementById(`question${question.slice(1)}`);
+
+                if (userAnswer === correctAnswers[question]) {
+                    score++;
+                    questionDiv.classList.add('correct'); 
+                } else {
+                    questionDiv.classList.add('incorrect'); 
+                    
+                    const correctAnswerText = document.createElement('p');
+                    correctAnswerText.classList.add('correct-answer');
+                    correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
+                    questionDiv.appendChild(correctAnswerText);
+                }
+            }
+            
+            resultDisplay.textContent = `Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.`;
+        }
+
+        function resetQuiz(formId, resultDisplayId) {
+            const form = document.getElementById(formId);
+            const resultDisplay = document.getElementById(resultDisplayId);
+
+            if (!form || !resultDisplay) {
+                console.error("Erro: Formulário ou elemento de resultado não encontrados.");
+                return;
+            }
+
+            form.reset();
+            resultDisplay.textContent = '';
+
+            document.querySelectorAll('.question').forEach(questionDiv => {
+                questionDiv.classList.remove('correct', 'incorrect');
+                const correctAnswerText = questionDiv.querySelector('.correct-answer');
+                if (correctAnswerText) {
+                    questionDiv.removeChild(correctAnswerText);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
