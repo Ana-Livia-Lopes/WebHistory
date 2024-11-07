@@ -292,6 +292,21 @@ body {
 .scroller::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+#add{
+    border-radius: 6;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    width: 110px;
+    background-color: #3a7940;
+    transition: all 0.3s;
+}
+
+#add:hover{
+    background-color: rgb(88, 169, 96);
+}
+
+
 .content_gloss {
     padding: 40px;
     margin-left: 230px;
