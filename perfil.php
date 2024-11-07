@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
+
     if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] == 0) {
         $imagem = $_FILES["imagem"];
         $extensao = strtolower(pathinfo($imagem["name"], PATHINFO_EXTENSION));
@@ -99,8 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
+            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
             ?>
-            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''>
+            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
             <?php 
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";

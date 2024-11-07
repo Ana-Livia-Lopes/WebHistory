@@ -50,10 +50,13 @@ session_start();
             </ul>
         </div>
         <?php 
-
-        if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
+        
+       if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
-            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
+            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
+            ?>
+            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
+            <?php 
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
@@ -88,7 +91,7 @@ session_start();
             </div>
         </section>
         <section id="secao2">
-            <div class=" pc imgSobre" data-aos="fade" data-aos-duration="1000" data-aos-delay="200">
+            <div class=" pc imgSobre">
                 <div class="sobre">
                     <h1>Sobre:</h1>
                     <p>Bem-vindo ao História na Web! Aqui, você terá acesso a uma vasta gama de recursos de qualidade sobre os mais variados momentos da história, que contribuirão para o seu aprendizado.</p>
@@ -311,7 +314,7 @@ session_start();
                     <p>Endereço: Av. Independência, 846 - Independência, Taubaté - SP, 12031-001</p>
                     <p>Telefone: (12) 3609-5701</p>
                     <p>E-mail: senaitaubate@sp.senai.br</p>
-                </div>
+                </div> 
             
                 <div class="equipe">
                     <h2>Equipe Desenvolvedora</h2>
