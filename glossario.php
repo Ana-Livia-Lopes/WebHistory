@@ -1,4 +1,4 @@
-<?php
+    <?php
     include 'glossarioInfos.php';
     include 'conexao.php';
     session_start();
@@ -152,6 +152,7 @@
         <!-- Seções existentes do glossário -->
         <?php
         if($_SESSION['tipo'] == 'Admin'){
+            include 'id_verify.php';
             echo "<form class='nova-secao' action='' method='POST'>
                     <h2 id='nova'>Nova seção</h2>
                     <input id='titu' name='titulo' type='text' placeholder='Título' required></input>
@@ -164,11 +165,28 @@
 
         <div class='section_nova'>
         <?php
-        if ($resultado_conteudo->num_rows > 0) {
-            while ($linha = $resultado_conteudo->fetch_assoc()) {
-            echo   "<div class='section_gloss'><h2>".$linha['titulo_conteudo']."</h2>
-                    <p>".$linha['texto_conteudo']."</p>
-                    <p id='fonte-nova'>Fonte: ".$linha['fonte_conteudo']."</p></div>";
+        if($_SESSION['tipo'] == 'Admin'){
+            if ($resultado_conteudo->num_rows > 0) {
+                while ($linha = $resultado_conteudo->fetch_assoc()) {
+                echo   "<div class='section_gloss'><h2>".$linha['titulo_conteudo']."</h2>
+                        <p>".$linha['texto_conteudo']."</p>
+                        <p id='fonte-nova'>Fonte: ".$linha['fonte_conteudo']."</p>
+                        <button>Excluir";
+    
+                        $query = "DELETE FROM conteudo WHERE id_conteudo = ?"; 
+                            $stmt = $conexao->prepare($query);
+                            $stmt->bind_param("i", $id);
+    
+                            if ($stmt->execute()) {
+                                header('Location: logout.php?exc=1');
+                            } else {
+                                echo "Erro ao excluir usuário: ".$conexao->error;
+                            }
+    
+                            $stmt->close();
+    
+                echo    "</button></div>";
+                }
             }
         }
         ?>
