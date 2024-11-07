@@ -21,7 +21,7 @@ session_start();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=sailing" />
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
@@ -52,7 +52,6 @@ session_start();
         <?php 
 
         if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
-            include './id_verify.php';
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
@@ -66,6 +65,16 @@ session_start();
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
+
+        if(isset($_GET['exc'])) {
+            echo"<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'sua conta foi excluida',
+                text: 'tente criar uma nova conta',
+            });
+            </script>";
+            }
         ?>
     </nav>
     
@@ -331,5 +340,8 @@ session_start();
             </div>
         </footer> 
     </main>
+    <a href="#" class="btn" id="scrollToTopButton"></a>
+
+    
 </body>
 </html>

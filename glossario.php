@@ -1,5 +1,6 @@
 <?php
     include 'glossarioInfos.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +44,6 @@
         <?php 
 
         if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
-            include './id_verify.php';
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
@@ -117,6 +117,11 @@
     </ul>
     </div> 
     <div class="content_gloss">
+        <?php
+        if($_SESSION['tipo'] == 'Admin'){
+            echo "<button id='add'>+ Adicionar</button>";
+        }
+        ?>
         <div class="div-pesquisa">
             <form id="form" onsubmit="pesquisa(event)">
             <i class="fa-solid fa-magnifying-glass"></i>
