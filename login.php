@@ -18,7 +18,10 @@
                     <input class="inserir" type="email" name="email" required>
 
                     <label for="senha">Senha</label>
-                    <input class="inserir" type="password" name="senha" required>
+                    <input id="senha-campo" class="inserir" type="password" name="senha" required>
+                    <div id='mostrar'>
+                        <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
+                    </div>
 
                     <?php
 
@@ -65,5 +68,15 @@
         </div>
     </div>
 </section>
+<script>
+    function mostrarSenha() {
+        var x = document.getElementById("senha-campo");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 </body>
 </html>
