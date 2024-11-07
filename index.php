@@ -51,7 +51,8 @@ session_start();
         </div>
         <?php 
 
-        if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
+        if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
+            include './id_verify.php';
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";

@@ -53,7 +53,7 @@
                         }
                     ?>
 
-                    <button id="entrar" type="submit">Entrar</button>
+                    <button id="entrar" type="submit" onclick="window.location='index.php'">Entrar</button>
                     <p class="celular">Não tem uma conta? <a href="./cadastro.php">Cadastre-se!</a></p>
                     <p><a class="voltar" href="./index.php">Voltar para o início</a></p>
                 </form>
@@ -61,7 +61,7 @@
         <div id="box-welcome">
             <h2>Não tem uma conta?</h2>
             <p>Entre com seus dados pessoais e comece sua jornada conosco</p>
-            <button id="cadastrar-button"><a href="./cadastro.php">Cadastre-se</a></button>
+            <button id="cadastrar-button" onclick="window.location='./cadastro.php'"><a href="./cadastro.php">Cadastre-se</a></button>
         </div>
     </div>
 </section>

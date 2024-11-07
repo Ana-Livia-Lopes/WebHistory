@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <label for="senha">Senha</label>
             <input class="campo-inserir" type="password" name="senha" required>
             
-            <button id="botao-cadastrar" type="submit">Cadastrar</button>
+            <button id="botao-cadastrar" type="submit" onclick="window.location='index.php'">Cadastrar</button>
             <p class="celular">Já tem uma conta? <a href="./login.php" id="entre">Entre!</a></p>
             <p><a class="voltar" href="./index.php">Voltar para o início</a></p>
         </form>
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="box-bemvindo">
         <h2>Já tem uma conta?</h2>
         <p>Para continuar sua jornada conosco, entre com suas credenciais.</p>
-        <button id="botao-entrar"><a href="./login.php">Entrar</a></button>
+        <button id="botao-entrar" onclick="window.location='login.php'"><a href="./login.php">Entrar</a></button>
     </div>
 </section>
 </body>
