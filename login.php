@@ -53,7 +53,7 @@
                         }
                     ?>
 
-                    <button id="entrar" type="submit" onclick="window.location='index.php'">Entrar</button>
+                    <button id="entrar" type="submit">Entrar</button>
                     <p class="celular">Não tem uma conta? <a href="./cadastro.php">Cadastre-se!</a></p>
                     <p><a class="voltar" href="./index.php">Voltar para o início</a></p>
                 </form>
