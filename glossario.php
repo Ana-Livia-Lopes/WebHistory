@@ -1,6 +1,31 @@
 <?php
     include 'glossarioInfos.php';
+    include 'conexao.php';
     session_start();
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $titulo = $_POST["titulo"];
+        $conteudo = $_POST["conteudo"];
+        $fonte = $_POST["fonte"];
+
+        $sql_insercao = "INSERT INTO conteudo (titulo_conteudo, texto_conteudo, fonte_conteudo) VALUES (?, ?, ?)";
+    
+        $stmt = $conexao->prepare($sql_insercao);
+    
+        $stmt->bind_param("sss", $titulo, $conteudo, $fonte);
+
+        if ($stmt->execute()) {
+            header("Location: glossario.php");
+        } else {
+            echo "Erro ao inserir conteúdo: " . $conexao->error;
+        }
+    
+        $stmt->close();
+        $conexao->close();
+    }
+
+    $sql_conteudo = "SELECT * FROM conteudo";
+    $resultado_conteudo = $conexao->query($sql_conteudo);
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +110,7 @@
 
 <main class="main-content">
     <div class="sidebar_gloss scroller">
-        <ul> 
+        <ul>
             <li><a href="#agricultura">Agricultura</a></li>
             <li><a href="#rupestre">Arte Rupestre</a></li>
             <li><a href="#cidade-estado">Cidade-estado</a></li>
@@ -117,11 +142,6 @@
     </ul>
     </div> 
     <div class="content_gloss">
-        <?php
-        if($_SESSION['tipo'] == 'Admin'){
-            echo "<button id='add'>+ Adicionar</button>";
-        }
-        ?>
         <div class="div-pesquisa">
             <form id="form" onsubmit="pesquisa(event)">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -130,6 +150,30 @@
             </form>
         </div><br>
         <!-- Seções existentes do glossário -->
+        <?php
+        if($_SESSION['tipo'] == 'Admin'){
+            echo "<form class='nova-secao' action='' method='POST'>
+                    <h2 id='nova'>Nova seção</h2>
+                    <input id='titu' name='titulo' type='text' placeholder='Título' required></input>
+                    <textarea id='cont' name='conteudo' type='text' placeholder='Conteúdo' required></textarea>
+                    <input id='font' name='fonte' type='text' placeholder='Fonte' required></input>
+                    <button type='submit' id='add'>Adicionar</button>
+                </form>";
+        }
+        ?>
+
+        <div class='section_nova'>
+        <?php
+        if ($resultado_conteudo->num_rows > 0) {
+            while ($linha = $resultado_conteudo->fetch_assoc()) {
+            echo   "<div class='section_gloss'><h2>".$linha['titulo_conteudo']."</h2>
+                    <p>".$linha['texto_conteudo']."</p>
+                    <p id='fonte-nova'>Fonte: ".$linha['fonte_conteudo']."</p></div>";
+            }
+        }
+        ?>
+        </div>
+
         <div id="agricultura" class="section_gloss">
             <h2><?= $glossario['agricultura']['title'] ?></h2>
             <p class="p1"><?= $glossario['agricultura']['text'] ?></p>

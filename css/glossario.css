@@ -246,6 +246,7 @@ body {
     background-color: #063512;
     border-radius: 4px;
     margin-top: 15px;
+    margin-left: 20px;
     position: fixed;
     height: 130vh;
 }
@@ -293,23 +294,68 @@ body {
     background: #555;
   }
 
+.nova-secao{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 1150px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+#nova{
+    font-size: 2em;
+    color: #2c3e50;
+}
+
+#titu{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#cont{
+    margin-bottom: 20px;
+    height: 100px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#font{
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 16px;
+
+}
+
 #add{
-    border-radius: 6;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    width: 110px;
-    background-color: #3a7940;
-    transition: all 0.3s;
+    border-radius: 6px 6px 6px 6px;
+    width: 100px;
+    background-color: #2d6933;
+    transition: all 0.4s;
 }
 
 #add:hover{
-    background-color: rgb(88, 169, 96);
+    background-color: #33933c;
 }
-
 
 .content_gloss {
     padding: 40px;
     margin-left: 230px;
+}
+
+.section_nova{
+    margin-bottom: 50px;
+    background-color: #ffffff00;
+    border-radius: 10px;
+    max-width: 1150px;
+}
+
+#fonte-nova{
+    font-style: italic;
 }
 
 .section_gloss {

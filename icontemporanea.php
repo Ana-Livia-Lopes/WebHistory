@@ -39,34 +39,35 @@
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-cog"></i>
-                        <span class="item-nav">Admin</span>
-                    </a>
-                </li>
             </ul>
         </div>
-        <?php session_start();
+        <?php 
+        session_start();
 
-        if ($_SESSION['nome'] != '') {
+        if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
             echo "<div class='usuario'>";
-            echo    "<a href='perfil.php'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
+            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
-            if ($_SESSION['nome'] != '') {
-                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
-            }
+            echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
             echo    "</div>";
             echo "</div>";
-        }
-
-        if ($_SESSION['nome'] == '') {
+        } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
+
+        if(isset($_GET['exc'])) {
+            echo"<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'sua conta foi excluida',
+                text: 'tente criar uma nova conta',
+            });
+            </script>";
+            }
         ?>
     </nav>
     <main class="main-content">
@@ -77,6 +78,7 @@
                 <p>
                     <h2>Idade Contemporânea</h2><hr id="hr5">
                     <h3>Revolução Industrial</h3>
+                    <img class="img-conteudo" src="img/rev-industrial.jpeg" width="400" height="300" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                     <ul>
                         <li>
                             <h4>Características</h4>
@@ -89,6 +91,7 @@
                     </ul>
     
                     <h3>Revolução Francesa</h3>
+                    <img class="img-conteudo" src="img/rev-francesa.jfif" width="400" height="300" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                     <ul>
                         <li>
                             <h4>Causas</h4>
@@ -101,6 +104,7 @@
                     </ul>
     
                     <h3>Guerras Mundiais</h3>
+                    <img class="img-conteudo" src="img/guerras-mundiais.jpeg" width="400" height="300" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                     <ul>
                         <li>
                             <h4>Primeira Guerra Mundial</h4>
@@ -113,6 +117,7 @@
                     </ul>
     
                     <h3>Guerra Fria</h3>
+                    <img class="img-conteudo" src="img/guerra-fria.jpeg" width="400" height="300" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                     <ul>
                         <li>
                             <h4>Corrida Armamentista</h4>
@@ -125,6 +130,7 @@
                     </ul>
     
                     <h3>Movimentos de Direitos Civis</h3>
+                    <img class="img-conteudo" src="img/movimentos-direitos-civis.jpg" width="400" height="300" style="float: right; margin-left: 15px; margin-bottom: 2px;">
                     <ul>
                         <li>
                             <h4>Estados Unidos</h4>
@@ -137,6 +143,7 @@
                     </ul>
     
                     <h3>Globalização</h3>
+                    <img class="img-conteudo" src="img/globalizacao.jpeg" width="400" height="300" style="float: left; margin-right: 15px; margin-bottom: 2px;">
                     <ul>
                         <li>
                             <h4>Avanços Tecnológicos</h4>

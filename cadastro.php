@@ -49,7 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input class="campo-inserir" type="email" name="email" required>
             
             <label for="senha">Senha</label>
-            <input class="campo-inserir" type="password" name="senha" required>
+            <input class="campo-inserir" id="senha-campo" type="password" name="senha" required>
+            <div id='mostrar'>
+                <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
+            </div>
             
             <button id="botao-cadastrar" type="submit" onclick="window.location='index.php'">Cadastrar</button>
             <p class="celular">Já tem uma conta? <a href="./login.php" id="entre">Entre!</a></p>
@@ -62,6 +65,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <button id="botao-entrar" onclick="window.location='login.php'"><a href="./login.php">Entrar</a></button>
     </div>
 </section>
+<script>
+    function mostrarSenha() {
+        var x = document.getElementById("senha-campo");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 </body>
 </html>
 

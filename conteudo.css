@@ -308,6 +308,14 @@ iframe {
     color: black;
 }
 
+#sug_video a {
+    color: #438e4b;
+}
+
+#sug_video a:hover {
+    color: #2d5a32;
+}
+
 .video-fr:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.389);
@@ -366,6 +374,8 @@ iframe {
 a {
     text-decoration: none;
 }
+
+
 /*quiz*/
 .question {
     margin-bottom: 15px;
@@ -621,6 +631,10 @@ footer ul li {
     .sidebar{
         position: fixed;
     }
+    .img-conteudo{
+        width: 200px;
+        height: 150px;
+    }
 }
 @media (min-width: 769px){
 #celular{
@@ -631,4 +645,5 @@ footer ul li {
     display: none;
 }
 }
+
 /* fim responsividade */
