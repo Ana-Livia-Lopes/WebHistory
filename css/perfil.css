@@ -40,6 +40,7 @@
     background-color: rgb(49, 49, 49);
     padding: .4rem .8rem;
     transition: all 0.5s ease;
+    z-index: 1;
 }
 
 .sidebar.active ~.main-content{
@@ -336,7 +337,13 @@
     padding-left: 10px;
     font-size: 18px;
     margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#aviso{
     margin-bottom: 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.516);
 }
 
 #campo-email{
