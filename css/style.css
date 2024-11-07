@@ -6,6 +6,9 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+html {
+    background-color: rgb(207, 207, 207);
+}
 body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -244,6 +247,8 @@ body {
     no-repeat center center;
     background-size: cover;
     display: flow-root;
+    border-radius: 20px;
+    margin: 10px;
 }
 
 
@@ -256,7 +261,7 @@ body {
     0.9px -0.9px 0 black,
     -0.9px 0.9px 0 black,
     0.9px 0.9px 0 black;
-    margin-top: 60px;
+    margin-top: 120px;
     display: flex;          
     justify-content: center;
     align-items: center;   
@@ -275,7 +280,7 @@ body {
   font-weight:500;
   font-size:32px;
   padding-top:2em;
-  height:100vh;
+  height:83vh;
   overflow:hidden;
   
 }
@@ -330,7 +335,7 @@ body {
 
 /* sobre */
 #secao2{
-    margin-top: 150px;
+    margin-top: 90px;
 }
 .imgSobre {
     background: url('../img/sobre.png') no-repeat center center;

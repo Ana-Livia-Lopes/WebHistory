@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="sidebar">
+<nav class="sidebar">
         <div>
             <div class="topo">
                 <div class="logo">
@@ -42,6 +42,7 @@
             </ul>
         </div>
         <?php 
+        session_start();
 
         if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
             echo "<div class='usuario'>";
@@ -57,6 +58,16 @@
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
+
+        if(isset($_GET['exc'])) {
+            echo"<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'sua conta foi excluida',
+                text: 'tente criar uma nova conta',
+            });
+            </script>";
+            }
         ?>
     </nav>
     <main class="main-content">
@@ -232,11 +243,11 @@
 
                 <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/eDDGqU9OgAc?si=fSWmIs_f_le015OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/QGvwWyP1S4o?si=3-2WSnvP6HBp8Ob2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/QGvwWyP1S4o?si=3-2WSnvP6HBp8Ob2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/kCKuP2OqfEs?si=3_qhuwn4S8n-_uD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/kCKuP2OqfEs?si=3_qhuwn4S8n-_uD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/4hEDjSdszSU?si=UE8jkJd1Ov_cwsbj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="video-fr" width="560" height="315" src="https://www.youtube.com/embed/4hEDjSdszSU?si=UE8jkJd1Ov_cwsbj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
                 <h4 id="sug_video">Veja mais:<a href="https://www.youtube.com/watch?v=CXtre0g9YUI" target="_blank"> Movimento pelos Direitos Civis nos EUA - Profa Anelize</a></h4>
         </section>
