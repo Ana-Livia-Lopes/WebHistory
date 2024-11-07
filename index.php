@@ -67,15 +67,14 @@ session_start();
         }
 
         if(isset($_GET['exc'])) {
-            echo("<script>
+            echo"<script>
             Swal.fire({
                 icon: 'error',
                 title: 'sua conta foi excluida',
                 text: 'tente criar uma nova conta',
             });
-        }
-        </script>");
-        }
+            </script>";
+            }
         ?>
     </nav>
     
