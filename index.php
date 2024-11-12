@@ -25,7 +25,7 @@ session_start();
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
-<body>
+<>
 <nav class="sidebar">
         <div>
             <div class="topo">
@@ -42,10 +42,19 @@ session_start();
                     </a>
                 </li>
                 <li>
-                    <a href="glossario.php">
-                        <i class="bx bx-book"></i>
-                        <span class="item-nav">Glossário</span>
-                    </a>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        echo "<a href='glossario.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    } else {
+                        echo "<a href='glossario.php'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    }
+                    ?>
                 </li>
                 <li>
                     <a id="conteudo-select">
@@ -94,18 +103,40 @@ session_start();
         }
         
 
-        if(isset($_GET['exc'])) {
-            echo"<script>
-            Swal.fire({
-                icon: 'error',
-                title: 'sua conta foi excluida',
-                text: 'tente criar uma nova conta',
-            });
-            </script>";
-            }
         ?>
     </nav>
-    
+    <?php
+    if(isset($_GET['exc'])) {
+        echo"<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'sua conta foi excluida',
+            text: 'tente criar uma nova conta',
+            confirmButtonText: 'OK'
+            }).then((result) => {
+    if (result.isConfirmed) {
+        window.location.href = 'index.php';
+    }
+});
+</script>";
+        }
+
+        if(isset($_GET['cad'])) {
+            echo"<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'sua conta foi adcionada',
+                text: 'entre com a conta criada',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+    if (result.isConfirmed) {
+        window.location.href = 'index.php';
+    }
+});
+</script>";
+            }
+
+    ?>
     <main class="main-content">
         
         <section id="secao1">
