@@ -2,20 +2,23 @@
     include 'glossarioInfos.php';
     include 'conexao.php';
     session_start();
+    
 
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['titulo'], $_POST['conteudo'], $_POST['fonte'])) {
         $titulo = $_POST["titulo"];
         $conteudo = $_POST["conteudo"];
+        $imagem = $_POST["imagem"];
         $fonte = $_POST["fonte"];
+        $ident = $_POST["ident"];
 
-        $sql_insercao = "INSERT INTO conteudo (titulo_conteudo, texto_conteudo, fonte_conteudo) VALUES (?, ?, ?)";
+        $sql_insercao = "INSERT INTO conteudo (titulo_conteudo, texto_conteudo, imagem_conteudo, fonte_conteudo, ident_conteudo) VALUES (?, ?, ?, ?, ?)";
     
         $stmt = $conexao->prepare($sql_insercao);
     
-        $stmt->bind_param("sss", $titulo, $conteudo, $fonte);
+        $stmt->bind_param("sssss", $titulo, $conteudo, $imagem, $fonte, $ident);
 
         if ($stmt->execute()) {
-            header("Location: glossario.php");
+            header("Location: glossario.php?id=". $_SESSION['id'] ."");
         } else {
             echo "Erro ao inserir conteúdo: " . $conexao->error;
         }
@@ -39,7 +42,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="./main.js" defer></script>
     <link rel="stylesheet" href="css/glossario.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -149,6 +152,11 @@
 <main class="main-content">
     <div class="sidebar_gloss scroller">
         <ul>
+            <?php
+            while ($linha = $resultado_conteudo->fetch_assoc()){
+                echo "<li><a href='".$linha['ident_conteudo']."'>".$linha['titulo_conteudo']."</a></li>";
+            }
+            ?>
             <li><a href="#agricultura">Agricultura</a></li>
             <li><a href="#rupestre">Arte Rupestre</a></li>
             <li><a href="#cidade-estado">Cidade-estado</a></li>
@@ -184,7 +192,7 @@
             <form id="form" onsubmit="pesquisa(event)">
             <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" id="input" placeholder="Buscar..." required>
-                <button type="submit">Buscar</button>
+                <button id="busca" type="submit">Buscar</button>
             </form>
         </div><br>
         <!-- Seções existentes do glossário -->
@@ -195,39 +203,56 @@
                     <h2 id='nova'>Nova seção</h2>
                     <input id='titu' name='titulo' type='text' placeholder='Título' required></input>
                     <textarea id='cont' name='conteudo' type='text' placeholder='Conteúdo' required></textarea>
+                    <input id='imag' name='imagem' type='url' placeholder='Link da imagem'></input>
                     <input id='font' name='fonte' type='text' placeholder='Fonte' required></input>
+                    <input id='ident' name='ident' type='text' placeholder='Identificação' required></input>
                     <button type='submit' id='add'>Adicionar</button>
                 </form>";
         }
         ?>
 
         <div class='section_nova'>
-        <?php
-        if($_SESSION['tipo'] == 'Admin'){
-            if ($resultado_conteudo->num_rows > 0) {
-                while ($linha = $resultado_conteudo->fetch_assoc()) {
-                echo   "<div class='section_gloss'><h2>".$linha['titulo_conteudo']."</h2>
-                        <p>".$linha['texto_conteudo']."</p>
-                        <p id='fonte-nova'>Fonte: ".$linha['fonte_conteudo']."</p>
-                        <button>Excluir";
-    
-                        $query = "DELETE FROM conteudo WHERE id_conteudo = ?"; 
-                            $stmt = $conexao->prepare($query);
-                            $stmt->bind_param("i", $id);
-    
-                            if ($stmt->execute()) {
-                                header('Location: logout.php?exc=1');
-                            } else {
-                                echo "Erro ao excluir usuário: ".$conexao->error;
-                            }
-    
-                            $stmt->close();
-    
-                echo    "</button></div>";
+            <?php
+                if ($resultado_conteudo->num_rows > 0) {
+                    while ($linha = $resultado_conteudo->fetch_assoc()) {
+                        echo "<form action='' method='POST' class='section_gloss'>
+                                <h2>".$linha['titulo_conteudo']."</h2>
+                                <p id='txt-nova'>".$linha['texto_conteudo']."</p>
+                                <img id='img-nova' src=".$linha['imagem_conteudo']."></img>
+                                <p id='fonte-nova'>Fonte: ".$linha['fonte_conteudo']."</p>";
+                        
+                        if ($_SESSION['tipo'] == 'Admin') {
+                            echo "<input type='hidden' name='action' value='delete'>
+                                <input type='hidden' name='id_conteudo' value='".$linha['id_conteudo']."'>
+                                <button id='exc-secao' type='submit'>Excluir</button>";
+                        }
+                        echo "</form>";
+                    }
                 }
-            }
-        }
-        ?>
+
+                if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['action']) && $_POST['action'] === 'delete') {
+                    $id = $_POST['id_conteudo'];
+                    $query = "DELETE FROM conteudo WHERE id_conteudo = ?"; 
+                    $stmt = $conexao->prepare($query);
+                    $stmt->bind_param("i", $id);
+
+                    if ($stmt->execute()) {
+                        echo "<script>
+                        Swal.fire({
+                            title: 'Seção excluída com sucesso!',
+                            icon: 'success',
+                            confirmButtonColor: '#438e4b',
+                        }).then(function() {
+                            location.href = 'glossario.php?id=".$_SESSION['id']."';
+                        });
+                        </script>";
+                    } else {
+                        echo "Erro ao excluir seção: ".$conexao->error;
+                    }
+
+                    $stmt->close();
+                }
+            ?>
         </div>
 
         <div id="agricultura" class="section_gloss">

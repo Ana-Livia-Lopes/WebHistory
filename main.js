@@ -66,3 +66,5 @@ window.addEventListener('scroll', () => {
         scrollToTopButton.classList.remove('show'); // Esconde o botão
     }
 });
+
+//Organizador alfabético dos termos no glossário
