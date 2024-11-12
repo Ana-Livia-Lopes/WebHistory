@@ -66,11 +66,12 @@
         </script>
         <?php 
 
+    $imagem = isset($_SESSION['imagem']) ? $_SESSION['imagem'] : 'default.jpg';
         if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
             ?>
-            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
+            <img id='user-def-nav' src='img/<?php echo $imagem; ?>' alt=''></a>
             <?php 
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
@@ -83,6 +84,17 @@
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
+        
+
+        if(isset($_GET['exc'])) {
+            echo"<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'sua conta foi excluida',
+                text: 'tente criar uma nova conta',
+            });
+            </script>";
+            }
         ?>
     </nav>
     <main class="main-content">
