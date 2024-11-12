@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </li>
                 <li>
                     <a id="conteudo-select">
-                        <i class="bx bx-hourglass" type='solid'></i>
+                        <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
                         <select id="select-nav" class="item-nav" onchange="changePag()">
                             <option value="">Períodos</option>
                             <option value="hprimitiva.php">História Primitiva</option>

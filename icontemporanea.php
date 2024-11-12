@@ -39,14 +39,39 @@
                         <span class="item-nav">Glossário</span>
                     </a>
                 </li>
+                <li>
+                    <a id="conteudo-select">
+                        <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
+                        <select id="select-nav" class="item-nav" onchange="changePag()">
+                            <option value="">Períodos</option>
+                            <option value="hprimitiva.php">História Primitiva</option>
+                            <option value="hantiga.php">História Antiga</option>
+                            <option value="imedia.php">Idade Média</option>
+                            <option value="imoderna.php">Idade Moderna</option>
+                            <option value="icontemporanea.php">Idade Contemporânea</option>
+                        </select>
+                    </a>
+                </li>
             </ul>
         </div>
-        <?php 
-        session_start();
+        <script>       
+            function changePag() {
+                const dropdown = document.getElementById("select-nav");
+                const pagina = dropdown.value;
 
-        if (isset($_SESSION['id']) && $_SESSION['id'] != '') {
+                if (pagina) { 
+                    window.location.href = pagina; 
+                }
+            }
+        </script>
+        <?php 
+
+        if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
-            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'><img id='user-def-nav' src='img/user_default.jpg' alt=''></a>";
+            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
+            ?>
+            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
+            <?php 
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
@@ -58,16 +83,6 @@
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
-
-        if(isset($_GET['exc'])) {
-            echo"<script>
-            Swal.fire({
-                icon: 'error',
-                title: 'sua conta foi excluida',
-                text: 'tente criar uma nova conta',
-            });
-            </script>";
-            }
         ?>
     </nav>
     <main class="main-content">
