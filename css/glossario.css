@@ -342,22 +342,28 @@ body {
     font-size: 16px;
 }
 
-#font{
+#font, #imag, #ident{
     margin-bottom: 20px;
     padding: 5px;
     font-size: 16px;
-
 }
 
 #add{
-    border-radius: 6px 6px 6px 6px;
+    border-radius: 6px;
     width: 100px;
-    background-color: #2d6933;
+    background-color: #438e4b;
+    border: none;
+    height:40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #E8F0FE;
     transition: all 0.4s;
 }
 
 #add:hover{
-    background-color: #33933c;
+    background-color: #51a95a;
 }
 
 .content_gloss {
@@ -372,8 +378,27 @@ body {
     max-width: 1150px;
 }
 
+#txt-nova{
+    margin-bottom: 10px;
+}
+
 #fonte-nova{
     font-style: italic;
+}
+
+.section_nova button{
+    margin-top: 15px;
+    background-color: #ff3232;
+    border-radius: 6px;
+    width: 80px;
+    border: none;
+    height:40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #E8F0FE;
+    transition: all 0.4s;
 }
 
 .section_gloss {
@@ -460,7 +485,7 @@ body {
 
   }
   
-button{
+#busca{
     border:none;
     float:left;
     height:40px;
