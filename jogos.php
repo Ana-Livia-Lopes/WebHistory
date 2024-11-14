@@ -5,8 +5,89 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <script src="./main.js" defer></script>
+        <link rel="stylesheet" href="css/jogos.css">
     </head>
     <body>
+    <nav class="sidebar">
+        <div>
+            <div class="topo">
+                <div class="logo">
+                    <img id="logo-nav" src="img/HistWeb.png" alt="">
+                </div>
+                <i class="bx bx-menu" id="but-menu"></i>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.php">
+                        <i class="bx bx-home-alt"></i>
+                        <span class="item-nav">Início</span>
+                    </a>
+                </li>
+                <li>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        echo "<a href='glossario.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    } else {
+                        echo "<a href='glossario.php'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    }
+                    ?>
+                </li>
+                <li>
+                    <a id="conteudo-select">
+                        <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
+                        <select id="select-nav" class="item-nav" onchange="changePag()">
+                            <option value="">Períodos</option>
+                            <option value="hprimitiva.php">História Primitiva</option>
+                            <option value="hantiga.php">História Antiga</option>
+                            <option value="imedia.php">Idade Média</option>
+                            <option value="imoderna.php">Idade Moderna</option>
+                            <option value="icontemporanea.php">Idade Contemporânea</option>
+                        </select>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <script>       
+            function changePag() {
+                const dropdown = document.getElementById("select-nav");
+                const pagina = dropdown.value;
+
+                if (pagina) { 
+                    window.location.href = pagina; 
+                }
+            }
+        </script>
+        <?php 
+
+    $imagem = isset($_SESSION['imagem']) ? $_SESSION['imagem'] : 'default.jpg';
+        if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
+            echo "<div class='usuario'>";
+            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
+            ?>
+            <img id='user-def-nav' src='img/<?php echo $imagem; ?>' alt=''></a>
+            <?php 
+            echo    "<div class='subclass-usuario'>";
+            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
+            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
+            echo    "</div>";
+            echo    "<div id='botao-acoes'>";
+            echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
+            echo    "</div>";
+            echo "</div>";
+        } else {
+            echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
+        }
+        
+
+        ?>
+    </nav>
+    <main class="main-content"></main>
         <h1>JOGOS</h1>
         <form>
             <div class="btn" onclick="Conteudo('linha')" ><div id="texto">quiz 1</div></div>
@@ -95,117 +176,52 @@
               </div>
             </section>
         </div>
+        <footer>
+            <div id="footer">
+        
+                <div class="contato">
+                    <h2>Informações de Contato</h2>
+                    <p><strong>SESI Caçapava:</strong></p>
+                    <p>Endereço: Av. Monsenhor Theodomiro Lobo, 100, Caçapava - SP, 12285-050</p>
+                    <p>Telefone: (12) 3653-1943</p>
+                    <p>E-mail: contato@sesi-cacapava.com.br</p>
+            
+                    <p><strong>SENAI Taubaté:</strong></p>
+                    <p>Endereço: Av. Independência, 846 - Independência, Taubaté - SP, 12031-001</p>
+                    <p>Telefone: (12) 3609-5701</p>
+                    <p>E-mail: senaitaubate@sp.senai.br</p>
+                </div> 
+            
+                <div class="equipe">
+                    <h2>Equipe Desenvolvedora</h2>
+                    <ul>
+                        <p>Ana Lívia dos Santos Lopes</p>
+                        <li><a href="https://linktr.ee/analivialopess" target="_blank">Link para contato</a></li>
+            
+                        <p>Gabriel Reis de Brito</p>
+                        <li><a href="https://linktr.ee/gabrielreiss" target="_blank">Link para contato</a></li>
+            
+                        <p>Isadora Gomes da Silva</p>
+                        <li><a href="https://linktr.ee/isadoragomess" target="_blank">Link para contato</a></li>
+            
+                        <p>Lucas Randal Abreu Balderrama</p>
+                        <li><a href="https://linktr.ee/lucasbalderrama" target="_blank">Link para contato</a></li>
+                    </ul>
+                </div>
+            
+                <div class="links-adicionais">
+                    <h2>Links Adicionais</h2>
+                    <ul>
+                        <li><a href="termos.php" target="_blank">Termos de Uso</a></li>
+                        <li><a href="privacidade.php" target="_blank">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer> 
+    </main>
 </body>
 </html>
 
-
-
-
-
-
-<style>
-    body{
-        align-items: center;
-        justify-content: center;
-        display: grid;
-    }
-#linha, #linha2, #linha3, #linha4, #linha5, #linha6 {
-    display: none;
-}
-h1{
-    text-align: center;
-}
-.btn{
-    margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  width: 800px;
-  height: 100px;  
-  background-color: transparent;
-  border: 3px solid #000;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 0 #000;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  position: relative;
-  overflow: hidden;
-  #texto{
-    position: relative;
-    z-index:3;
-    font-size: 30px;
-  }
-  &:after {
-    transition: all 1s ease;
-    content: '';
-    left: -100px;
-    top: 0;
-    height: 100%;
-    width: 0;
-    transform: skew(-60deg);
-    position: absolute;
-    background: #000;
-  }
-  &:hover{
-    color: #fff;
-    &:after {
-      width: 200%;
-    }
-  }
-}
-/* memória */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap");
-
-
-.memory-game {
-  padding-left: 20px;
-  position: relative;
-  display: flex;
-  width: 650px;
-  max-width: 100% !important;
-  height: 450px;
-  margin: 60px;
-  flex-wrap: wrap;
-  perspective: 1000px;
-}
-.memory-card {
-  width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
-  margin: 5px;
-  position: relative;
-  box-shadow: 2px 2px 4px 2px rgb(0 0 0 / 30%);
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-}
-
-.front-face,
-.back-face {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  border: #333 8px;
-  background: #341f44;
-  backface-visibility: hidden;
-  list-style: none;
-  object-fit: cover ;
-}
-.back-face{
-    background-color: white;
-}
-
-
-.memory-card.flip {
-  transform: rotateY(180deg);
-}
-
-.front-face {
-  transform: rotateY(180deg);
-}
-
-</style>
 
 
 
