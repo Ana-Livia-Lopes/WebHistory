@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("sss", $var_nome, $var_email, $senha_hashed);
     
     if ($stmt->execute()) {
-        header("Location: index.php");
+        header("Location: index.php?cad=1");
     } else {
         echo "Erro ao cadastrar usuário: " . $conexao->error;
     }

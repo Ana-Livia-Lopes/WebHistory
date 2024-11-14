@@ -25,7 +25,7 @@ session_start();
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
-<body>
+<>
 <nav class="sidebar">
         <div>
             <div class="topo">
@@ -42,20 +42,53 @@ session_start();
                     </a>
                 </li>
                 <li>
-                    <a href="glossario.php">
-                        <i class="bx bx-book"></i>
-                        <span class="item-nav">Glossário</span>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        echo "<a href='glossario.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    } else {
+                        echo "<a href='glossario.php'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    }
+                    ?>
+                </li>
+                <li>
+                    <a id="conteudo-select">
+                        <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
+                        <select id="select-nav" class="item-nav" onchange="changePag()">
+                            <option value="">Períodos</option>
+                            <option value="hprimitiva.php">História Primitiva</option>
+                            <option value="hantiga.php">História Antiga</option>
+                            <option value="imedia.php">Idade Média</option>
+                            <option value="imoderna.php">Idade Moderna</option>
+                            <option value="icontemporanea.php">Idade Contemporânea</option>
+                        </select>
                     </a>
                 </li>
             </ul>
         </div>
+        <script>       
+            function changePag() {
+                const dropdown = document.getElementById("select-nav");
+                const pagina = dropdown.value;
+
+                if (pagina) { 
+                    window.location.href = pagina; 
+                }
+            }
+        </script>
         <?php 
-        
-       if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
+
+    $imagem = isset($_SESSION['imagem']) ? $_SESSION['imagem'] : 'default.jpg';
+        if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
             ?>
-            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
+            <img id='user-def-nav' src='img/<?php echo $imagem; ?>' alt=''></a>
             <?php 
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
@@ -68,19 +101,42 @@ session_start();
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
+        
 
-        if(isset($_GET['exc'])) {
-            echo"<script>
-            Swal.fire({
-                icon: 'error',
-                title: 'sua conta foi excluida',
-                text: 'tente criar uma nova conta',
-            });
-            </script>";
-            }
         ?>
     </nav>
-    
+    <?php
+    if(isset($_GET['exc'])) {
+        echo"<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'sua conta foi excluida',
+            text: 'tente criar uma nova conta',
+            confirmButtonText: 'OK'
+            }).then((result) => {
+    if (result.isConfirmed) {
+        window.location.href = 'index.php';
+    }
+});
+</script>";
+        }
+
+        if(isset($_GET['cad'])) {
+            echo"<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'sua conta foi adcionada',
+                text: 'entre com a conta criada',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+    if (result.isConfirmed) {
+        window.location.href = 'index.php';
+    }
+});
+</script>";
+            }
+
+    ?>
     <main class="main-content">
         
         <section id="secao1">

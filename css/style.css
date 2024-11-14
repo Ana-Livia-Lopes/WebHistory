@@ -151,7 +151,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.sidebar ul li a:hover{
+.sidebar ul li a:hover:not(#conteudo-select){
     background-color: rgba(255, 255, 255, 0.21);
 }
 
@@ -240,10 +240,28 @@ body {
     display: flex;
     align-items: center;
 }
+#select-nav {
+    background-color: rgb(49, 49, 49); 
+    color: rgb(202, 202, 202); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: transparent; 
+    font-weight: 500;
+    padding: 4px;
+    max-width: 176px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: auto;
+}
+#conteudo-select i {
+    margin-right: -7px;
+}
+#select-nav option{
+    font-weight: 600;
+}
 /* fim da navbar */
 /* seção 1 */
 #secao1{
-    background: url('../img/fundo.jpg')
+    background: url('../img/fundo-i.jpg')
     no-repeat center center;
     background-size: cover;
     display: flow-root;
@@ -253,14 +271,9 @@ body {
 
 
 #secao1 h1{
-    color: white;
+    color: rgb(253, 250, 238);
     font-size: 100px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    text-shadow: 2px 4px 5px black,
-    -0.9px -0.9px 0 black,  
-    0.9px -0.9px 0 black,
-    -0.9px 0.9px 0 black,
-    0.9px 0.9px 0 black;
     margin-top: 120px;
     display: flex;          
     justify-content: center;
@@ -276,24 +289,19 @@ body {
 
 #secao1 {
   text-align:center;
-  color:#ffffff;
+  color: rgb(253, 250, 238);
   font-weight:500;
-  font-size:32px;
+  font-size:29px;
   padding-top:2em;
   height:83vh;
   overflow:hidden;
-  
 }
 
 .div {
+    font-family: 'Montserrat', sans-serif;
     display:inline-block;
     overflow:hidden;
     white-space:nowrap;
-    text-shadow: 
-    -1.5px -1.5px 0 black,  
-    1.5px -1.5px 0 black,
-    -1.5px 1.5px 0 black,
-    1.5px 1.5px 0 black;
 }
 
 .div:first-of-type, #secao1 h1:first-of-type{    
@@ -307,6 +315,7 @@ body {
 
 .div:last-of-type span {
     animation: slidein 8s forwards;
+    font-family: 'Montserrat', sans-serif;
 }
 
 @keyframes showup {
@@ -325,9 +334,9 @@ body {
 @keyframes reveal {
     0% {opacity:0;width:0px;}
     20% {opacity:1;width:0px;}
-    30% {width:337px;}
+    30% {width:348px;}
 
-    100% {opacity:1;width:337px;}
+    100% {opacity:1;width:348px;}
 }
 
 /* fim seção 1 */
@@ -363,6 +372,7 @@ body {
 }
 
 .sobre h1 {
+    color:rgb(47, 22, 22);
     font-size: 65px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
