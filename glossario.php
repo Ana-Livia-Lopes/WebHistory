@@ -9,26 +9,26 @@
         $conteudo = $_POST["conteudo"];
         $imagem = $_POST["imagem"];
         $fonte = $_POST["fonte"];
-        $ident = $_POST["ident"];
-
+        $ident = $_POST["titulo"];
+    
         $sql_insercao = "INSERT INTO conteudo (titulo_conteudo, texto_conteudo, imagem_conteudo, fonte_conteudo, ident_conteudo) VALUES (?, ?, ?, ?, ?)";
-    
+        
         $stmt = $conexao->prepare($sql_insercao);
-    
         $stmt->bind_param("sssss", $titulo, $conteudo, $imagem, $fonte, $ident);
-
+    
         if ($stmt->execute()) {
             header("Location: glossario.php?id=". $_SESSION['id'] ."");
+            exit;
         } else {
             echo "Erro ao inserir conteúdo: " . $conexao->error;
         }
     
         $stmt->close();
-        $conexao->close();
     }
-
+    
     $sql_conteudo = "SELECT * FROM conteudo";
-    $resultado_conteudo = $conexao->query($sql_conteudo);
+    $resultado_conteudo_sidebar = $conexao->query($sql_conteudo);
+    $resultado_conteudo_pagina = $conexao->query($sql_conteudo);
 ?>
 
 <!DOCTYPE html>
@@ -153,8 +153,8 @@
     <div class="sidebar_gloss scroller">
         <ul>
             <?php
-            while ($linha = $resultado_conteudo->fetch_assoc()){
-                echo "<li><a href='".$linha['ident_conteudo']."'>".$linha['titulo_conteudo']."</a></li>";
+            while ($linha = $resultado_conteudo_sidebar->fetch_assoc()){
+                echo "<li><a href='#".$linha['ident_conteudo']."'>".$linha['titulo_conteudo']."</a></li>";
             }
             ?>
             <li><a href="#agricultura">Agricultura</a></li>
@@ -197,15 +197,23 @@
         </div><br>
         <!-- Seções existentes do glossário -->
         <?php
-        if($_SESSION['tipo'] == 'Admin'){
+        if(isset($_SESSION['tipo']) && $_SESSION['tipo'] === 'Admin'){
             include 'id_verify.php';
             echo "<form class='nova-secao' action='' method='POST'>
                     <h2 id='nova'>Nova seção</h2>
-                    <input id='titu' name='titulo' type='text' placeholder='Título' required></input>
-                    <textarea id='cont' name='conteudo' type='text' placeholder='Conteúdo' required></textarea>
-                    <input id='imag' name='imagem' type='url' placeholder='Link da imagem'></input>
-                    <input id='font' name='fonte' type='text' placeholder='Fonte' required></input>
-                    <input id='ident' name='ident' type='text' placeholder='Identificação' required></input>
+
+                    <label for='titulo'>Título</label>
+                    <input id='titu' name='titulo' type='text' required></input>
+
+                    <label for='conteudo'>Texto</label>
+                    <textarea id='cont' name='conteudo' type='text' required></textarea>
+
+                    <label for='imagem'>Imagem (URL)</label>
+                    <input id='imag' name='imagem' type='url'></input>
+
+                    <label for='fonte'>Fonte</label>
+                    <input id='font' name='fonte' type='text' required></input>
+
                     <button type='submit' id='add'>Adicionar</button>
                 </form>";
         }
@@ -213,12 +221,12 @@
 
         <div class='section_nova'>
             <?php
-                if ($resultado_conteudo->num_rows > 0) {
-                    while ($linha = $resultado_conteudo->fetch_assoc()) {
-                        echo "<form action='' method='POST' class='section_gloss'>
+                if ($resultado_conteudo_pagina->num_rows > 0) {
+                    while ($linha = $resultado_conteudo_pagina->fetch_assoc()) {
+                        echo "<form action='' id='".$linha['ident_conteudo']."' method='POST' class='section_gloss'>
                                 <h2>".$linha['titulo_conteudo']."</h2>
                                 <p id='txt-nova'>".$linha['texto_conteudo']."</p>
-                                <img id='img-nova' src=".$linha['imagem_conteudo']."></img>
+                                <img id='img-nova' src='".$linha['imagem_conteudo']."'></img>
                                 <p id='fonte-nova'>Fonte: ".$linha['fonte_conteudo']."</p>";
                         
                         if ($_SESSION['tipo'] == 'Admin') {
