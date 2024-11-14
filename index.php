@@ -110,8 +110,8 @@ session_start();
         echo"<script>
         Swal.fire({
             icon: 'error',
-            title: 'sua conta foi excluida',
-            text: 'tente criar uma nova conta',
+            title: 'Sua conta foi excluida',
+            text: 'Tente criar uma nova conta',
             confirmButtonText: 'OK'
             }).then((result) => {
     if (result.isConfirmed) {
@@ -125,8 +125,8 @@ session_start();
             echo"<script>
             Swal.fire({
                 icon: 'success',
-                title: 'sua conta foi adcionada',
-                text: 'entre com a conta criada',
+                title: 'Sua conta foi adicionada',
+                text: 'Entre com a conta criada',
                 confirmButtonText: 'OK'
             }).then((result) => {
     if (result.isConfirmed) {
