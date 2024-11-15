@@ -104,11 +104,14 @@
 
 
 <style>
-    body{
-        align-items: center;
-        justify-content: center;
-        display: grid;
-    }
+body{
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
+#linha6{
+  margin-bottom: 30px;
+}
 #linha, #linha2, #linha3, #linha4, #linha5, #linha6 {
     display: none;
 }
@@ -116,7 +119,7 @@ h1{
     text-align: center;
 }
 .btn{
-    margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items:center;
@@ -194,6 +197,7 @@ h1{
 }
 .back-face{
     background-color: white;
+    cursor: pointer;
 }
 
 

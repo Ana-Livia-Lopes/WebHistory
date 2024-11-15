@@ -42,6 +42,12 @@ session_start();
                     </a>
                 </li>
                 <li>
+                    <a href="jogos.php">
+                    <box-icon name='dice-3'></box-icon>     
+                        <span class="item-nav">Início</span>
+                    </a>
+                </li>
+                <li>
                     <?php
                     if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
                         echo "<a href='glossario.php?id=". $_SESSION['id'] ."'>
