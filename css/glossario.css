@@ -443,28 +443,6 @@ label{
     display: block;
     margin: auto;
 }
-#cuneiforme{    
-    display: inline-block;
-}
-#cuneiforme img{
-    height: 450px;
-    margin-left: 4%;
-}
-#cuneiforme .img2{
-    width: 450px;
-}
-#república img{
-    margin-left: 4%;
-}
-#república .img2{
-    width: 290px;
-}
-#colonialismo img{
-    width: 1000px;
-}
-#servidao img, #retributiva img{
-    width: 600px;
-}
 .div-pesquisa{
     background-color:#E8F0FE;
     border:solid 2px #063512;
@@ -530,27 +508,6 @@ label{
     }
     img{
         width: 180px;
-    }
-    #servidao img, #retributiva img{
-        width: 180px;
-    }
-    #república .img2{
-        width: 180px;
-    }
-    #colonialismo img{
-        width: 180px;
-        
-    }
-    #servidao img, #retributiva img{
-        width: 180px;
-    }
-    #cuneiforme .img2{
-        width: 180px;
-        height: 100px;
-    }
-    #cuneiforme img{
-        width: 180px;
-        height: 180px;
     }
     .div-pesquisa{
         width:203.9px;
