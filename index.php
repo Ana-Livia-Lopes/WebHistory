@@ -25,7 +25,6 @@ session_start();
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
 </head>
-<>
 <nav class="sidebar">
         <div>
             <div class="topo">
@@ -44,7 +43,7 @@ session_start();
                 <li>
                     <a href="jogos.php">
                     <box-icon name='dice-3'></box-icon>     
-                        <span class="item-nav">Início</span>
+                        <span class="item-nav">Jogos</span>
                     </a>
                 </li>
                 <li>
