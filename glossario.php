@@ -60,16 +60,32 @@
                     </a>
                 </li>
                 <li>
-                    <a href="glossario.php">
-                        <i class="bx bx-book"></i>
-                        <span class="item-nav">Glossário</span>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        include 'id_verify.php';
+                        echo "<a href='glossario.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    } else {
+                        echo "<a href='glossario.php'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    }
+                    ?>
+                </li>
+                <li>
+                    <a href="jogos.php">
+                        <i class="bx bx-joystick"></i>
+                        <span class="item-nav">Jogos</span>
                     </a>
                 </li>
                 <li>
                     <a id="conteudo-select">
                         <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
                         <select id="select-nav" class="item-nav" onchange="changePag()">
-                            <option value="">Períodos</option>
+                            <option value="" id="opt-periodos">Períodos</option>
                             <option value="hprimitiva.php">História Primitiva</option>
                             <option value="hantiga.php">História Antiga</option>
                             <option value="imedia.php">Idade Média</option>
@@ -92,16 +108,15 @@
         </script>
         <?php 
 
-    $imagem = isset($_SESSION['imagem']) ? $_SESSION['imagem'] : 'default.jpg';
         if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
             ?>
-            <img id='user-def-nav' src='img/<?php echo $imagem; ?>' alt=''></a>
+            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
             <?php 
             echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
-            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
+            echo        "<p class='user-nome'>" . $usuario['nome_usuario'] . "</p>";
+            echo        "<p id='user-nivel-acesso'>" . $usuario['tipo_usuario'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
             echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
@@ -110,17 +125,6 @@
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
-        
-
-        if(isset($_GET['exc'])) {
-            echo"<script>
-            Swal.fire({
-                icon: 'error',
-                title: 'sua conta foi excluida',
-                text: 'tente criar uma nova conta',
-            });
-            </script>";
-            }
         ?>
     </nav>
     <script>
@@ -168,7 +172,6 @@
         <!-- Seções existentes do glossário -->
         <?php
         if(isset($_SESSION['tipo']) && $_SESSION['tipo'] === 'Admin'){
-            include 'id_verify.php';
             echo "<form class='nova-secao' action='' method='POST'>
                     <h2 id='nova'>Nova seção</h2>
 
@@ -202,7 +205,7 @@
                         if ($_SESSION['tipo'] == 'Admin') {
                             echo "<input type='hidden' name='action' value='delete'>
                                 <input type='hidden' name='id_conteudo' value='".$linha['id_conteudo']."'>
-                                <button id='exc-secao' type='submit'>Excluir</button>";
+                                <button id='exc-secao' type='submit'><i class='bx bx-trash'></i>Excluir</button>";
                         }
                         echo "</form>";
                     }

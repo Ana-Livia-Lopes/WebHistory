@@ -4,10 +4,18 @@ let butMenu = document.querySelector('#but-menu')
 let sideBar = document.querySelector('.sidebar')
 
 butMenu.onclick = function() {
-    sideBar.classList.toggle('active');
+    sideBar.classList.toggle('active'); //abre a nav bar quando o botão de 3 barrinhas é clicado
+}
+
+let ampulheta = document.querySelector('#ampulheta')
+let dropDown = document.querySelector('#select-nav')
+
+dropDown.onclick = function(){
+    ampulheta.classList.toggle('girar'); //faz a animação de giro da ampulheta quando o dropdown é clicado
 }
 
 // Fim código sidebar
+
 AOS.init();
 
 function banner1() {
