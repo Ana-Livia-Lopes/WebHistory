@@ -8,11 +8,7 @@
     <title>Maia Quiz</title>
 </head>
 <body>
-
-    <main class="tela-principal">
-
-        <section class='conteudos'>
-
+        <section class='quiz-ha'>
             <article class='centro' id='instrucoes'>
                 Leia a questão e clique na resposta correta
             </article>
@@ -20,7 +16,6 @@
             <article class='questoes'>
                 
                 <figure class='imagemDaQuestao'>
-                    <img src="" alt="Img da questao" width="300px"/>
                 </figure>   
 
                 <header class='questao'>
@@ -30,54 +25,23 @@
                                 
                 <div class='corpo'>
                     <ol type='A' id='alternativas'>
-                        <li id='a' value='1A' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
-                        <li id='b' value='1B' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
-                        <li id='c' value='1C' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
-                        <li id='d' value='1D' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
+                    <li id='a' value='1A' class='respostas' onClick='verificarSeAcertou(this)'></li>
+                    <li id='b' value='1B' class='respostas' onClick='verificarSeAcertou(this)'></li>
+                    <li id='c' value='1C' class='respostas' onClick='verificarSeAcertou(this)'></li>
+                    <li id='d' value='1D' class='respostas' onClick='verificarSeAcertou(this)'></li>
                     </ol>
                 </div>
                 <article id='aviso' class='centro'>
                     <span id='numero'></span> de <span id='total'></span>
                 </article>
             </article>
-            
-        
         </section>
 
-    </main>
-<audio preload src="assets/positive.mp3" id='somAcerto'></audio>
-<audio preload src="assets/negative.mp3" id='somErro'></audio>
-<audio preload src="assets/aplausos.mp3" id='somAplausos'></audio>
-
     <style>
-        /*Inicio quiz*/
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-        /* vermelho #f44336 ou #d50000 verde #4caf50 ou #1b5e20  */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.25rem;
-        }
-
-        body {
+        .quiz-ha {
             width: 100vw;
-            height: 100vh;
-            background: #ececec;
-            color: #191919;
-            overflow-x: hidden;
-        }
-
-        main {
-            width: 100%;
-            height: 100vh;
-        }
-
-        section {
-            width: 100vw;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -90,12 +54,10 @@
             margin: 0.5rem 0 0 0;
         }
 
-        /* classe para centralizar textos, paragrafos */
         .centro {
             text-align: center;
         }
 
-        /* div class questao com numero da questao e pergunta */
         .questao {
             display: flex;
             align-items: center;
@@ -105,7 +67,7 @@
 
         #numQuestao {
             text-align: center;
-            width: 3rem;
+            width: 2.5rem;
             height: 2rem;
             display: block;
             background: #438e4b;
@@ -115,7 +77,8 @@
         }
 
         #pergunta {
-            margin-left: 1rem;
+            font-size: 1rem;
+            margin-left: 0.5rem;
         }
 
         .imagemDaQuestao {
@@ -125,21 +88,18 @@
             margin-bottom: 15px;
         }
 
-        /* article que acomoda a questao completa */
         .questoes {
             user-select: none;
             background: #fff;
-            padding: 1.5rem 1.5rem 1rem 1.5rem;
+            padding: 1.2rem 1.2rem 0.7rem 1.2rem;
             border: 1px solid #ececec;
             border-radius: 15px;
             margin-bottom: 0.625rem;
 
-            /* Tamanho fixo */
-            width: 500px; /* Ou ajuste conforme necessário */
-            max-width: 600px; /* Para limitar o tamanho máximo do quiz */
+            height: 460px;
+            max-width: 450px;
 
-            /* Quebra de linha e ajuste de texto */
-            overflow-y: auto; /* Adiciona barra de rolagem caso o texto exceda a altura */
+            overflow-y: auto;
             word-wrap: break-word;
             text-align: justify;
         }
@@ -149,11 +109,13 @@
             display: block;
             margin-bottom: 0.625rem;
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 18px;
+            font-size: 1rem; 
+            padding: 0.75rem; 
+            margin-bottom: 0.5rem; 
         }
 
         .questoes ol li:hover {
-            background: #438e4b74;
             cursor: pointer;
             border: 1px solid black;
         }
@@ -178,7 +140,12 @@
 
         #aviso {
             color: #438e4b;
-            margin-bottom: -5px;
+            margin-top: 54px;
+            font-size: 0.8rem;
+        }
+
+        #total #numero {
+            font-size: 1rem;
         }
 
         #autoria {
@@ -186,9 +153,6 @@
             font-size: 0.75rem;
         }
 
-        /* ANIMACAO */
-
-        /* Animar o input */
         @keyframes piscar {
             0% {
                 filter: drop-shadow(0 0 15px #438e4b);
@@ -238,163 +202,141 @@
             background:#03a9f4;
             font-size: 2rem;
         }
-        /*Fim quiz*/
     </style>
 
     <script>
-        /* Aula 20 MaiaQuiz  */
-        let titulo     = document.querySelector('h1')
+        let titulo = document.querySelector('h1')
         let instrucoes = document.querySelector('#instrucoes')
-        let aviso      = document.querySelector('#aviso')
-        let progresso  = document.querySelector('#progresso')
-        let pontos = 0 // pontos para o placar
-        let placar = 0 // placar
+        let aviso = document.querySelector('#aviso')
+        let progresso = document.querySelector('#progresso')
+        let pontos = 0 
+        let placar = 0 
 
-        // AUDIO
-        let somAcerto   = document.querySelector('#somAcerto')
-        let somErro     = document.querySelector('#somErro')
         let somAplausos = document.querySelector('#somAplausos')
 
-        // PERGUNTA
         let numQuestao = document.querySelector('#numQuestao')
-        let imgQuestao = document.querySelector('.imagemDaQuestao img')  // ADICIONE
-        let pergunta   = document.querySelector('#pergunta')
+        let pergunta = document.querySelector('#pergunta')
 
-        // ALTERNATIVAS
         let a = document.querySelector('#a')
         let b = document.querySelector('#b')
         let c = document.querySelector('#c')
         let d = document.querySelector('#d')
 
-        // article com a class questoes
         let articleQuestoes = document.querySelector('.questoes')
-        // ol li com as alternativas
-        let alternativas = document.querySelector('#alternativas')
+        let alternativas = document.querySelectorAll('#alternativas li')
 
-        const q0 = {
-            numQuestao   : 0,
-            imagem       : '0.png',  // ADICIONE
-            pergunta     : "Pergunta",
-            alternativaA : "Alternativa A",
-            alternativaB : "Alternativa B",
-            alternativaC : "Alternativa C",
-            alternativaD : "Alternativa D",
-            correta      : "0",
-        }
-        
-        const q1 = {
-            numQuestao   : 1,
-            imagem       : './img/feudalismo.jfif',  // ADICIONE
-            pergunta     : "Qual civilização desenvolveu a escrita cuneiforme?",
-            alternativaA : "Babilônios",
-            alternativaB : "Sumérios",
-            alternativaC : "Assírios",
-            alternativaD : "Acádios",
-            correta      : "Sumérios",
-        }
-        const q2 = {
-            numQuestao   : 2,
-            imagem       : '2.png',  // ADICIONE
-            pergunta     : "Qual é a capital do Brasil?",
-            alternativaA : "Rio de Janeiro",
-            alternativaB : "Brasília",
-            alternativaC : "Salvador",
-            alternativaD : "Lisboa",
-            correta      : "Brasília",
-        }
-        const q3 = {
-            numQuestao   : 3,
-            imagem       : '3.png',  // ADICIONE
-            pergunta     : "Austral é o mesmo que...",
-            alternativaA : "Oeste",
-            alternativaB : "Leste",
-            alternativaC : "Norte",
-            alternativaD : "Sul",
-            correta      : "Sul",
-        }
-        const q4 = {
-            numQuestao   : 4,
-            imagem       : '4.png',  // ADICIONE
-            pergunta     : "A linha do Equador divide a Terra em...",
-            alternativaA : "Leste e Oeste",
-            alternativaB : "Norte e Sul",
-            alternativaC : "Verão e Inverno",
-            alternativaD : "Solstícios e Eclipses",
-            correta      : "Norte e Sul",
-        }
-        const q5 = {
-            numQuestao   : 5,
-            imagem       : '5.png',  // ADICIONE
-            pergunta     : "Nascente é o mesmo que...",
-            alternativaA : "Lado que o sol nasce",
-            alternativaB : "Abaixo do Equador",
-            alternativaC : "Lado que o sol se põe",
-            alternativaD : "Acima do Equador",
-            correta      : "Lado que o sol nasce",
-        }
+        const questoes = [
+            {
+                numQuestao: 1,
+                pergunta: "Qual civilização desenvolveu a escrita cuneiforme?",
+                alternativaA: "Babilônios",
+                alternativaB: "Sumérios",
+                alternativaC: "Assírios",
+                alternativaD: "Acádios",
+                correta: "Sumérios",
+            },
+            {
+                numQuestao: 2,
+                pergunta: "O Código de Hamurabi é associado a qual civilização?",
+                alternativaA: "Gregos",
+                alternativaB: "Egípcios",
+                alternativaC: "Babilônios",
+                alternativaD: "Sumérios",
+                correta: "Babilônios",
+            },
+            {
+                numQuestao: 3,
+                pergunta: "O que os egípcios praticavam para preservar os corpos?",
+                alternativaA: "Embalsamamento",
+                alternativaB: "Cremação",
+                alternativaC: "Mumificação",
+                alternativaD: "Sepultamento",
+                correta: "Mumificação",
+            },
+            {
+                numQuestao: 4,
+                pergunta: "Qual filósofo grego é conhecido por sua contribuição à ética e à política?",
+                alternativaA: "Homero",
+                alternativaB: "Sócrates",
+                alternativaC: "Aristóteles",
+                alternativaD: "Platão",
+                correta: "Aristóteles",
+            },
+            {
+                numQuestao: 5,
+                pergunta: "Qual estrutura é um exemplo da engenharia romana?",
+                alternativaA: "Pirâmides de Gizé",
+                alternativaB: "Coliseu",
+                alternativaC: "Templo de Apolo",
+                alternativaD: "Partenon",
+                correta: "Coliseu",
+            }
+        ]
 
-        // CONSTANTE COM UM ARRAY DE OBJETOS COM TODAS AS QUESTOES
-        const questoes = [q1, q2, q3, q4, q5]
+        let questaoAtual = 0
 
-        let numero = document.querySelector('#numero')
-        let total  = document.querySelector('#total')
+        document.querySelector('#total').textContent = questoes.length
 
-        numero.textContent = q1.numQuestao
-
-        let totalDeQuestoes = (questoes.length)-1
-        console.log("Total de questões " + totalDeQuestoes)
-        total.textContent = totalDeQuestoes
-
-        // MONTAR A 1a QUESTAO COMPLETA, para iniciar o Quiz
-        numQuestao.textContent = q1.numQuestao
-        imgQuestao.setAttribute('src', 'images/'+q1.imagem)  // ADICIONE
-        pergunta.textContent   = q1.pergunta
-        a.textContent = q1.alternativaA
-        b.textContent = q1.alternativaB
-        c.textContent = q1.alternativaC
-        d.textContent = q1.alternativaD
-
-        // CONFIGURAR O VALUE INICIAL DA 1a QUESTAO COMPLETA
-        a.setAttribute('value', '1A')
-        b.setAttribute('value', '1B')
-        c.setAttribute('value', '1C')
-        d.setAttribute('value', '1D')
-
-        // PARA MONTAR AS PROXIMAS QUESTOES
         function proximaQuestao(nQuestao) {
-            numero.textContent = nQuestao;
-            numQuestao.textContent = questoes[nQuestao].numQuestao;
+            if (nQuestao >= questoes.length) {
+                fimDoJogo()
+                return
+            }
 
-            // Tente carregar a imagem e veja se o caminho é válido
-            console.log("Tentando carregar a imagem:", questoes[nQuestao].imagem);
-            imgQuestao.setAttribute('src', questoes[nQuestao].imagem); // Ajustado para refletir a propriedade correta
+            let questao = questoes[nQuestao]
 
-            pergunta.textContent = questoes[nQuestao].pergunta;
-            a.textContent = questoes[nQuestao].alternativaA;
-            b.textContent = questoes[nQuestao].alternativaB;
-            c.textContent = questoes[nQuestao].alternativaC;
-            d.textContent = questoes[nQuestao].alternativaD;
+            questaoAtual = nQuestao 
+            document.querySelector('#numero').textContent = questao.numQuestao
+            numQuestao.textContent = questao.numQuestao
+            pergunta.textContent = questao.pergunta
+            a.textContent = questao.alternativaA
+            b.textContent = questao.alternativaB
+            c.textContent = questao.alternativaC
+            d.textContent = questao.alternativaD
 
-            a.setAttribute('value', nQuestao + 'A');
-            b.setAttribute('value', nQuestao + 'B');
-            c.setAttribute('value', nQuestao + 'C');
-            d.setAttribute('value', nQuestao + 'D');
+            const respostaCorretaEl = document.querySelector('#resposta-correta')
+            if (respostaCorretaEl) respostaCorretaEl.remove()
         }
 
-        // VERIFICAR DUPLO CLICK NAS ALTERNATIVAS
-        alternativas.addEventListener('dblclick', () => {
-            //console.log('Duplo clique')
-            pontos -= 10 // tirar 10 pontos em caso de duplo click
-            if(numQuestao.value == 10 && pontos == 110) { pontos = 100 }
+        function verificarSeAcertou(respostaEscolhida) {
+            let certa = questoes[questaoAtual].correta
+
+            if (respostaEscolhida === certa) {
+                piscarNoAcerto()
+                pontos += 10
+
+                const respostaCorretaEl = document.querySelector('#resposta-correta')
+                if (respostaCorretaEl) respostaCorretaEl.remove()
+            } else {
+                piscarNoErro()
+                mostrarRespostaCorreta()
+            }
+
+            setTimeout(() => {
+                tirarPiscar()
+                proximaQuestao(questaoAtual + 0.5)
+            }, 2000)
+        }
+
+        function mostrarRespostaCorreta() {
+            if (document.querySelector('#resposta-correta')) return
+
+            const respostaCorretaEl = document.createElement('p')
+            respostaCorretaEl.id = 'resposta-correta'
+            respostaCorretaEl.textContent = `Resposta correta: ${questoes[questaoAtual].correta}`
+            respostaCorretaEl.style.color = 'black'
+            respostaCorretaEl.style.marginTop = '10px'
+            respostaCorretaEl.style.marginLeft = '70px'
+            respostaCorretaEl.style.marginBottom = '-34px'
+            respostaCorretaEl.style.fontSize = '20px'
+            document.querySelector('#alternativas').appendChild(respostaCorretaEl)
+        }
+
+        alternativas.forEach((alternativa) => {
+            alternativa.addEventListener('click', () => {
+                verificarSeAcertou(alternativa.textContent)
+            })
         })
-
-        function bloquearAlternativas() {
-            alternativas.classList.add('bloqueado')
-        }
-
-        function desbloquearAlternativas() {
-            alternativas.classList.remove('bloqueado')
-        }
 
         function piscarNoAcerto() {
             articleQuestoes.classList.remove('errou')
@@ -407,65 +349,31 @@
         }
 
         function tirarPiscar() {
-            setTimeout(() => {
-                articleQuestoes.classList.remove('acertou');
-                articleQuestoes.classList.remove('errou');
-            }, 400); // Remove a cor após 2 segundos
+            articleQuestoes.classList.remove('acertou')
+            articleQuestoes.classList.remove('errou')
         }
-
-        function verificarSeAcertou(nQuestao, resposta) {
-            let numeroDaQuestao = nQuestao.value;
-            let respostaEscolhida = resposta.textContent;
-            let certa = questoes[numeroDaQuestao].correta;
-
-            if(respostaEscolhida === certa) {
-                piscarNoAcerto();
-                somAcerto.play();
-                pontos += 10;
-            } else {
-                piscarNoErro();
-                somErro.play();
-            }
-
-            setTimeout(() => {
-                tirarPiscar(); // Remove a cor de acerto/erro
-                proximaQuestao(parseInt(numeroDaQuestao) + 1); // Carrega a próxima questão
-            }, 1500); // Ajuste o tempo para coincidir com o tempo da animação
-        }
-
-        function tirarPiscar() {
-            articleQuestoes.classList.remove('acertou');
-            articleQuestoes.classList.remove('errou');
-        }
-
-
-        // Ajustar o início do quiz e o próximo carregamento
-        proximaQuestao(0);
 
         function fimDoJogo() {
+            let s = pontos === 1 ? '' : 's'
+            instrucoes.textContent = `Fim de Jogo! Você conseguiu ${pontos} ponto${s}.`
 
-            somAplausos.play()
-
-            let s = 's'
-            pontos == 0 ? s = '' : s = s
-            instrucoes.textContent = "Fim de Jogo! Você conseguiu " + pontos + " ponto"+ s
-
+            instrucoes.style.marginTop = '300px'
             instrucoes.classList.add('placar')
-
-            // OCULTAR O ARTICLE DA QUESTAO
             articleQuestoes.style.display = 'none'
+            articleQuestoes.style.marginTop = '0px'
 
-            setTimeout(function() {
-                pontos = 0 // zerar placar
-                //location.reload();
+            setTimeout(() => {
+                pontos = 0
                 instrucoes.classList.remove('placar')
-                // REINICIAR O JOGO
                 articleQuestoes.style.display = 'block'
                 proximaQuestao(0)
+
+                instrucoes.style.marginTop = '0px'
                 instrucoes.textContent = 'Leia a questão e clique na resposta correta'
             }, 8000)
-
         }
+
+        proximaQuestao(0)
     </script>
 </body>
 </html>

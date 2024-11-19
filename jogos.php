@@ -114,7 +114,35 @@
           <form>
               <div class="btn" onclick="Conteudo('linha2')" ><div id="texto">Quiz - História Antiga</div></div>
           </form>
-          <div id="linha2">Conteúdo 2</div>
+          <div id="linha2">
+            <section class='quiz-ha'>
+              <article class='centro' id='instrucoes'>
+                  Leia a questão e clique na resposta correta
+              </article>
+
+              <article class='questoes'>
+                  
+                  <figure class='imagemDaQuestao'>
+                  </figure>   
+
+                  <header class='questao'>
+                      <span id='numQuestao'></span>
+                      <h2 id='pergunta'></h2>
+                  </header>
+                                  
+                  <div class='corpo'>
+                      <ol type='A' id='alternativas'>
+                      <li id='a' value='1A' class='respostas' onClick='verificarSeAcertou(this)'></li>
+                      <li id='b' value='1B' class='respostas' onClick='verificarSeAcertou(this)'></li>
+                      <li id='c' value='1C' class='respostas' onClick='verificarSeAcertou(this)'></li>
+                      <li id='d' value='1D' class='respostas' onClick='verificarSeAcertou(this)'></li>
+                      </ol>
+                  </div>
+                  <article id='aviso' class='centro'>
+                    <span id='numero'></span> de <span id='total'></span>
+                  </article>-              </article>
+          </section>
+          </div>
           <form>
               <div class="btn" onclick="Conteudo('linha3')" ><div id="texto">Quiz - Idade Média</div></div>
           </form>
