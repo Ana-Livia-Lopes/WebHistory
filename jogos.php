@@ -7,12 +7,8 @@
         <script src="./main.js" defer></script>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
-<<<<<<< HEAD
       </head>
     <body>
-=======
-        </head>
->>>>>>> 89bbe5df09f5dc00603ca24b2534a946b934e7cd
     <nav class="sidebar">
         <div>
             <div class="topo">
@@ -29,20 +25,9 @@
                     </a>
                 </li>
                 <li>
-<<<<<<< HEAD
                     <?php
                     if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
                         include 'id_verify.php';
-=======
-                    <a href="jogos.php">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path id="icon-game" d="M189-160q-60 0-102.5-43T42-307q0-9 1-18t3-18l84-336q14-54 57-87.5t98-33.5h390q55 0 98 33.5t57 87.5l84 336q2 9 3.5 18.5T919-306q0 61-43.5 103.5T771-160q-42 0-78-22t-54-60l-28-58q-5-10-15-15t-21-5H385q-11 0-21 5t-15 15l-28 58q-18 38-54 60t-78 22Zm3-80q19 0 34.5-10t23.5-27l28-57q15-31 44-48.5t63-17.5h190q34 0 63 18t45 48l28 57q8 17 23.5 27t34.5 10q28 0 48-18.5t21-46.5q0 1-2-19l-84-335q-7-27-28-44t-49-17H285q-28 0-49.5 17T208-659l-84 335q-2 6-2 18 0 28 20.5 47t49.5 19Zm348-280q17 0 28.5-11.5T580-560q0-17-11.5-28.5T540-600q-17 0-28.5 11.5T500-560q0 17 11.5 28.5T540-520Zm80-80q17 0 28.5-11.5T660-640q0-17-11.5-28.5T620-680q-17 0-28.5 11.5T580-640q0 17 11.5 28.5T620-600Zm0 160q17 0 28.5-11.5T660-480q0-17-11.5-28.5T620-520q-17 0-28.5 11.5T580-480q0 17 11.5 28.5T620-440Zm80-80q17 0 28.5-11.5T740-560q0-17-11.5-28.5T700-600q-17 0-28.5 11.5T660-560q0 17 11.5 28.5T700-520Zm-360 60q13 0 21.5-8.5T370-490v-40h40q13 0 21.5-8.5T440-560q0-13-8.5-21.5T410-590h-40v-40q0-13-8.5-21.5T340-660q-13 0-21.5 8.5T310-630v40h-40q-13 0-21.5 8.5T240-560q0 13 8.5 21.5T270-530h40v40q0 13 8.5 21.5T340-460Zm140-20Z"/></svg>    
-                        <span class="item-nav">Jogos</span>
-                    </a>
-                </li>
-                <li>
-                    <?php
-                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
->>>>>>> 89bbe5df09f5dc00603ca24b2534a946b934e7cd
                         echo "<a href='glossario.php?id=". $_SESSION['id'] ."'>
                                 <i class='bx bx-book'></i>
                                 <span class='item-nav'>Glossário</span>
@@ -56,7 +41,6 @@
                     ?>
                 </li>
                 <li>
-<<<<<<< HEAD
                     <a href="jogos.php">
                         <i class="bx bx-joystick"></i>
                         <span class="item-nav">Jogos</span>
@@ -67,12 +51,6 @@
                         <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
                         <select id="select-nav" class="item-nav" onchange="changePag()">
                             <option value="" id="opt-periodos">Períodos</option>
-=======
-                    <a id="conteudo-select">
-                        <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
-                        <select id="select-nav" class="item-nav" onchange="changePag()">
-                            <option value="">Períodos</option>
->>>>>>> 89bbe5df09f5dc00603ca24b2534a946b934e7cd
                             <option value="hprimitiva.php">História Primitiva</option>
                             <option value="hantiga.php">História Antiga</option>
                             <option value="imedia.php">Idade Média</option>
@@ -95,27 +73,15 @@
         </script>
         <?php 
 
-<<<<<<< HEAD
-=======
-    $imagem = isset($_SESSION['imagem']) ? $_SESSION['imagem'] : 'default.jpg';
->>>>>>> 89bbe5df09f5dc00603ca24b2534a946b934e7cd
         if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
             ?>
-<<<<<<< HEAD
             <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
             <?php 
             echo    "<div class='subclass-usuario'>";
             echo        "<p class='user-nome'>" . $usuario['nome_usuario'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $usuario['tipo_usuario'] . "</p>";
-=======
-            <img id='user-def-nav' src='img/<?php echo $imagem; ?>' alt=''></a>
-            <?php 
-            echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
-            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
->>>>>>> 89bbe5df09f5dc00603ca24b2534a946b934e7cd
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
             echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
@@ -124,11 +90,6 @@
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
-<<<<<<< HEAD
-=======
-        
-
->>>>>>> 89bbe5df09f5dc00603ca24b2534a946b934e7cd
         ?>
     </nav>
     <main class="main-content">
