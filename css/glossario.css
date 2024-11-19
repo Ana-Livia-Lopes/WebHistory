@@ -141,7 +141,7 @@
     transition: background-color 0.3s ease;
 }
 
-.sidebar ul li a:hover{
+.sidebar ul li a:hover:not(#conteudo-select){
     background-color: rgba(255, 255, 255, 0.21);
 }
 
@@ -155,11 +155,13 @@
 
 .sidebar .item-nav{
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.5s ease;
 }
 
 .sidebar.active .item-nav{
     opacity: 1;
+    pointer-events: visible;
 }
 
 .main-content{
@@ -189,18 +191,25 @@
     font-size: 16px;
 }
 
-#nav-sair{
+.sidebar #nav-sair{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
     background-color: #438e4b;
     color: white;
     border: none;
-    width: 47px;
-    height: 25px;
+    width: 0;
+    height: 0;
     border-radius: 3px;
     cursor: pointer;
     transition: all 0.2s ease;
     opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active #nav-sair{
+    opacity: 1;
+    width: 47px;
+    height: 25px;
 }
 
 #nav-entrar{
@@ -217,19 +226,16 @@
     margin-bottom: 20px;
 }
 
-#nav-sair, #nav-entrar:hover{
+#nav-entrar:hover{
     background-color: #5c9f63;
     color: rgb(226, 226, 226);
-}
-
-.sidebar.active #nav-sair{
-    opacity: 1;
 }
 
 #botao-acoes{
     display: flex;
     align-items: center;
 }
+
 #select-nav {
     background-color: rgb(49, 49, 49); 
     color: rgb(202, 202, 202); 
@@ -237,17 +243,36 @@
     border: transparent; 
     font-weight: 500;
     padding: 4px;
-    max-width: 176px;
+    max-width: 30px;
     border-radius: 5px;
     font-size: 16px;
-    margin-left: auto;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
+
+.sidebar.active #select-nav {
+    max-width: 106px;
+    opacity: 1;
+}
+
+#opt-periodos{
+    display: none;
+}
+
+#ampulheta.girar{
+    rotate: 180deg;
+    transition: all 1s;
+}
+
 #conteudo-select i {
     margin-right: -7px;
 }
+
 #select-nav option{
     font-weight: 600;
 }
+
 /* fim da navbar */
 
 /* glossario */
@@ -294,7 +319,7 @@ body {
 }
 .scroller{
     width: 200px;
-    height: 90vh;
+    height: 96vh;
     overflow-y: scroll;
 }
 .scroller::-webkit-scrollbar  {
@@ -323,14 +348,20 @@ body {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
+label{
+    margin-bottom: 5px;
+    color: rgb(92, 92, 92);
+    font-weight: 600;
+}
+
 #nova{
     font-size: 2em;
     color: #2c3e50;
+    margin-bottom: 20px;
 }
 
 #titu{
     margin-bottom: 20px;
-    margin-top: 20px;
     padding: 5px;
     font-size: 16px;
 }
@@ -386,9 +417,33 @@ body {
     font-style: italic;
 }
 
-.section_nova button{
+#exc-secao{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 3px;
     margin-top: 15px;
     background-color: #ff3232;
+    border-radius: 6px;
+    width: 94px;
+    border: none;
+    height:40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #E8F0FE;
+    transition: all 0.4s;
+}
+
+#exc-secao:hover{
+    background-color: #ff5858;
+}
+
+#edit-secao{
+    margin-top: 15px;
+    margin-left: 8px;
+    background-color: #3e71fc;
     border-radius: 6px;
     width: 80px;
     border: none;
@@ -399,6 +454,10 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #E8F0FE;
     transition: all 0.4s;
+}
+
+#edit-secao:hover{
+    background-color: #5c87ff;
 }
 
 .section_gloss {
@@ -436,28 +495,6 @@ body {
 .section_gloss img:not(#cuneiforme img, #república img){
     display: block;
     margin: auto;
-}
-#cuneiforme{    
-    display: inline-block;
-}
-#cuneiforme img{
-    height: 450px;
-    margin-left: 4%;
-}
-#cuneiforme .img2{
-    width: 450px;
-}
-#república img{
-    margin-left: 4%;
-}
-#república .img2{
-    width: 290px;
-}
-#colonialismo img{
-    width: 1000px;
-}
-#servidao img, #retributiva img{
-    width: 600px;
 }
 .div-pesquisa{
     background-color:#E8F0FE;
@@ -524,27 +561,6 @@ body {
     }
     img{
         width: 180px;
-    }
-    #servidao img, #retributiva img{
-        width: 180px;
-    }
-    #república .img2{
-        width: 180px;
-    }
-    #colonialismo img{
-        width: 180px;
-        
-    }
-    #servidao img, #retributiva img{
-        width: 180px;
-    }
-    #cuneiforme .img2{
-        width: 180px;
-        height: 100px;
-    }
-    #cuneiforme img{
-        width: 180px;
-        height: 180px;
     }
     .div-pesquisa{
         width:203.9px;

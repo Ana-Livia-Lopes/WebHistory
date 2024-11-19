@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
 <nav class="sidebar">
-        <div>
+<div>
             <div class="topo">
                 <div class="logo">
                     <img id="logo-nav" src="img/HistWeb.png" alt="">
@@ -89,16 +89,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </a>
                 </li>
                 <li>
-                    <a href="glossario.php">
-                        <i class="bx bx-book"></i>
-                        <span class="item-nav">Glossário</span>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        echo "<a href='glossario.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    } else {
+                        echo "<a href='glossario.php'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    }
+                    ?>
+                </li>
+                <li>
+                    <a href="jogos.php">
+                        <i class="bx bx-joystick"></i>
+                        <span class="item-nav">Jogos</span>
                     </a>
                 </li>
                 <li>
                     <a id="conteudo-select">
                         <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
                         <select id="select-nav" class="item-nav" onchange="changePag()">
-                            <option value="">Períodos</option>
+                            <option value="" id="opt-periodos">Períodos</option>
                             <option value="hprimitiva.php">História Primitiva</option>
                             <option value="hantiga.php">História Antiga</option>
                             <option value="imedia.php">Idade Média</option>
@@ -128,8 +143,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
             <?php 
             echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
-            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
+            echo        "<p class='user-nome'>" . $usuario['nome_usuario'] . "</p>";
+            echo        "<p id='user-nivel-acesso'>" . $usuario['tipo_usuario'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
             echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
@@ -163,7 +178,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
                     </div>
                     
-                    <p id="aviso">As alterações são visíveis na barra lateral apenas após o usuário sair da conta e entrar novamente</p>
                     <button type="submit" id="confirma">Confirmar alterações</button>
                 </div>
             </div>

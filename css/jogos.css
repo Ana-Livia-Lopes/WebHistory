@@ -1,22 +1,18 @@
-*{
+  /* Início da navbar */
+  *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-/* Início da navbar */
-
 #logo-nav{
     width: 120px;
     margin-left: 15px;
     margin-top: 7px;
 }
-
 .bx{
     font-size: 23px;
 }
-
 #user-def-nav{
     width: 45px;
     height: 45px;
@@ -24,11 +20,9 @@
     border-radius: 100%;
     transition: all 0.5s ease;
 }
-
 .sidebar.active #user-def-nav{
     margin: 2px;
 }
-
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -44,16 +38,13 @@
     padding: .4rem .8rem;
     transition: all 0.5s ease;
 }
-
 .sidebar.active ~.main-content{
     left: 250px;
     width: calc(100% - 250px);
 }
-
 .sidebar.active{
     width: 250px;
 }
-
 .sidebar #but-menu{
     position: absolute;
     color: rgb(202, 202, 202);
@@ -65,11 +56,9 @@
     cursor: pointer;
     transition: all 0.5s ease;
 }
-
 .sidebar.active #but-menu{
     left: 90%;
 }
-
 .sidebar .topo .logo{
     display: flex;
     height: 50px;
@@ -79,49 +68,40 @@
     opacity: 0;
     transition: all 0.5s ease;
 }
-
 .sidebar.active .topo .logo{
     opacity: 1;
 }
-
 .topo .logo i{
     margin-right: 5px;
 }
-
 .usuario{
     padding: 7px;
     display: flex;
     margin: 1rem 0;
     transition: all 0.5s ease;
 }
-
 .usuario p{
     color: white;
     opacity: 1;
     margin-left: 0.5rem;
 }
-
 .user-nome{
     font-weight: 600;
     overflow-wrap: break-word;
     width: 90%;
 }
-
 #user-nivel-acesso{
     color: rgb(165, 165, 165);
     font-size: 14px;
     font-weight: 500;
 }
-
 .sidebar p{
     opacity: 0;
     transition: all 0.5s ease;
 }
-
 .sidebar.active p{
     opacity: 1;
 }
-
 .sidebar ul li{
     position: relative;
     list-style-type: none;
@@ -130,7 +110,6 @@
     margin: 0.8rem auto;
     line-height: 50px;
 }
-
 .sidebar ul li a{
     color: rgb(202, 202, 202);
     font-weight: 500;
@@ -140,11 +119,9 @@
     border-radius: 0.7rem;
     transition: background-color 0.3s ease;
 }
-
 .sidebar ul li a:hover:not(#conteudo-select){
     background-color: rgba(255, 255, 255, 0.21);
 }
-
 .sidebar ul li a i{
     min-width: 50px;
     text-align: center;
@@ -152,45 +129,36 @@
     border-radius: 12px;
     line-height: 50px;
 }
-
 .sidebar .item-nav{
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
 }
-
 .sidebar.active .item-nav{
     opacity: 1;
     pointer-events: visible;
 }
-
 .main-content{
     position: relative;
-    background-color: rgb(207, 207, 207);
     min-height: 100vh;
     top: 0;
     left: 80px;
     transition: all 0.5s ease;
-    width: calc(100% - 80px);
 }
-
 .sidebar.active .usuario{
     background-color: rgba(255, 255, 255, 0.112);
     padding: 7px;
     border-radius: 0.8rem;
 }
-
 .subclass-usuario{
     font-size: 2px;
 }
-
 .sidebar.active .subclass-usuario{
     width: 55%;
     display: flex;
     flex-direction: column;
     font-size: 16px;
 }
-
 .sidebar #nav-sair{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
@@ -205,13 +173,11 @@
     opacity: 0;
     pointer-events: none;
 }
-
 .sidebar.active #nav-sair{
     opacity: 1;
     width: 47px;
     height: 25px;
 }
-
 #nav-entrar{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
@@ -225,17 +191,14 @@
     transition: all 0.2s ease;
     margin-bottom: 20px;
 }
-
 #nav-entrar:hover{
     background-color: #5c9f63;
     color: rgb(226, 226, 226);
 }
-
 #botao-acoes{
     display: flex;
     align-items: center;
 }
-
 #select-nav {
     background-color: rgb(49, 49, 49); 
     color: rgb(202, 202, 202); 
@@ -250,237 +213,120 @@
     cursor: pointer;
     transition: all 0.5s ease;
 }
-
 .sidebar.active #select-nav {
     max-width: 106px;
     opacity: 1;
 }
-
 #opt-periodos{
     display: none;
 }
-
 #ampulheta.girar{
     rotate: 180deg;
     transition: all 1s;
 }
-
 #conteudo-select i {
     margin-right: -7px;
 }
-
 #select-nav option{
     font-weight: 600;
 }
-
 /* fim da navbar */
-
-.main-content{
-    background-color: rgba(231, 231, 231, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
+  align-items: center;
+  justify-content: center;
+  display: grid;
 }
-
-.pagina-perfil{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(54, 54, 54);
-    color: white;
-    border-radius: 7px;
-    width: 700px;
+#linha6{
+  margin-bottom: 30px;
+}
+#linha, #linha2, #linha3, #linha4, #linha5, #linha6 {
+    display: none;
+}
+h1{
+    text-align: center;
+    margin: 40px auto;
+}
+.btn{
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 800px;
+  height: 100px;  
+  background-color: transparent;
+  border: 3px solid #000;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 0 #000;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  #texto{
+    position: relative;
+    z-index:3;
+    font-size: 30px;
+  }
+  &:after {
+    transition: all 1s ease;
+    content: '';
+    left: -100px;
+    top: 0;
     height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 0;
+    transform: skew(-60deg);
+    position: absolute;
+    background: #000;
+  }
+  &:hover{
+    color: #fff;
+    &:after {
+      width: 200%;
+    }
+  }
 }
-
-#fundo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 700px;
-    height: 140px;
-    background-color: #438e4b;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+/* memória */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap");
+.memory-game {
+  padding-left: 20px;
+  position: relative;
+  display: flex;
+  width: 650px;
+  max-width: 100% !important;
+  height: 450px;
+  margin: 60px;
+  flex-wrap: wrap;
+  perspective: 1000px;
 }
-
-#user-perfil{
-    width: 125px;
-    height: 125px;
-    border-radius: 50%;
-    margin-top: -7%;
-    border: 5px solid rgb(54, 54, 54);
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 2px 2px 4px 2px rgb(0 0 0 / 30%);
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
-
-.nome-acima{
-    color: rgba(255, 255, 255, 0.599);
-    float: left;
-    font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  border: #333 8px;
+  background: #341f44;
+  backface-visibility: hidden;
+  list-style: none;
+  object-fit: cover ;
 }
-
-.nome-email{
-    display: flex;
-    flex-direction: column;
-}
-
-.info{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: rgb(76, 76, 76);
-    border-radius: 10px;
-    width: 630px;
-    margin-top: 20px;
-    margin-bottom: 25px;
-    padding: 20px;
-    padding-bottom: 0;
-}
-
-.informacoes{
-    margin-left: 35px;
-}
-
-#banner-histweb{
-    margin-left: 40px;
-    width: 340px;
-    color: #528d58;
-    filter: brightness(0) saturate(100%) invert(64%) sepia(7%) saturate(1716%) hue-rotate(75deg) brightness(100%) contrast(84%);
-}
-
-#excluir-conta{
-    background-color: #ff3232;
-    border: none;
-    width: 120px;
-    border-radius: 5px;
-    height: 40px;
-    color: white;
-    font-weight: 500;
-    font-size: 15px;
-    transition: all 0.3s;
+.back-face{
+    background-color: white;
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 20px;
 }
-
-#excluir-conta:hover{
-    background-color: #ff5c5c;
+.memory-card.flip {
+  transform: rotateY(180deg);
 }
-
-#campo-nome{
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(47, 47, 47);
-    color: rgba(255, 255, 255, 0.803);
-    height: 40px;
-    width: 590px;
-    padding-left: 10px;
-    font-size: 18px;
-    margin-top: 7px;
-    margin-bottom: 7px;
-}
-
-#campo-email{
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(47, 47, 47);
-    color: rgba(255, 255, 255, 0.803);
-    height: 40px;
-    width: 590px;
-    padding-left: 10px;
-    font-size: 18px;
-    margin-top: 7px;
-    margin-bottom: 20px;
-}
-
-#campo-senha{
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(47, 47, 47);
-    color: rgba(255, 255, 255, 0.803);
-    height: 40px;
-    width: 590px;
-    padding-left: 10px;
-    font-size: 18px;
-    margin-top: 7px;
-    margin-bottom: 5px;
-}
-
-#mostrar{
-    margin-bottom: 20px;
-}
-
-#confirma{
-    background-color: #438e4b;
-    border: none;
-    border-radius: 5px;
-    font-weight: 500;
-    color: white;
-    width: 180px;
-    height: 40px;
-    font-size: 15px;
-    align-self: center;
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: all 0.4s;
-}
-
-#confirma:hover{
-    background-color: #67b36f;
-}
-
-.exclusao{
-    align-self: center;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-input[type="file"] {
-    margin-top: 7px;
-    margin-bottom: 20px;
-}
-
-
-
-@media (max-width: 768px){
-    .pagina-perfil{
-        width: 300px;
-    }
-    .info{
-        width: 230px;
-    }
-    #campo-nome, #campo-email, #campo-senha, #upload{
-        width: 190px;
-        height: 30px;
-    }
-    #fundo{
-        width: 300px;
-        height: 120px;
-    }
-    #banner-histweb{
-        width: 250px;
-        margin-top: -18px;
-        margin-left: 20px;
-    }
-    #confirma{
-        height: 30px;
-    }
-    #excluir-conta{
-        height: 30px;
-    }
-    #user-perfil{
-        margin-top: -11%;
-        width: 100px;
-        height: 100px;
-    }
-    .nome-acima{
-        font-size: 12px;
-    }
-    #mostrar{
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
+.front-face {
+  transform: rotateY(180deg);
 }
