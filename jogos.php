@@ -3,10 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>História na Web - jogos</title>
+        <title>Jogos</title>
         <script src="./main.js" defer></script>
         <link rel="stylesheet" href="css/jogos.css">
         <link rel="shortcut icon" href="./img/HW-icon.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
         </head>
@@ -95,92 +97,101 @@
     </nav>
     <main class="main-content">
       <body>
-          <h1>JOGOS</h1>
-          <p>Teste seus conhecimentos sobre eventos históricos, figuras importantes e fatos curiosos, enquanto se diverte e aprende.</p>
+        <div class="div-jogo">
+          <div class="texto-sessao">
+            <h1>Navegue na história através de nossos jogos</h1>
+            <p class="p-jogos">Teste seus conhecimentos sobre eventos históricos, figuras importantes e fatos curiosos, enquanto se diverte e aprende.</p>
+          </div>
+          <div class="img-sessao">
+            <img src="img/fundo.jpg" alt="games">
+          </div>
+        </div>
+        <div class="quiz"> 
           <form>
-              <div class="btn" onclick="Conteudo('linha')" ><div id="texto">quiz 1</div></div>
+              <div class="btn" onclick="Conteudo('linha')" ><div id="texto">Quiz - História Primitiva</div></div>
           </form>
           <div id="linha">Conteúdo 1</div>
           <form>
-              <div class="btn" onclick="Conteudo('linha2')" ><div id="texto">quiz 2</div></div>
+              <div class="btn" onclick="Conteudo('linha2')" ><div id="texto">Quiz - História Antiga</div></div>
           </form>
           <div id="linha2">Conteúdo 2</div>
           <form>
-              <div class="btn" onclick="Conteudo('linha3')" ><div id="texto">quiz 3</div></div>
+              <div class="btn" onclick="Conteudo('linha3')" ><div id="texto">Quiz - Idade Média</div></div>
           </form>
           <div id="linha3">Conteúdo 3</div>
           <form>
-              <div class="btn" onclick="Conteudo('linha4')" ><div id="texto">quiz 4</div></div>
+              <div class="btn" onclick="Conteudo('linha4')" ><div id="texto">Quiz - Idade Moderna</div></div>
           </form>
           <div id="linha4">Conteúdo 4</div>
           <form>
-              <div class="btn" onclick="Conteudo('linha5')" ><div id="texto">quiz 5</div></div>
+              <div class="btn" onclick="Conteudo('linha5')" ><div id="texto">Quiz - Idade Contemporânea</div></div>
           </form>
           <div id="linha5">Conteúdo 5</div>
           <form>
               <div class="btn" onclick="Conteudo('linha6')" ><div id="texto">Jogo da memória</div></div>
           </form>
           <div id="linha6">
+        </div>
           <section class="memory-game">
                 <div class="memory-card" data-framework="donut">
                   <!--Card 1-->
                   <img class="front-face" src="img/banner1.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
 
                 <div class="memory-card" data-framework="donut">
                   <img class="front-face" src="img/banner1.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
 
                 <div class="memory-card" data-framework="pizza">
                   <!--Card 2-->
                   <img class="front-face" src="img/banner2.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
                 <div class="memory-card" data-framework="pizza">
                   <img class="front-face" src="img/banner2.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
 
                 <div class="memory-card" data-framework="dog">
                   <!--Card 3-->
                   <img class="front-face" src="img/banner3.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
                 <div class="memory-card" data-framework="dog">
                   <img class="front-face" src="img/banner3.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
 
                 <div class="memory-card" data-framework="queijo">
                   <!--Card 4-->
                   <img class="front-face" src="img/banner4.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
                 <div class="memory-card" data-framework="queijo">
                   <img class="front-face" src="img/banner4.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
 
                 <div class="memory-card" data-framework="elefante">
                   <!--Card 5-->
                   <img class="front-face" src="img/banner5.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
                 <div class="memory-card" data-framework="elefante">
                   <img class="front-face" src="img/banner5.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
 
                 <div class="memory-card" data-framework="Cat">
                   <!--Card 6-->
                   <img class="front-face" src="img/banner6.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
                 <div class="memory-card" data-framework="Cat">
                   <img class="front-face" src="img/banner6.jpg" />
-                  <img class="back-face" src="img/HW-icon.png" />
+                  <img class="back-face" src="img/HW-icon-folha.png" />
                 </div>
               </section>
           </div>
