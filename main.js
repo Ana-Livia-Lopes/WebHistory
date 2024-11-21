@@ -16,68 +16,7 @@ dropDown.onclick = function(){
 
 // Fim código sidebar
 // código quiz
-const correctAnswers = {
-    q11: "Invasões bárbaras e insegurança",
-    q12: "Árabes",
-    q13: "Promoveram troca cultural e comercial com a Ásia",
-    q14: "Levou à valorização dos salários devido à escassez de trabalhadores",
-    q15: "Cisma do Oriente"
-};
 
-function checkAnswers(formId, resultDisplayId) {
-    let score = 0;
-    const form = document.getElementById(formId);
-    const resultDisplay = document.getElementById(resultDisplayId);
-
-    if (!form || !resultDisplay) {
-        console.error("Erro: Formulário ou elemento de resultado não encontrados.");
-        return;
-    }
-
-    document.querySelectorAll('.question .correct-answer').forEach(answer => answer.remove());
-    document.querySelectorAll('.question').forEach(div => div.classList.remove('correct', 'incorrect'));
-
-    for (let question in correctAnswers) {
-        const userAnswer = form[question] ? form[question].value : "";
-        const questionDiv = document.getElementById(`question${question.slice(1)}`);
-
-        if (userAnswer === correctAnswers[question]) {
-            score++;
-            questionDiv.classList.add('correct'); 
-        } else {
-            questionDiv.classList.add('incorrect'); 
-            
-            const correctAnswerText = document.createElement('p');
-            correctAnswerText.classList.add('correct-answer');
-            correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
-            questionDiv.appendChild(correctAnswerText);
-        }
-    }
-    
-    resultDisplay.textContent = `Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.`;
-}
-
-function resetQuiz(formId, resultDisplayId) {
-
-    const form = document.getElementById(formId);
-    const resultDisplay = document.getElementById(resultDisplayId);
-
-    if (!form || !resultDisplay) {
-        console.error("Erro: Formulário ou elemento de resultado não encontrados.");
-        return;
-    }
-
-    form.reset();
-    resultDisplay.textContent = '';
-
-    document.querySelectorAll('.question').forEach(questionDiv => {
-        questionDiv.classList.remove('correct', 'incorrect');
-        const correctAnswerText = questionDiv.querySelector('.correct-answer');
-        if (correctAnswerText) {
-            questionDiv.removeChild(correctAnswerText);
-        }
-    });
-}
 // fim código quiz
 AOS.init();
 
