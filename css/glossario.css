@@ -417,6 +417,35 @@ label{
     font-style: italic;
 }
 
+.bot-admin{
+    display:flex;
+    justify-content: space-between;
+    max-width: 200px;
+}
+
+#edit-secao{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 3px;
+    margin-top: 15px;
+    background-color: #3246ff;
+    border-radius: 6px;
+    width: 94px;
+    border: none;
+    height:40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #E8F0FE;
+    transition: all 0.4s;
+}
+
+#edit-secao:hover{
+    background-color: #5c87ff;
+}
+
 #exc-secao{
     display: flex;
     align-items: center;
@@ -438,26 +467,6 @@ label{
 
 #exc-secao:hover{
     background-color: #ff5858;
-}
-
-#edit-secao{
-    margin-top: 15px;
-    margin-left: 8px;
-    background-color: #3e71fc;
-    border-radius: 6px;
-    width: 80px;
-    border: none;
-    height:40px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #E8F0FE;
-    transition: all 0.4s;
-}
-
-#edit-secao:hover{
-    background-color: #5c87ff;
 }
 
 .section_gloss {
