@@ -203,36 +203,81 @@
                                 <p id='fonte-nova'>Fonte: ".$linha['fonte_conteudo']."</p>";
                         
                         if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == 'Admin') {
-                            echo "<input type='hidden' name='action' value='delete'>
-                                <input type='hidden' name='id_conteudo' value='".$linha['id_conteudo']."'>
-                                <button id='exc-secao' type='submit'><i class='bx bx-trash'></i>Excluir</button>";
+                            // Formulário de edição
+                            echo "<input type='hidden' name='action' value='edit'>
+                                  <input type='hidden' name='id_conteudo' value='".$linha['id_conteudo']."'>
+                                  <input class='edicao' id='novo-tit' name='novo_titulo' type='text' value='".$linha['titulo_conteudo']."' required>
+                                  <textarea class='edicao' id='novo-txt' name='novo_texto' required>".$linha['texto_conteudo']."</textarea>
+                                  <input class='edicao' id='nova-img' name='nova_imagem' type='url' value='".$linha['imagem_conteudo']."'>
+                                  <input class='edicao' id='nova-fnt' name='nova_fonte' type='text' value='".$linha['fonte_conteudo']."' required>
+                                  <button class='edicao' type='submit'>Salvar</button>";
+                            // Botão para excluir
+                            echo "<div class='bot-admin'><button id='exc-secao' type='submit' name='action' value='delete'><i class='bx bx-trash'></i>Excluir</button>
+                                  <button type='button' id='edit-secao'><i class='bx bx-pencil'></i>Editar</button></div>";
                         }
+                
                         echo "</form>";
                     }
                 }
+                
 
-                if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['action']) && $_POST['action'] === 'delete') {
-                    $id = $_POST['id_conteudo'];
-                    $query = "DELETE FROM conteudo WHERE id_conteudo = ?"; 
-                    $stmt = $conexao->prepare($query);
-                    $stmt->bind_param("i", $id);
-
-                    if ($stmt->execute()) {
-                        echo "<script>
-                        Swal.fire({
-                            title: 'Seção excluída com sucesso!',
-                            icon: 'success',
-                            confirmButtonColor: '#438e4b',
-                        }).then(function() {
-                            location.href = 'glossario.php?id=".$_SESSION['id']."';
-                        });
-                        </script>";
-                    } else {
-                        echo "Erro ao excluir seção: ".$conexao->error;
+                if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                    if (isset($_POST['action'])) {
+                        // Exclusão de seções
+                        if ($_POST['action'] === 'delete' && isset($_POST['id_conteudo'])) {
+                            $id = $_POST['id_conteudo'];
+                            $query = "DELETE FROM conteudo WHERE id_conteudo = ?"; 
+                            $stmt = $conexao->prepare($query);
+                            $stmt->bind_param("i", $id);
+                
+                            if ($stmt->execute()) {
+                                echo "<script>
+                                Swal.fire({
+                                    title: 'Seção excluída com sucesso!',
+                                    icon: 'success',
+                                    confirmButtonColor: '#438e4b',
+                                }).then(function() {
+                                    location.href = 'glossario.php?id=".$_SESSION['id']."';
+                                });
+                                </script>";
+                            } else {
+                                echo "Erro ao excluir seção: ".$conexao->error;
+                            }
+                
+                            $stmt->close();
+                        }
+                
+                        // Edição de seções
+                        if ($_POST['action'] === 'edit' && isset($_POST['id_conteudo'])) {
+                            $id = $_POST['id_conteudo'];
+                            $novo_titulo = $_POST['novo_titulo'];
+                            $novo_texto = $_POST['novo_texto'];
+                            $nova_imagem = $_POST['nova_imagem'];
+                            $nova_fonte = $_POST['nova_fonte'];
+                
+                            $query = "UPDATE conteudo SET titulo_conteudo = ?, texto_conteudo = ?, imagem_conteudo = ?, fonte_conteudo = ? WHERE id_conteudo = ?";
+                            $stmt = $conexao->prepare($query);
+                            $stmt->bind_param("ssssi", $novo_titulo, $novo_texto, $nova_imagem, $nova_fonte, $id);
+                
+                            if ($stmt->execute()) {
+                                echo "<script>
+                                Swal.fire({
+                                    title: 'Seção atualizada com sucesso!',
+                                    icon: 'success',
+                                    confirmButtonColor: '#438e4b',
+                                }).then(function() {
+                                    location.href = 'glossario.php?id=".$_SESSION['id']."';
+                                });
+                                </script>";
+                            } else {
+                                echo "Erro ao editar seção: ".$conexao->error;
+                            }
+                
+                            $stmt->close();
+                        }
                     }
-
-                    $stmt->close();
                 }
+                
             ?>
         </div>
     </div>
