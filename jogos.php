@@ -97,15 +97,17 @@
     </nav>
     <main class="main-content">
       <body>
-        <div class="div-jogo">
-          <div class="texto-sessao">
-            <h1>Navegue na história através de nossos jogos</h1>
-            <p class="p-jogos">Teste seus conhecimentos sobre eventos históricos, figuras importantes e fatos curiosos, enquanto se diverte e aprende.</p>
+        <section class="sessao1">
+          <div class="div-jogo">
+            <div class="texto-sessao">
+              <h1>Navegue na história através de nossos jogos</h1>
+              <p class="p-jogos">Teste seus conhecimentos sobre eventos históricos, figuras importantes e fatos curiosos, enquanto se diverte e aprende.</p>
+            </div>
+            <!-- <div class="img-sessao">
+              <img src="img/fundo2-login.jpg" alt="games">
+            </div> -->
           </div>
-          <div class="img-sessao">
-            <img src="img/fundo.jpg" alt="games">
-          </div>
-        </div>
+        </section>
         <div class="quiz"> 
           <form>
               <div class="btn" onclick="Conteudo('linha')" ><div id="texto">Quiz - História Primitiva</div></div>
@@ -164,62 +166,62 @@
                 <div class="memory-card" data-framework="donut">
                   <!--Card 1-->
                   <img class="front-face" src="img/banner1.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
 
                 <div class="memory-card" data-framework="donut">
                   <img class="front-face" src="img/banner1.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
 
                 <div class="memory-card" data-framework="pizza">
                   <!--Card 2-->
                   <img class="front-face" src="img/banner2.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
                 <div class="memory-card" data-framework="pizza">
                   <img class="front-face" src="img/banner2.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
 
                 <div class="memory-card" data-framework="dog">
                   <!--Card 3-->
                   <img class="front-face" src="img/banner3.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
                 <div class="memory-card" data-framework="dog">
                   <img class="front-face" src="img/banner3.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
 
                 <div class="memory-card" data-framework="queijo">
                   <!--Card 4-->
                   <img class="front-face" src="img/banner4.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
                 <div class="memory-card" data-framework="queijo">
                   <img class="front-face" src="img/banner4.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
 
                 <div class="memory-card" data-framework="elefante">
                   <!--Card 5-->
                   <img class="front-face" src="img/banner5.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
                 <div class="memory-card" data-framework="elefante">
                   <img class="front-face" src="img/banner5.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
 
                 <div class="memory-card" data-framework="Cat">
                   <!--Card 6-->
                   <img class="front-face" src="img/banner6.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
                 <div class="memory-card" data-framework="Cat">
                   <img class="front-face" src="img/banner6.jpg" />
-                  <img class="back-face" src="img/HW-icon-folha.png" />
+                  <img class="back-face" src="img/folhah.png" />
                 </div>
               </section>
           </div>
