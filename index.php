@@ -57,6 +57,12 @@ session_start();
                     ?>
                 </li>
                 <li>
+                    <a href="jogos.php">
+                        <i class="bx bx-joystick"></i>
+                        <span class="item-nav">Jogos</span>
+                    </a>
+                </li>
+                <li>
                     <a id="conteudo-select">
                         <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
                         <select id="select-nav" class="item-nav" onchange="changePag()">

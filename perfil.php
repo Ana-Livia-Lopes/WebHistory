@@ -177,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div id='mostrar'>
                         <input type='checkbox' onclick='mostrarSenha()'> Mostrar senha
                     </div>
-                    
+                    <p id="aviso">As alterações são visíveis na barra lateral apenas após o usuário sair da conta e entrar novamente</p>
                     <button type="submit" id="confirma">Confirmar alterações</button>
                 </div>
             </div>

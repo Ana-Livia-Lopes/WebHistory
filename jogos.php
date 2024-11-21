@@ -11,6 +11,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         </head>
         <nav class="sidebar">
         <div>
@@ -30,7 +31,6 @@
                 <li>
                     <?php
                     if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
-                        include 'id_verify.php';
                         echo "<a href='glossario.php?id=". $_SESSION['id'] ."'>
                                 <i class='bx bx-book'></i>
                                 <span class='item-nav'>Glossário</span>
@@ -53,7 +53,7 @@
                     <a id="conteudo-select">
                         <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
                         <select id="select-nav" class="item-nav" onchange="changePag()">
-                            <option value="" id="opt-periodos">Períodos</option>
+                            <option value="">Períodos</option>
                             <option value="hprimitiva.php">História Primitiva</option>
                             <option value="hantiga.php">História Antiga</option>
                             <option value="imedia.php">Idade Média</option>
@@ -76,15 +76,16 @@
         </script>
         <?php 
 
+    $imagem = isset($_SESSION['imagem']) ? $_SESSION['imagem'] : 'default.jpg';
         if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
             ?>
-            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
+            <img id='user-def-nav' src='img/<?php echo $imagem; ?>' alt=''></a>
             <?php 
             echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $usuario['nome_usuario'] . "</p>";
-            echo        "<p id='user-nivel-acesso'>" . $usuario['tipo_usuario'] . "</p>";
+            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
+            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
             echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
@@ -93,6 +94,8 @@
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
+        
+
         ?>
     </nav>
     <main class="main-content">
@@ -161,19 +164,18 @@
               <div class="btn" onclick="Conteudo('linha6')" ><div id="texto">Jogo da memória</div></div>
           </form>
           <div id="linha6">
-        </div>
-          <section class="memory-game">
+            <section class="memory-game">
+              <div class="memory-card" data-framework="donut">
+                <!--Card 1-->
+                <img class="front-face" src="img/banner1.jpg" />
+                <img class="back-face" src="img/folhah.png" />
+              </div>
+              
                 <div class="memory-card" data-framework="donut">
-                  <!--Card 1-->
                   <img class="front-face" src="img/banner1.jpg" />
                   <img class="back-face" src="img/folhah.png" />
                 </div>
-
-                <div class="memory-card" data-framework="donut">
-                  <img class="front-face" src="img/banner1.jpg" />
-                  <img class="back-face" src="img/folhah.png" />
-                </div>
-
+                
                 <div class="memory-card" data-framework="pizza">
                   <!--Card 2-->
                   <img class="front-face" src="img/banner2.jpg" />
@@ -193,7 +195,7 @@
                   <img class="front-face" src="img/banner3.jpg" />
                   <img class="back-face" src="img/folhah.png" />
                 </div>
-
+                
                 <div class="memory-card" data-framework="queijo">
                   <!--Card 4-->
                   <img class="front-face" src="img/banner4.jpg" />
@@ -203,7 +205,7 @@
                   <img class="front-face" src="img/banner4.jpg" />
                   <img class="back-face" src="img/folhah.png" />
                 </div>
-
+                
                 <div class="memory-card" data-framework="elefante">
                   <!--Card 5-->
                   <img class="front-face" src="img/banner5.jpg" />
@@ -213,7 +215,7 @@
                   <img class="front-face" src="img/banner5.jpg" />
                   <img class="back-face" src="img/folhah.png" />
                 </div>
-
+                
                 <div class="memory-card" data-framework="Cat">
                   <!--Card 6-->
                   <img class="front-face" src="img/banner6.jpg" />
@@ -223,16 +225,21 @@
                   <img class="front-face" src="img/banner6.jpg" />
                   <img class="back-face" src="img/folhah.png" />
                 </div>
+              </div>
               </section>
-          </div>
-  </body> 
-</main>
+            </div>
+          </body> 
+        </main>
 </html>
 <script>
     function Conteudo(id){
         var elemento = document.getElementById(id);
         if (elemento.style.display === "none" || elemento.style.display === "") {
             elemento.style.display = 'block';
+            window.scrollBy({
+            top: 500,
+            behavior: "smooth" 
+        });
         } else {
             elemento.style.display = 'none';
         }
@@ -297,5 +304,24 @@ function resetBoard() {
 })();
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
+
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? disableCards() : unflipCards();
+
+  setTimeout(() => {
+    if (document.querySelectorAll(".memory-card.flip").length === cards.length) {
+      Swal.fire({
+        title: "Parabéns!",
+        text: "você concluiu o jogo da memória",
+        icon: "success"
+      }); 
+    }
+  }, 500);
+}
+
+
 
 </script>

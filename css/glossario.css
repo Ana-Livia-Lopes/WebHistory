@@ -556,9 +556,6 @@ label{
     .content_gloss {
         margin-left: 0;
     }
-    .section_gloss {
-        max-width: 230px;
-    }
     img{
         width: 180px;
     }
@@ -577,6 +574,9 @@ label{
       .section_gloss h2 {
         font-size: 1.5em;
  
+    }
+    input, textarea{
+        border: solid 0.5px rgb(114, 114, 114);
     }
     
   }

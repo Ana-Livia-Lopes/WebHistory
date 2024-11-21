@@ -380,7 +380,11 @@
     margin-top: 7px;
     margin-bottom: 7px;
 }
-
+#aviso{
+    margin-bottom: 30px;
+    font-size: 13.75px;
+    color: rgba(255, 255, 255, 0.516);
+}
 #campo-email{
     border-radius: 5px;
     border: none;
@@ -408,7 +412,7 @@
 }
 
 #mostrar{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #confirma{
