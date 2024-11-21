@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -101,15 +104,12 @@
     </nav>
     <main class="main-content">
       <body>
-        <section class="sessao1">
+        <section class="secao1">
           <div class="div-jogo">
-            <div class="texto-sessao">
+            <div class="texto-secao">
               <h1>Navegue na história através de nossos jogos</h1>
               <p class="p-jogos">Teste seus conhecimentos sobre eventos históricos, figuras importantes e fatos curiosos, enquanto se diverte e aprende.</p>
             </div>
-            <!-- <div class="img-sessao">
-              <img src="img/fundo2-login.jpg" alt="games">
-            </div> -->
           </div>
         </section>
         <div class="quiz"> 
