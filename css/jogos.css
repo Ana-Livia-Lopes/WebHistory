@@ -564,6 +564,45 @@ h1{
     height: 100%;
     transform: rotateY(180deg);
 }
+.question {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#end_options {
+    margin-bottom: 30px;
+} 
+
+.correct {
+    background-color: #d4edda;
+}
+
+.incorrect {
+    background-color: #f8d7da;
+}
+
+#button-quiz {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #063512b1;
+    color: #fff;
+    margin-right: 10px;
+}
+
+#button-quiz:hover {
+    background-color: #051d0bc6;
+}
+
+#result {
+    text-align: center;
+    color: rgb(87, 55, 26);
+    font-weight: bold;
+    margin-top: 20px;
+}
 @media (max-width: 768px){
     .btn{
         width: 300px;

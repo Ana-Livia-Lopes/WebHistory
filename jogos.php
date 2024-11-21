@@ -12,6 +12,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         </head>
         <nav class="sidebar">
         <div>
@@ -151,7 +152,58 @@
           <form>
               <div class="btn" onclick="Conteudo('linha3')" ><div id="texto">Quiz - Idade Média</div></div>
           </form>
-          <div id="linha3">Conteúdo 3</div>
+          <div id="linha3">
+          <section class="historia">
+            <h2>H.W. Quiz - Idade Média</h2>
+            <div id="quiz-container">
+                <form id="quizForm">
+                    <div class="question" id="question11">
+                        <p>1. Qual foi uma das causas do surgimento do feudalismo?</p>
+                        <label><input type="radio" name="q11" value="Aumento da população urbana"> Aumento da população urbana</label><br>
+                        <label><input type="radio" name="q11" value="Invasões bárbaras e insegurança"> Invasões bárbaras e insegurança</label><br>
+                        <label><input type="radio" name="q11" value="Estabelecimento de comércio internacional"> Estabelecimento de comércio internacional</label><br>
+                        <label><input type="radio" name="q11" value="Descoberta de novas rotas marítimas" id="end_options"> Descoberta de novas rotas marítimas</label>
+                    </div>
+
+                    <div class="question" id="question12">
+                        <p>2. Qual civilização é conhecida por ter estabelecido o Califado de Córdoba na Península Ibérica?</p>
+                        <label><input type="radio" name="q12" value="Romanos"> Romanos</label><br>
+                        <label><input type="radio" name="q12" value="Vikings"> Vikings</label><br>
+                        <label><input type="radio" name="q12" value="Árabes"> Árabes</label><br>
+                        <label><input type="radio" name="q12" value="Francos" id="end_options"> Francos</label>
+                    </div>
+
+                    <div class="question" id="question13">
+                        <p>3. Qual foi o impacto das Cruzadas na Europa?</p>
+                        <label><input type="radio" name="q13" value="Causaram a destruição total de Jerusalém"> Causaram a destruição total de Jerusalém</label><br>
+                        <label><input type="radio" name="q13" value="Fortaleceram o isolamento cultural europeu"> Fortaleceram o isolamento cultural europeu</label><br>
+                        <label><input type="radio" name="q13" value="Promoveram troca cultural e comercial com a Ásia"> Promoveram troca cultural e comercial com a Ásia</label><br>
+                        <label><input type="radio" name="q13" value="Diminuíram o poder da Igreja Católica" id="end_options"> Diminuíram o poder da Igreja Católica</label>
+                    </div>
+
+                    <div class="question" id="question14">
+                        <p>4. Qual foi o impacto da Peste Negra na economia europeia?</p>
+                        <label><input type="radio" name="q14" value="Causou um aumento na mão de obra disponível"> Causou um aumento na mão de obra disponível</label><br>
+                        <label><input type="radio" name="q14" value="Reduziu o valor dos salários devido ao excesso de trabalhadores"> Reduziu o valor dos salários devido ao excesso de trabalhadores</label><br>
+                        <label><input type="radio" name="q14" value="Levou à valorização dos salários devido à escassez de trabalhadores"> Levou à valorização dos salários devido à escassez de trabalhadores</label><br>
+                        <label><input type="radio" name="q14" value="Teve pouco impacto na economia, sendo apenas uma crise de saúde" id="end_options"> Teve pouco impacto na economia, sendo apenas uma crise de saúde</label>
+                    </div>
+
+                    <div class="question" id="question15">
+                        <p>5. Qual foi o evento que resultou na divisão da Igreja Cristã entre Católica e Ortodoxa?</p>
+                        <label><input type="radio" name="q15" value="Cruzadas"> Cruzadas</label><br>
+                        <label><input type="radio" name="q15" value="Renascimento Carolíngio"> Renascimento Carolíngio</label><br>
+                        <label><input type="radio" name="q15" value="Cisma do Oriente"> Cisma do Oriente</label><br>
+                        <label><input type="radio" name="q15" value="Queda do Império Romano do Ocidente" id="end_options"> Queda do Império Romano do Ocidente</label>
+                    </div>
+
+                    <button id="button-quiz" type="button" onclick="checkAnswers('quizForm', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="resetQuiz('quizForm', 'result')">Resetar</button>
+                </form>
+
+                <p id="result"></p>
+            </div>
+          </div>
           <form>
               <div class="btn" onclick="Conteudo('linha4')" ><div id="texto">Quiz - Idade Moderna</div></div>
           </form>
