@@ -197,19 +197,35 @@
                 if ($resultado_conteudo_pagina->num_rows > 0) {
                     while ($linha = $resultado_conteudo_pagina->fetch_assoc()) {
                         echo "<form action='' id='".$linha['titulo_conteudo']."' method='POST' class='section_gloss'>
-                                <h2>".$linha['titulo_conteudo']."</h2>
+                                <div class='cont-atual'><h2>".$linha['titulo_conteudo']."</h2>
                                 <p id='txt-nova'>".$linha['texto_conteudo']."</p>
                                 <img id='img-nova' src='".$linha['imagem_conteudo']."'></img>
-                                <p id='fonte-nova'>Fonte: ".$linha['fonte_conteudo']."</p>";
+                                <p id='fonte-nova'>Fonte: ".$linha['fonte_conteudo']."</p></div>";
                         
                         if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == 'Admin') {
                             echo "<input type='hidden' name='action' value='edit'>
                                   <input type='hidden' name='id_conteudo' value='".$linha['id_conteudo']."'>
-                                  <input class='edicao' id='novo-tit' name='novo_titulo' type='text' value='".$linha['titulo_conteudo']."' required>
-                                  <textarea class='edicao' id='novo-txt' name='novo_texto' required>".$linha['texto_conteudo']."</textarea>
-                                  <input class='edicao' id='nova-img' name='nova_imagem' type='url' value='".$linha['imagem_conteudo']."'>
-                                  <input class='edicao' id='nova-fnt' name='nova_fonte' type='text' value='".$linha['fonte_conteudo']."' required>
-                                  <button class='edicao' type='submit'>Salvar</button>";
+
+                                  <div class='edicao'>
+                                    <h2 id='nova'>Editar seção</h2>
+
+                                    <label for='novo_titulo'>Título</label>
+                                    <input id='titu' name='novo_titulo' type='text' value='".$linha['titulo_conteudo']."' required>
+
+                                    <label for='novo_texto'>Texto</label>
+                                    <textarea id='cont' name='novo_texto' required>".$linha['texto_conteudo']."</textarea>
+
+                                    <label for='nova_imagen'>Imagem (URL)</label>
+                                    <input id='imag' name='nova_imagem' type='url' value='".$linha['imagem_conteudo']."'>
+
+                                    <label for='nova_fonte'>Fonte</label>
+                                    <input id='font' name='nova_fonte' type='text' value='".$linha['fonte_conteudo']."' required>
+
+                                    <div class='salv-canc'>
+                                        <button id='add' type='submit'>Salvar</button>
+                                        <button id='canc-edit' type='button'>Cancelar</button>
+                                    </div>
+                                  </div>";
 
                             echo "<div class='bot-admin'><button id='exc-secao' type='submit' name='action' value='delete'><i class='bx bx-trash'></i>Excluir</button>
                                   <button type='button' id='edit-secao'><i class='bx bx-pencil'></i>Editar</button></div>";
@@ -275,6 +291,31 @@
                     }
                 }
             ?>
+            <script>
+                let butEdit = document.querySelectorAll('#edit-secao')
+                let edicao = document.querySelectorAll('.edicao')
+                let conteudo = document.querySelectorAll('.cont-atual')
+                let butExc = document.querySelectorAll('#exc-secao')
+                let butCanc = document.querySelectorAll('#canc-edit')
+
+                butCanc.forEach((botao, index) => {
+                    botao.addEventListener('click', () => {
+                        edicao[index].classList.toggle('esconder');
+                        conteudo[index].classList.toggle('mostrar')
+                        butEdit[index].classList.toggle('mostrar')
+                        butExc[index].classList.toggle('mostrar')
+                    })
+                })
+
+                butEdit.forEach((botao, index) => {
+                    botao.addEventListener('click', () => {
+                        edicao[index].classList.toggle('mostrar');
+                        conteudo[index].classList.toggle('esconder')
+                        butEdit[index].classList.toggle('esconder')
+                        butExc[index].classList.toggle('esconder')
+                    });
+                });
+            </script>
         </div>
     </div>
     </main>

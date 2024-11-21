@@ -328,9 +328,13 @@ body {
   
 .scroller::-webkit-scrollbar-track{
     background: #f4f4f9;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
 .scroller::-webkit-scrollbar-thumb {
     background: #888;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
   
 .scroller::-webkit-scrollbar-thumb:hover {
@@ -356,7 +360,7 @@ label{
 
 #nova{
     font-size: 2em;
-    color: #2c3e50;
+    color: #2a412b;
     margin-bottom: 20px;
 }
 
@@ -423,13 +427,54 @@ label{
     max-width: 200px;
 }
 
+.edicao{
+    flex-direction: column;
+    display: none;
+}
+
+/* Mostrar/esconder na parte de edição */
+
+.edicao.mostrar{
+    display: flex;
+}
+
+.edicao.esconder{
+    display: none;
+}
+
+.cont-atual.esconder{
+    display: none;
+}
+
+.cont-atual.mostrar{
+    display: block;
+}
+
+#edit-secao.esconder{
+    display: none;
+}
+
+#edit-secao.mostrar{
+    display: flex;
+}
+
+#exc-secao.esconder{
+    display: none;
+}
+
+#exc-secao.mostrar{
+    display: flex;
+}
+
+/* fim */
+
 #edit-secao{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding: 3px;
     margin-top: 15px;
-    background-color: #3246ff;
+    background-color: #4655d8;
     border-radius: 6px;
     width: 94px;
     border: none;
@@ -443,7 +488,7 @@ label{
 }
 
 #edit-secao:hover{
-    background-color: #5c87ff;
+    background-color: #5779d7;
 }
 
 #exc-secao{
@@ -466,7 +511,31 @@ label{
 }
 
 #exc-secao:hover{
-    background-color: #ff5858;
+    background-color: #ff5e5e;
+}
+
+.salv-canc{
+    display:flex;
+    justify-content: space-between;
+    max-width: 210px;
+}
+
+#canc-edit{
+    border-radius: 6px;
+    width: 100px;
+    background-color: #ff3232;
+    border: none;
+    height:40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #E8F0FE;
+    transition: all 0.4s;
+}
+
+#canc-edit:hover{
+    background-color: #ff5e5e;
 }
 
 .section_gloss {
@@ -481,7 +550,7 @@ label{
 .section_gloss h2 {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: #2a412b;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -556,6 +625,15 @@ label{
   }
 
   @media (max-width: 768px){
+    .sidebar.active ~.main-content{
+        left: 80px;
+    }
+    .sidebar.active{
+        width: 100%;
+    }
+    .usuario{
+        justify-content: space-evenly;
+    }
     .sidebar_gloss ul li a {
         font-size: 10px;
     }
