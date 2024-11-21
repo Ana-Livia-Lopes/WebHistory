@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -101,53 +104,127 @@
     </nav>
     <main class="main-content">
       <body>
-        <section class="sessao1">
+        <section class="secao1">
           <div class="div-jogo">
-            <div class="texto-sessao">
+            <div class="texto-secao">
               <h1>Navegue na história através de nossos jogos</h1>
               <p class="p-jogos">Teste seus conhecimentos sobre eventos históricos, figuras importantes e fatos curiosos, enquanto se diverte e aprende.</p>
             </div>
-            <!-- <div class="img-sessao">
-              <img src="img/fundo2-login.jpg" alt="games">
-            </div> -->
           </div>
         </section>
         <div class="quiz"> 
           <form>
-              <div class="btn" onclick="Conteudo('linha')" ><div id="texto">Quiz - História Primitiva</div></div>
+              <div class="btn" onclick="Conteudo('linha'); resetQuiz(formId, resultDisplayId)" ><div id="texto">Quiz - História Primitiva</div></div>
           </form>
-          <div id="linha">Conteúdo 1</div>
+          <div id="linha">
+          <section class="historia">
+            <h2>H.W. Quiz - História Primitiva</h2>
+            <div id="quiz-container">
+            <form id="quizForm">
+                <div class="question" id="question1">
+                    <p>1. Qual foi a principal transformação tecnológica no período Paleolítico?</p>
+                    <label><input type="radio" name="q1" value="Uso de metais para fabricação de ferramentas"> Uso de metais para fabricação de ferramentas</label><br>
+                    <label><input type="radio" name="q1" value="Construção de moradias permanentes"> Construção de moradias permanentes</label><br>
+                    <label><input type="radio" name="q1" value="Descoberta do fogo"> Descoberta do fogo</label><br>
+                    <label><input id="end_options" type="radio" name="q1" value="Criação de sistemas de escrita"> Criação de sistemas de escrita</label>
+                </div>
+
+                <div class="question" id="question2">
+                    <p>2. O que caracteriza o estilo de vida dos primeiros hominídeos no período Paleolítico?</p>
+                    <label><input type="radio" name="q2" value="Sedentarismo e agricultura"> Sedentarismo e agricultura</label><br>
+                    <label><input type="radio" name="q2" value="Vida nômade com caça, pesca e coleta"> Vida nômade com caça, pesca e coleta</label><br>
+                    <label><input type="radio" name="q2" value="Domesticaram animais de grande porte"> Domesticaram animais de grande porte</label><br>
+                    <label><input id="end_options" type="radio" name="q2" value="Construíram cidades e aldeias"> Construíram cidades e aldeias</label>
+                </div>
+
+                <div class="question" id="question3">
+                    <p>3. Quais materiais eram utilizados para fazer as pinturas rupestres no Paleolítico?</p>
+                    <label><input type="radio" name="q3" value="Tinta à base de óleo vegetal"> Tinta à base de óleo vegetal</label><br>
+                    <label><input type="radio" name="q3" value="Sangue de animais, folhas e flores"> Sangue de animais, folhas e flores</label><br>
+                    <label><input type="radio" name="q3" value="Pó de argila misturado com água"> Pó de argila misturado com água</label><br>
+                    <label><input id="end_options" type="radio" name="q3" value="Carvão e resina de árvores"> Carvão e resina de árvores</label>
+                </div>
+
+                <div class="question" id="question4">
+                    <p>4. Qual foi uma mudança importante ocorrida no Neolítico?</p>
+                    <label><input type="radio" name="q4" value="Desenvolvimento da metalurgia"> Desenvolvimento da metalurgia</label><br>
+                    <label><input type="radio" name="q4" value="Início da escrita"> Início da escrita</label><br>
+                    <label><input type="radio" name="q4" value="Sedentarização e prática da agricultura"> Sedentarização e prática da agricultura</label><br>
+                    <label><input id="end_options" type="radio" name="q4" value="Uso da roda para transporte"> Uso da roda para transporte</label>
+                </div>
+
+                <div class="question" id="question5">
+                    <p>5. O que ficou conhecido como Revolução Agrícola no Neolítico?</p>
+                    <label><input type="radio" name="q5" value="A utilização de metais para fabricar armas"> A utilização de metais para fabricar armas</label><br>
+                    <label><input type="radio" name="q5" value="A criação de instrumentos de pedra lascada"> A criação de instrumentos de pedra lascada</label><br>
+                    <label><input type="radio" name="q5" value="O domínio da agricultura e criação de animais"> O domínio da agricultura e criação de animais</label><br>
+                    <label><input id="end_options" type="radio" name="q5" value="A construção de abrigos em cavernas"> A construção de abrigos em cavernas</label>
+                </div>
+
+                <button id="button-quiz" type="button" onclick="checkAnswers('quizForm', 'result')">Enviar</button>
+                <button id="button-quiz" type="button" onclick="resetQuiz('quizForm', 'result')">Resetar</button>
+            </form>
+
+                <p id="result"></p>
+            </div>
+        </section>
+          </div>
           <form>
               <div class="btn" onclick="Conteudo('linha2')" ><div id="texto">Quiz - História Antiga</div></div>
           </form>
           <div id="linha2">
-            <section class='quiz-ha'>
-              <article class='centro' id='instrucoes'>
-                  Leia a questão e clique na resposta correta
-              </article>
+          <section class="historia">
+            <h2>H.W. Quiz - História Antiga</h2>
+            <div id="quiz-container">
+                <form id="quizForm2">
+                    <div class="question" id="question6">
+                        <p>1. Qual civilização desenvolveu a escrita cuneiforme?</p>
+                        <label><input type="radio" name="q6" value="Babilônios"> Babilônios</label><br>
+                        <label><input type="radio" name="q6" value="Sumérios"> Sumérios</label><br>
+                        <label><input type="radio" name="q6" value="Assírios"> Assírios</label><br>
+                        <label><input id="end_options" type="radio" name="q6" value="Acádios"> Acádios</label>
+                    </div>
 
-              <article class='questoes'>
-                  
-                  <figure class='imagemDaQuestao'>
-                  </figure>   
+                    <div class="question" id="question7">
+                        <p>2. O Código de Hamurabi é associado a qual civilização?</p>
+                        <label><input type="radio" name="q7" value="Sumérios"> Sumérios</label><br>
+                        <label><input type="radio" name="q7" value="Babilônios"> Babilônios</label><br>
+                        <label><input type="radio" name="q7" value="Egípcios"> Egípcios</label><br>
+                        <label><input id="end_options" type="radio" name="q7" value="Gregos"> Gregos</label>
+                    </div>
 
-                  <header class='questao'>
-                      <span id='numQuestao'></span>
-                      <h2 id='pergunta'></h2>
-                  </header>
-                                  
-                  <div class='corpo'>
-                      <ol type='A' id='alternativas'>
-                      <li id='a' value='1A' class='respostas' onClick='verificarSeAcertou(this)'></li>
-                      <li id='b' value='1B' class='respostas' onClick='verificarSeAcertou(this)'></li>
-                      <li id='c' value='1C' class='respostas' onClick='verificarSeAcertou(this)'></li>
-                      <li id='d' value='1D' class='respostas' onClick='verificarSeAcertou(this)'></li>
-                      </ol>
-                  </div>
-                  <article id='aviso' class='centro'>
-                    <span id='numero'></span> de <span id='total'></span>
-                  </article>-              </article>
-          </section>
+                    <div class="question" id="question8">
+                        <p>3. O que os egípcios praticavam para preservar os corpos?</p>
+                        <label><input type="radio" name="q8" value="Embalsamamento"> Embalsamamento</label><br>
+                        <label><input type="radio" name="q8" value="Cremacão"> Cremacão</label><br>
+                        <label><input type="radio" name="q8" value="Mumificação"> Mumificação</label><br>
+                        <label ><input id="end_options" type="radio" name="q8" value="Sepultamento"> Sepultamento</label>
+                    </div>
+
+                    <div class="question" id="question9">
+                        <p>4. Qual filósofo grego é conhecido por sua contribuição à ética e à política?</p>
+                        <label><input type="radio" name="q9" value="Aristóteles"> Aristóteles</label><br>
+                        <label><input type="radio" name="q9" value="Platão"> Platão</label><br>
+                        <label><input type="radio" name="q9" value="Sócrates"> Sócrates</label><br>
+                        <label ><input id="end_options" type="radio" name="q9" value="Homero"> Homero</label>
+                    </div>
+
+                    <div class="question" id="question10">
+                        <p>5. Qual estrutura é um exemplo da engenharia romana?</p>
+                        <label><input type="radio" name="q10" value="Pirâmides de Gizé"> Pirâmides de Gizé</label><br>
+                        <label><input type="radio" name="q10" value="Partenon"> Partenon</label><br>
+                        <label><input type="radio" name="q10" value="Coliseu"> Coliseu</label><br>
+                        <label><input id="end_options" type="radio" name="q10" value="Templo de Apolo"> Templo de Apolo</label>
+                    </div>
+
+                    <button id="button-quiz" type="button" onclick="checkAnswers2('quizForm2', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="resetQuiz('quizForm2', 'result')">Resetar</button>
+
+                </form>
+
+                <p id="result"></p>
+            </div>
+        </section>
           </div>
           <form>
               <div class="btn" onclick="Conteudo('linha3')" ><div id="texto">Quiz - Idade Média</div></div>
@@ -156,7 +233,7 @@
           <section class="historia">
             <h2>H.W. Quiz - Idade Média</h2>
             <div id="quiz-container">
-                <form id="quizForm">
+                <form id="quizForm3">
                     <div class="question" id="question11">
                         <p>1. Qual foi uma das causas do surgimento do feudalismo?</p>
                         <label><input type="radio" name="q11" value="Aumento da população urbana"> Aumento da população urbana</label><br>
@@ -197,8 +274,8 @@
                         <label><input type="radio" name="q15" value="Queda do Império Romano do Ocidente" id="end_options"> Queda do Império Romano do Ocidente</label>
                     </div>
 
-                    <button id="button-quiz" type="button" onclick="checkAnswers('quizForm', 'result')">Enviar</button>
-                    <button id="button-quiz" type="button" onclick="resetQuiz('quizForm', 'result')">Resetar</button>
+                    <button id="button-quiz" type="button" onclick="checkAnswers3('quizForm3', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="resetQuiz('quizForm3', 'result')">Resetar</button>
                 </form>
 
                 <p id="result"></p>
@@ -207,11 +284,115 @@
           <form>
               <div class="btn" onclick="Conteudo('linha4')" ><div id="texto">Quiz - Idade Moderna</div></div>
           </form>
-          <div id="linha4">Conteúdo 4</div>
+          <div id="linha4">
+          <section class="historia">
+            <h2>H.W. Quiz - Idade Moderna</h2>
+            <div id="quiz-container">
+                <form id="quizForm4">
+                    <div class="question" id="question16">
+                        <p>1. Quem foi uma figura proeminente do Renascimento?</p>
+                        <label><input type="radio" name="q16" value="Martinho Lutero"> Martinho Lutero</label><br>
+                        <label><input type="radio" name="q16" value="Leonardo da Vinci"> Leonardo da Vinci</label><br>
+                        <label><input type="radio" name="q16" value="Vasco da Gama"> Vasco da Gama</label><br>
+                        <label><input type="radio" name="q16" value="Luís XIV" id="end_options"> Luís XIV</label>
+                    </div>
+
+                    <div class="question" id="question17">
+                        <p>2. Qual evento é considerado o início da Reforma Protestante?</p>
+                        <label><input type="radio" name="q17" value="Descobrimento das Américas"> Descobrimento das Américas</label><br>
+                        <label><input type="radio" name="q17" value="Publicação das 95 Teses de Lutero"> Publicação das 95 Teses de Lutero</label><br>
+                        <label><input type="radio" name="q17" value="Revolução Francesa"> Revolução Francesa</label><br>
+                        <label><input type="radio" name="q17" value="Início do Iluminismo" id="end_options"> Início do Iluminismo</label>
+                    </div>
+
+                    <div class="question" id="question18">
+                        <p>3. Qual foi uma consequência das Grandes Navegações?</p>
+                        <label><input type="radio" name="q18" value="Início do Renascimento"> Início do Renascimento</label><br>
+                        <label><input type="radio" name="q18" value="Publicação das 95 Teses"> Publicação das 95 Teses</label><br>
+                        <label><input type="radio" name="q18" value="Contato entre diferentes culturas e colonização"> Contato entre diferentes culturas e colonização</label><br>
+                        <label><input type="radio" name="q18" value="Declínio do absolutismo" id="end_options"> Declínio do absolutismo</label>
+                    </div>
+
+                    <div class="question" id="question19">
+                        <p>4. Qual das seguintes características é associada ao absolutismo?</p>
+                        <label><input type="radio" name="q19" value="Divisão de poderes"> Divisão de poderes</label><br>
+                        <label><input type="radio" name="q19" value="Controle total do monarca"> Controle total do monarca</label><br>
+                        <label><input type="radio" name="q19" value="Liberdade religiosa"> Liberdade religiosa</label><br>
+                        <label><input type="radio" name="q19" value="Democracia direta" id="end_options"> Democracia direta</label>
+                    </div>
+
+                    <div class="question" id="question20">
+                        <p>5. O que foi um objetivo do Iluminismo?</p>
+                        <label><input type="radio" name="q20" value="Fortalecer o poder do rei"> Fortalecer o poder do rei</label><br>
+                        <label><input type="radio" name="q20" value="Expandir o poder da Igreja Católica"> Expandir o poder da Igreja Católica</label><br>
+                        <label><input type="radio" name="q20" value="Promover a razão e os direitos individuais"> Promover a razão e os direitos individuais</label><br>
+                        <label><input type="radio" name="q20" value="Iniciar a colonização da América" id="end_options"> Iniciar a colonização da América</label>
+                    </div>
+
+                    <button id="button-quiz" type="button" onclick="checkAnswers4('quizForm4', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="resetQuiz('quizForm4', 'result')">Resetar</button>
+                </form>
+
+                <p id="result"></p>
+            </div>
+        </section>
+          </div>
           <form>
               <div class="btn" onclick="Conteudo('linha5')" ><div id="texto">Quiz - Idade Contemporânea</div></div>
           </form>
-          <div id="linha5">Conteúdo 5</div>
+          <div id="linha5">
+          <section class="historia">
+            <h2>H.W. Quiz - Idade Contemporânea</h2>
+            <div id="quiz-container">
+                <form id="quizForm">
+                    <div class="question" id="question21">
+                        <p>1. Qual país foi o berço da Revolução Industrial?</p>
+                        <label><input type="radio" name="q21" value="França"> França</label><br>
+                        <label><input type="radio" name="q21" value="Alemanha"> Alemanha</label><br>
+                        <label><input type="radio" name="q21" value="Inglaterra"> Inglaterra</label><br>
+                        <label><input type="radio" name="q21" value="Estados Unidos" id="end_options"> Estados Unidos</label>
+                    </div>
+
+                    <div class="question" id="question22">
+                        <p>2. Qual evento marcou o início da Revolução Francesa?</p>
+                        <label><input type="radio" name="q22" value="Formação da Assembleia Nacional"> Formação da Assembleia Nacional</label><br>
+                        <label><input type="radio" name="q22" value="Execução de Luís XVI"> Execução de Luís XVI</label><br>
+                        <label><input type="radio" name="q22" value="Construção do Muro de Berlim"> Construção do Muro de Berlim</label><br>
+                        <label><input type="radio" name="q22" value="Tratado de Versalhes" id="end_options"> Tratado de Versalhes</label>
+                    </div>
+
+                    <div class="question" id="question23">
+                        <p>3. O Tratado de Versalhes foi assinado após qual guerra?</p>
+                        <label><input type="radio" name="q23" value="Primeira Guerra Mundial"> Primeira Guerra Mundial</label><br>
+                        <label><input type="radio" name="q23" value="Segunda Guerra Mundial"> Segunda Guerra Mundial</label><br>
+                        <label><input type="radio" name="q23" value="Guerra Fria"> Guerra Fria</label><br>
+                        <label><input type="radio" name="q23" value="Guerra do Vietnã" id="end_options"> Guerra do Vietnã</label>
+                    </div>
+
+                    <div class="question" id="question24">
+                        <p>4. Qual evento ocorreu durante a Guerra Fria e aumentou as tensões entre EUA e URSS?</p>
+                        <label><input type="radio" name="q24" value="A Queda do Muro de Berlim"> A Queda do Muro de Berlim</label><br>
+                        <label><input type="radio" name="q24" value="A Crise dos Mísseis de Cuba"> A Crise dos Mísseis de Cuba</label><br>
+                        <label><input type="radio" name="q24" value="A Lei dos Direitos Civis de 1964"> A Lei dos Direitos Civis de 1964</label><br>
+                        <label><input type="radio" name="q24" value="Início da Revolução Industrial" id="end_options"> Início da Revolução Industrial</label>
+                    </div>
+
+                    <div class="question" id="question25">
+                        <p>5. Qual dos seguintes avanços tecnológicos impulsionou a Globalização no século XX?</p>
+                        <label><input type="radio" name="q25" value="A invenção do telescópio"> A invenção do telescópio</label><br>
+                        <label><input type="radio" name="q25" value="A invenção da televisão"> A invenção da televisão</label><br>
+                        <label><input type="radio" name="q25" value="A internet"> A internet</label><br>
+                        <label><input type="radio" name="q25" value="O primeiro voo humano" id="end_options"> O primeiro voo humano</label>
+                    </div>
+
+                    <button id="button-quiz" type="button" onclick="checkAnswers('quizForm', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="resetQuiz('quizForm', 'result')">Resetar</button>
+                </form>
+
+                <p id="result"></p>
+            </div>
+        </section>
+          </div>
           <form>
               <div class="btn" onclick="Conteudo('linha6')" ><div id="texto">Jogo da memória</div></div>
           </form>
@@ -375,5 +556,117 @@ function checkForMatch() {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const correctAnswers = {
+    q1: "Descoberta do fogo",
+    q2: "Vida nômade com caça, pesca e coleta",
+    q3: "Sangue de animais, folhas e flores",
+    q4: "Sedentarização e prática da agricultura",
+    q5: "O domínio da agricultura e criação de animais",
+    q6: "Sumérios",
+    q7: "Babilônios",
+    q8: "Mumificação",
+    q9: "Aristóteles",
+    q10: "Coliseu",
+    q11: "Invasões bárbaras e insegurança",
+    q12: "Árabes",
+    q13: "Promoveram troca cultural e comercial com a Ásia",
+    q14: "Levou à valorização dos salários devido à escassez de trabalhadores",
+    q15: "Cisma do Oriente",
+    q16: "Leonardo da Vinci",
+    q17: "Publicação das 95 Teses de Lutero",
+    q18: "Contato entre diferentes culturas e colonização",
+    q19: "Controle total do monarca",
+    q20: "Promover a razão e os direitos individuais",
+    q21: "Inglaterra",
+    q22: "Formação da Assembleia Nacional",
+    q23: "Primeira Guerra Mundial",
+    q24: "A Crise dos Mísseis de Cuba",
+    q25: "A internet"
+};
+
+
+
+function checkAnswers(formId, resultDisplayId) {
+            let score = 0;
+            const form = document.getElementById(formId);
+            const resultDisplay = document.getElementById(resultDisplayId);
+
+            document.querySelectorAll('.question .correct-answer').forEach(answer => answer.remove());
+            document.querySelectorAll('.question').forEach(div => div.classList.remove('correct', 'incorrect'));
+
+            for (let question in correctAnswers) {
+                const userAnswer = form[question] ? form[question].value : "";
+                const questionDiv = document.getElementById(`question${question.slice(1)}`);
+
+                if (userAnswer === correctAnswers[question]) {
+                    score++;
+                    questionDiv.classList.add('correct');
+                } else {
+                    questionDiv.classList.add('incorrect'); 
+                    
+                    const correctAnswerText = document.createElement('p');
+                    correctAnswerText.classList.add('correct-answer');
+                    correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
+                    questionDiv.appendChild(correctAnswerText);
+                }
+            }
+            
+            resultDisplay.textContent = `Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.`;
+        }
+       
+
+        function resetQuiz(formId, resultDisplayId) {
+
+            const form = document.getElementById(formId);
+            const resultDisplay = document.getElementById(resultDisplayId);
+
+            if (!form || !resultDisplay) {
+                console.error("Erro: Formulário ou elemento de resultado não encontrados.");
+                return;
+            }
+
+            form.reset();
+            resultDisplay.textContent = '';
+
+            document.querySelectorAll('.question').forEach(questionDiv => {
+                questionDiv.classList.remove('correct', 'incorrect');
+                const correctAnswerText = questionDiv.querySelector('.correct-answer');
+                if (correctAnswerText) {
+                    questionDiv.removeChild(correctAnswerText);
+                }
+            });
+        }
+
+
+
+
+    
+
+    
 
 </script>
