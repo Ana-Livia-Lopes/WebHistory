@@ -36,10 +36,19 @@ session_start();
             </div>
             <ul>
                 <li>
-                    <a href="index.php">
-                        <i class="bx bx-home-alt"></i>
-                        <span class="item-nav">Início</span>
-                    </a>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        echo "<a href='index.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-home'></i>
+                                <span class='item-nav'>Início</span>
+                            </a>";
+                    } else {
+                        echo "<a href='index.php'>
+                                <i class='bx bx-home'></i>
+                                <span class='item-nav'>Início</span>
+                            </a>";
+                    }
+                    ?>
                 </li>
                 <li>
                     <?php
@@ -57,21 +66,41 @@ session_start();
                     ?>
                 </li>
                 <li>
-                    <a href="jogos.php">
-                        <i class="bx bx-joystick"></i>
-                        <span class="item-nav">Jogos</span>
-                    </a>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        echo "<a href='jogos.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-joystick'></i>
+                                <span class='item-nav'>Jogos</span>
+                            </a>";
+                    } else {
+                        echo "<a href='jogos.php'>
+                                <i class='bx bx-joystick'></i>
+                                <span class='item-nav'>Jogos</span>
+                            </a>";
+                    }
+                    ?>
                 </li>
                 <li>
                     <a id="conteudo-select">
                         <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
                         <select id="select-nav" class="item-nav" onchange="changePag()">
-                            <option value="">Períodos</option>
-                            <option value="hprimitiva.php">História Primitiva</option>
-                            <option value="hantiga.php">História Antiga</option>
-                            <option value="imedia.php">Idade Média</option>
-                            <option value="imoderna.php">Idade Moderna</option>
-                            <option value="icontemporanea.php">Idade Contemporânea</option>
+                            <?php
+                            if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                                echo   "<option value='' id='opt-periodos'>Períodos</option>
+                                        <option value='hprimitiva.php?id=".$_SESSION['id']."'>História Primitiva</option>
+                                        <option value='hantiga.php?id=".$_SESSION['id']."'>História Antiga</option>
+                                        <option value='imedia.php?id=".$_SESSION['id']."'>Idade Média</option>
+                                        <option value='imoderna.php?id=".$_SESSION['id']."'>Idade Moderna</option>
+                                        <option value='icontemporanea.php?id=".$_SESSION['id']."'>Idade Contemporânea</option>";
+                            } else {
+                                echo   "<option value='' id='opt-periodos'>Períodos</option>
+                                        <option value='hprimitiva.php'>História Primitiva</option>
+                                        <option value='hantiga.php'>História Antiga</option>
+                                        <option value='imedia.php'>Idade Média</option>
+                                        <option value='imoderna.php'>Idade Moderna</option>
+                                        <option value='icontemporanea.php'>Idade Contemporânea</option>";
+                            }
+                            ?>
                         </select>
                     </a>
                 </li>
@@ -89,16 +118,16 @@ session_start();
         </script>
         <?php 
 
-    $imagem = isset($_SESSION['imagem']) ? $_SESSION['imagem'] : 'default.jpg';
         if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
+            include 'id_verify.php';
             echo "<div class='usuario'>";
             echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
             ?>
-            <img id='user-def-nav' src='img/<?php echo $imagem; ?>' alt=''></a>
+            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
             <?php 
             echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $_SESSION['nome'] . "</p>";
-            echo        "<p id='user-nivel-acesso'>" . $_SESSION['tipo'] . "</p>";
+            echo        "<p class='user-nome'>" . $usuario['nome_usuario'] . "</p>";
+            echo        "<p id='user-nivel-acesso'>" . $usuario['tipo_usuario'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
             echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
@@ -107,8 +136,6 @@ session_start();
         } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
-        
-
         ?>
     </nav>
     <?php

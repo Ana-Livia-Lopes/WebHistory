@@ -46,7 +46,7 @@
                                     $_SESSION['tipo'] = $usuario_logado['tipo_usuario'];
                                     $_SESSION['imagem'] = $usuario_logado['imagem_usuario'];
                                     
-                                    header('Location: index.php');
+                                    header('Location: index.php?id='.$_SESSION['id'].'');
                                 } else {
                                     echo "<p style='color:red;'>Senha incorreta</p>";
                                 }

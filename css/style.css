@@ -286,6 +286,9 @@ body {
 /* fim da navbar */
 /* seção 1 */
 #secao1{
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     background: url('../img/fundo-i.jpg')
     no-repeat center center;
     background-size: cover;

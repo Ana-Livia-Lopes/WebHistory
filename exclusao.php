@@ -1,7 +1,6 @@
 <?php
 include './conexao.php';
 session_start();
-include './id_verify.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +15,7 @@ include './id_verify.php';
     <title>História na Web - Exclusão de usuário</title>
 </head>
 <body id="body-exclusao">
-    <nav class="sidebar">
+<nav class="sidebar">
         <div>
             <div class="topo">
                 <div class="logo">
@@ -26,43 +25,104 @@ include './id_verify.php';
             </div>
             <ul>
                 <li>
-                    <a href="index.php?id=<?php echo $_SESSION['id'] ?>">
-                        <i class="bx bx-home-alt"></i>
-                        <span class="item-nav">Início</span>
-                    </a>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        echo "<a href='index.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-home'></i>
+                                <span class='item-nav'>Início</span>
+                            </a>";
+                    } else {
+                        echo "<a href='index.php'>
+                                <i class='bx bx-home'></i>
+                                <span class='item-nav'>Início</span>
+                            </a>";
+                    }
+                    ?>
                 </li>
                 <li>
-                    <a href="glossario.php?id=<?php echo $_SESSION['id'] ?>">
-                        <i class="bx bx-book"></i>
-                        <span class="item-nav">Glossário</span>
-                    </a>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        echo "<a href='glossario.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    } else {
+                        echo "<a href='glossario.php'>
+                                <i class='bx bx-book'></i>
+                                <span class='item-nav'>Glossário</span>
+                            </a>";
+                    }
+                    ?>
                 </li>
                 <li>
-                    <a href='perfil.php?id=<?php echo $_SESSION['id'] ?>'>
-                        <i class="bx bx-user"></i>
-                        <span class="item-nav">Perfil</span>
+                    <?php
+                    if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                        echo "<a href='jogos.php?id=". $_SESSION['id'] ."'>
+                                <i class='bx bx-joystick'></i>
+                                <span class='item-nav'>Jogos</span>
+                            </a>";
+                    } else {
+                        echo "<a href='jogos.php'>
+                                <i class='bx bx-joystick'></i>
+                                <span class='item-nav'>Jogos</span>
+                            </a>";
+                    }
+                    ?>
+                </li>
+                <li>
+                    <a id="conteudo-select">
+                        <i class="bx bx-hourglass" type='solid' id="ampulheta"></i>
+                        <select id="select-nav" class="item-nav" onchange="changePag()">
+                            <?php
+                            if(isset($_SESSION['nome'])  && $_SESSION['nome'] != ''){
+                                echo   "<option value='' id='opt-periodos'>Períodos</option>
+                                        <option value='hprimitiva.php?id=".$_SESSION['id']."'>História Primitiva</option>
+                                        <option value='hantiga.php?id=".$_SESSION['id']."'>História Antiga</option>
+                                        <option value='imedia.php?id=".$_SESSION['id']."'>Idade Média</option>
+                                        <option value='imoderna.php?id=".$_SESSION['id']."'>Idade Moderna</option>
+                                        <option value='icontemporanea.php?id=".$_SESSION['id']."'>Idade Contemporânea</option>";
+                            } else {
+                                echo   "<option value='' id='opt-periodos'>Períodos</option>
+                                        <option value='hprimitiva.php'>História Primitiva</option>
+                                        <option value='hantiga.php'>História Antiga</option>
+                                        <option value='imedia.php'>Idade Média</option>
+                                        <option value='imoderna.php'>Idade Moderna</option>
+                                        <option value='icontemporanea.php'>Idade Contemporânea</option>";
+                            }
+                            ?>
+                        </select>
                     </a>
                 </li>
             </ul>
         </div>
-        <?php
+        <script>       
+            function changePag() {
+                const dropdown = document.getElementById("select-nav");
+                const pagina = dropdown.value;
 
-        if ($_SESSION['nome'] != '') {
+                if (pagina) { 
+                    window.location.href = pagina; 
+                }
+            }
+        </script>
+        <?php 
+
+        if (isset($_SESSION['nome']) && $_SESSION['nome'] != '') {
+            include 'id_verify.php';
             echo "<div class='usuario'>";
-            echo    "<img id='user-def-nav' src='img/" . $usuario['imagem_usuario'] . "' alt=''>";
+            echo    "<a href='perfil.php?id=". $_SESSION['id'] ."'>";
+            ?>
+            <img id='user-def-nav' src='img/<?php echo $usuario['imagem_usuario']; ?>' alt=''></a>
+            <?php 
             echo    "<div class='subclass-usuario'>";
-            echo        "<p class='user-nome'>" . $usuario['nome_usuario'] ."</p>";
+            echo        "<p class='user-nome'>" . $usuario['nome_usuario'] . "</p>";
             echo        "<p id='user-nivel-acesso'>" . $usuario['tipo_usuario'] . "</p>";
             echo    "</div>";
             echo    "<div id='botao-acoes'>";
-            if ($_SESSION['nome'] != '') {
-                echo "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
-            }
+            echo        "<a href='logout.php'><button id='nav-sair'>Sair</button></a>";
             echo    "</div>";
             echo "</div>";
-        }
-
-        if ($_SESSION['nome'] == '') {
+        } else {
             echo "<a href='login.php'><button id='nav-entrar'>Entrar</button></a>";
         }
         ?>

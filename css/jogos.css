@@ -1,11 +1,13 @@
-  /* Início da navbar */
-  *{
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+/* Início da navbar */
 
 #logo-nav{
     width: 120px;
@@ -155,11 +157,13 @@
 
 .sidebar .item-nav{
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.5s ease;
 }
 
 .sidebar.active .item-nav{
     opacity: 1;
+    pointer-events: visible;
 }
 
 .main-content{
@@ -189,18 +193,25 @@
     font-size: 16px;
 }
 
-#nav-sair{
+.sidebar #nav-sair{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
     background-color: #438e4b;
     color: white;
     border: none;
-    width: 47px;
-    height: 25px;
+    width: 0;
+    height: 0;
     border-radius: 3px;
     cursor: pointer;
     transition: all 0.2s ease;
     opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active #nav-sair{
+    opacity: 1;
+    width: 47px;
+    height: 25px;
 }
 
 #nav-entrar{
@@ -217,19 +228,16 @@
     margin-bottom: 20px;
 }
 
-#nav-sair, #nav-entrar:hover{
+#nav-entrar:hover{
     background-color: #5c9f63;
     color: rgb(226, 226, 226);
-}
-
-.sidebar.active #nav-sair{
-    opacity: 1;
 }
 
 #botao-acoes{
     display: flex;
     align-items: center;
 }
+
 #select-nav {
     background-color: rgb(49, 49, 49); 
     color: rgb(202, 202, 202); 
@@ -237,17 +245,36 @@
     border: transparent; 
     font-weight: 500;
     padding: 4px;
-    max-width: 176px;
+    max-width: 30px;
     border-radius: 5px;
     font-size: 16px;
-    margin-left: auto;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
+
+.sidebar.active #select-nav {
+    max-width: 106px;
+    opacity: 1;
+}
+
+#opt-periodos{
+    display: none;
+}
+
+#ampulheta.girar{
+    rotate: 180deg;
+    transition: all 1s;
+}
+
 #conteudo-select i {
     margin-right: -7px;
 }
+
 #select-nav option{
     font-weight: 600;
 }
+
 /* fim da navbar */
 body{
   display: grid;
@@ -270,7 +297,9 @@ body{
 }
 .secao1{
     background: url("../img/fundo2-login\ -\ Copia.jpg");
-    
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 section.secao1 {
     background-size: cover;
