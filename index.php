@@ -280,59 +280,86 @@ session_start();
             
     <!-- computador -->
      <div id="pc">
-         <div onclick="window.location='hprimitiva.php'" target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
-             <div class="div-img-banner" >
-             <img src="img/banner1.jpg" id="img-banner">
-             </div>
+        <?php if(isset($_SESSION['nome']) && $_SESSION['nome'] != ''){
+                echo "<a href='hprimitiva.php?id=".$_SESSION['id']."'>";
+            } else {
+                echo "<a href='hprimitiva.php'>";
+            }?>
+            <div target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
+                <div class="div-img-banner" >
+                <img src="img/banner1.jpg" id="img-banner">
+                </div>
+                    <div class="ag-courses-item_bg"></div>
+                <div class="texto">
+                    <h4>História Primitiva <i class="fa-solid fa-arrow-right"></i></h4>
+                    
+                </div>
+            </div>
+        </a>
+        <?php if(isset($_SESSION['nome']) && $_SESSION['nome'] != ''){
+                echo "<a href='hantiga.php?id=".$_SESSION['id']."'>";
+            } else {
+                echo "<a href='hantiga.php'>";
+            }?>
+            <div target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
+                <div class="div-img-banner">
+                    <img src="img/banner2.jpg" id="img-banner">
+                </div>
                 <div class="ag-courses-item_bg"></div>
-             <div class="texto">
-                 <h4>História Primitiva <i class="fa-solid fa-arrow-right"></i></h4>
-                 
-             </div>
-         </div>
-         <div onclick="window.location='hantiga.php'" target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
-             <div class="div-img-banner">
-                 <img src="img/banner2.jpg" id="img-banner">
-             </div>
-             <div class="ag-courses-item_bg"></div>
-             <div class="texto">
-                 <h4>História Antiga <i class="fa-solid fa-arrow-right"></i></h4>
-                 
-             </div>
-         </div>
-         
-         <div onclick="window.location='imedia.php'" target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
-             <div class="div-img-banner">
-                 <img src="img/banner3.jpg" id="img-banner">
-             </div>
-             <div class="ag-courses-item_bg"></div>
-             <div class="texto">
-                 <h4>Idade Média <i class="fa-solid fa-arrow-right"></i></h4>
-                 
-             </div>
-         </div>
-         
-         <div onclick="window.location='imoderna.php'" target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
-             <div class="div-img-banner">
-             <img src="img/banner4.jpg" id="img-banner">
-             </div>
-             <div class="ag-courses-item_bg"></div>
-             <div class="texto">
-                 <h4>Idade Moderna <i class="fa-solid fa-arrow-right"></i></h4>
-                 
-             </div>
-         </div>
-         
-         <div onclick="window.location='icontemporanea.php'" target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
-             <div class="div-img-banner">
-             <img src="img/banner5.jpg" id="img-banner">
-             </div>
-             <div class="ag-courses-item_bg"></div>
-             <div class="texto">
-                 <h4>Idade Contemporânea <i class="fa-solid fa-arrow-right"></i></h4>
-                 
-             </div>
-         </div>
+                <div class="texto">
+                    <h4>História Antiga <i class="fa-solid fa-arrow-right"></i></h4>
+                    
+                </div>
+            </div>
+        </a>
+        <?php if(isset($_SESSION['nome']) && $_SESSION['nome'] != ''){
+                echo "<a href='imedia.php?id=".$_SESSION['id']."'>";
+            } else {
+                echo "<a href='imedia.php'>";
+            }?>
+            <div target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
+                <div class="div-img-banner">
+                    <img src="img/banner3.jpg" id="img-banner">
+                </div>
+                <div class="ag-courses-item_bg"></div>
+                <div class="texto">
+                    <h4>Idade Média <i class="fa-solid fa-arrow-right"></i></h4>
+                    
+                </div>
+            </div>
+        </a>
+        <?php if(isset($_SESSION['nome']) && $_SESSION['nome'] != ''){
+                echo "<a href='imoderna.php?id=".$_SESSION['id']."'>";
+            } else {
+                echo "<a href='imoderna.php'>";
+            }?>
+            <div target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
+                <div class="div-img-banner">
+                <img src="img/banner4.jpg" id="img-banner">
+                </div>
+                <div class="ag-courses-item_bg"></div>
+                <div class="texto">
+                    <h4>Idade Moderna <i class="fa-solid fa-arrow-right"></i></h4>
+                    
+                </div>
+            </div>
+        </a>
+        <?php if(isset($_SESSION['nome']) && $_SESSION['nome'] != ''){
+                echo "<a href='icontemporanea.php?id=".$_SESSION['id']."'>";
+            } else {
+                echo "<a href='icontemporanea.php'>";
+            }?>
+            <div target="_blank" class="banner" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
+                <div class="div-img-banner">
+                <img src="img/banner5.jpg" id="img-banner">
+                </div>
+                <div class="ag-courses-item_bg"></div>
+                <div class="texto">
+                    <h4>Idade Contemporânea <i class="fa-solid fa-arrow-right"></i></h4>
+                    
+                </div>
+            </div>
+        </a>
      </div>
      <!-- fim computador -->
       <!-- celular -->
