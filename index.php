@@ -145,7 +145,8 @@ session_start();
             icon: 'error',
             title: 'Sua conta foi excluída',
             text: 'Tente criar uma nova conta',
-            confirmButtonText: 'OK'
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#438e4b'
             }).then((result) => {
     if (result.isConfirmed) {
         window.location.href = 'index.php';
@@ -160,10 +161,11 @@ session_start();
                 icon: 'success',
                 title: 'Sua conta foi adicionada',
                 text: 'Entre com a conta criada',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'Entrar',
+                confirmButtonColor: '#438e4b'
             }).then((result) => {
     if (result.isConfirmed) {
-        window.location.href = 'index.php';
+        window.location.href = 'login.php';
     }
 });
 </script>";

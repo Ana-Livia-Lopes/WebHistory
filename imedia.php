@@ -347,7 +347,11 @@
         <section class="historia">
             <h2>Veja também</h2>
             <div class="banner-grid">
-                <a href="hprimitiva.php">
+                <?php if(isset($_SESSION['nome']) && $_SESSION['nome'] != ''){
+                        echo "<a href='hprimitiva.php?id=".$_SESSION['id']."'>";
+                    } else {
+                        echo "<a href='hprimitiva.php'>";
+                    }?>
                     <div class="banner">
                         <img src="img/banner1.jpg" id="img-banner" alt="Imagem História Primitiva">
                         <div class="texto">
@@ -356,7 +360,11 @@
                     </div>
                 </a>
     
-                <a href="hantiga.php">
+                <?php if(isset($_SESSION['nome']) && $_SESSION['nome'] != ''){
+                        echo "<a href='hantiga.php?id=".$_SESSION['id']."'>";
+                    } else {
+                        echo "<a href='hantiga.php'>";
+                    }?>
                     <div class="banner">
                         <img src="img/banner2.jpg" id="img-banner" alt="Imagem História Antiga">
                         <div class="texto">
@@ -365,7 +373,11 @@
                     </div>
                 </a>
     
-                <a href="imoderna.php">
+                <?php if(isset($_SESSION['nome']) && $_SESSION['nome'] != ''){
+                        echo "<a href='imoderna.php?id=".$_SESSION['id']."'>";
+                    } else {
+                        echo "<a href='imoderna.php'>";
+                    }?>
                     <div class="banner">
                         <img src="img/banner4.jpg" id="img-banner" alt="Imagem Idade Moderna">
                         <div class="texto">
@@ -374,7 +386,11 @@
                     </div>
                 </a>
     
-                <a href="icontemporanea.php">
+                <?php if(isset($_SESSION['nome']) && $_SESSION['nome'] != ''){
+                        echo "<a href='icontemporanea.php?id=".$_SESSION['id']."'>";
+                    } else {
+                        echo "<a href='icontemporanea.php'>";
+                    }?>
                     <div class="banner">
                         <img src="img/banner5.jpg" id="img-banner" alt="Imagem Idade Contemporânea">
                         <div class="texto">
