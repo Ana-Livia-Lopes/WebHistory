@@ -224,57 +224,6 @@
             </div>
         </section>
 
-        <section class="historia">
-            <h2>H.W. Quiz - História Primitiva</h2>
-            <div id="quiz-container">
-            <form id="quizForm">
-                <div class="question" id="question1">
-                    <p>1. Qual foi a principal transformação tecnológica no período Paleolítico?</p>
-                    <label><input type="radio" name="q1" value="Uso de metais para fabricação de ferramentas"> Uso de metais para fabricação de ferramentas</label><br>
-                    <label><input type="radio" name="q1" value="Construção de moradias permanentes"> Construção de moradias permanentes</label><br>
-                    <label><input type="radio" name="q1" value="Descoberta do fogo"> Descoberta do fogo</label><br>
-                    <label><input id="end_options" type="radio" name="q1" value="Criação de sistemas de escrita"> Criação de sistemas de escrita</label>
-                </div>
-
-                <div class="question" id="question2">
-                    <p>2. O que caracteriza o estilo de vida dos primeiros hominídeos no período Paleolítico?</p>
-                    <label><input type="radio" name="q2" value="Sedentarismo e agricultura"> Sedentarismo e agricultura</label><br>
-                    <label><input type="radio" name="q2" value="Vida nômade com caça, pesca e coleta"> Vida nômade com caça, pesca e coleta</label><br>
-                    <label><input type="radio" name="q2" value="Domesticaram animais de grande porte"> Domesticaram animais de grande porte</label><br>
-                    <label><input id="end_options" type="radio" name="q2" value="Construíram cidades e aldeias"> Construíram cidades e aldeias</label>
-                </div>
-
-                <div class="question" id="question3">
-                    <p>3. Quais materiais eram utilizados para fazer as pinturas rupestres no Paleolítico?</p>
-                    <label><input type="radio" name="q3" value="Tinta à base de óleo vegetal"> Tinta à base de óleo vegetal</label><br>
-                    <label><input type="radio" name="q3" value="Sangue de animais, folhas e flores"> Sangue de animais, folhas e flores</label><br>
-                    <label><input type="radio" name="q3" value="Pó de argila misturado com água"> Pó de argila misturado com água</label><br>
-                    <label><input id="end_options" type="radio" name="q3" value="Carvão e resina de árvores"> Carvão e resina de árvores</label>
-                </div>
-
-                <div class="question" id="question4">
-                    <p>4. Qual foi uma mudança importante ocorrida no Neolítico?</p>
-                    <label><input type="radio" name="q4" value="Desenvolvimento da metalurgia"> Desenvolvimento da metalurgia</label><br>
-                    <label><input type="radio" name="q4" value="Início da escrita"> Início da escrita</label><br>
-                    <label><input type="radio" name="q4" value="Sedentarização e prática da agricultura"> Sedentarização e prática da agricultura</label><br>
-                    <label><input id="end_options" type="radio" name="q4" value="Uso da roda para transporte"> Uso da roda para transporte</label>
-                </div>
-
-                <div class="question" id="question5">
-                    <p>5. O que ficou conhecido como Revolução Agrícola no Neolítico?</p>
-                    <label><input type="radio" name="q5" value="A utilização de metais para fabricar armas"> A utilização de metais para fabricar armas</label><br>
-                    <label><input type="radio" name="q5" value="A criação de instrumentos de pedra lascada"> A criação de instrumentos de pedra lascada</label><br>
-                    <label><input type="radio" name="q5" value="O domínio da agricultura e criação de animais"> O domínio da agricultura e criação de animais</label><br>
-                    <label><input id="end_options" type="radio" name="q5" value="A construção de abrigos em cavernas"> A construção de abrigos em cavernas</label>
-                </div>
-
-                <button id="button-quiz" type="button" onclick="checkAnswers('quizForm', 'result')">Enviar</button>
-                <button id="button-quiz" type="button" onclick="resetQuiz('quizForm', 'result')">Resetar</button>
-            </form>
-
-                <p id="result"></p>
-            </div>
-        </section>
 
         <section class="historia">
             <h2>Veja também</h2>
@@ -388,55 +337,6 @@
 
     <a href="#" class="btn" id="scrollToTopButton"></a>
 
-    <script>
-        const correctAnswers = {
-            q1: "Descoberta do fogo",
-            q2: "Vida nômade com caça, pesca e coleta",
-            q3: "Sangue de animais, folhas e flores",
-            q4: "Sedentarização e prática da agricultura",
-            q5: "O domínio da agricultura e criação de animais",
-        };
 
-        function checkAnswers(formId, resultDisplayId) {
-            let score = 0;
-            const form = document.getElementById(formId);
-            const resultDisplay = document.getElementById(resultDisplayId);
-
-            for (let question in correctAnswers) {
-                const userAnswer = form[question] ? form[question].value : ""; 
-                const questionDiv = document.getElementById(`question${question.slice(1)}`);
-
-                questionDiv.classList.remove('correct', 'incorrect'); 
-
-                if (userAnswer === correctAnswers[question]) {
-                    score++;
-                    questionDiv.classList.add('correct');
-                } else {
-                    questionDiv.classList.add('incorrect'); 
-
-                    const correctAnswerText = document.createElement('p');
-                    correctAnswerText.classList.add('correct-answer'); 
-                    correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
-                    questionDiv.appendChild(correctAnswerText); 
-                }
-            }
-            
-            resultDisplay.textContent = `Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.`; 
-        }
-
-        function resetQuiz(formId, resultDisplayId) {
-            document.getElementById(formId).reset(); 
-            document.getElementById(resultDisplayId).textContent = ''; 
-            
-            document.querySelectorAll('.question').forEach(questionDiv => {
-                questionDiv.classList.remove('correct', 'incorrect');
-
-                const correctAnswerText = questionDiv.querySelector('.correct-answer');
-                if (correctAnswerText) {
-                    questionDiv.removeChild(correctAnswerText); 
-                }
-            });
-        }
-    </script>
 </body>
 </html>

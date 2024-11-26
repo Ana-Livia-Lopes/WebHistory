@@ -184,7 +184,7 @@ session_start();
         <section id="secao2">
             <div class=" pc imgSobre">
                 <div class="sobre">
-                    <h1>Sobre:</h1>
+                    <h1>Sobre</h1>
                     <p>Bem-vindo ao História na Web! Aqui, você terá acesso a uma vasta gama de recursos de qualidade sobre os mais variados momentos da história, que contribuirão para o seu aprendizado.</p>
                 </div>
             </div>
