@@ -208,58 +208,6 @@
             </div>
         </section>
 
-        <section class="historia">
-            <h2>H.W. Quiz - História Antiga</h2>
-            <div id="quiz-container">
-                <form id="quizForm">
-                    <div class="question" id="question6">
-                        <p>1. Qual civilização desenvolveu a escrita cuneiforme?</p>
-                        <label><input type="radio" name="q6" value="Babilônios"> Babilônios</label><br>
-                        <label><input type="radio" name="q6" value="Sumérios"> Sumérios</label><br>
-                        <label><input type="radio" name="q6" value="Assírios"> Assírios</label><br>
-                        <label><input id="end_options" type="radio" name="q6" value="Acádios"> Acádios</label>
-                    </div>
-
-                    <div class="question" id="question7">
-                        <p>2. O Código de Hamurabi é associado a qual civilização?</p>
-                        <label><input type="radio" name="q7" value="Sumérios"> Sumérios</label><br>
-                        <label><input type="radio" name="q7" value="Babilônios"> Babilônios</label><br>
-                        <label><input type="radio" name="q7" value="Egípcios"> Egípcios</label><br>
-                        <label><input id="end_options" type="radio" name="q7" value="Gregos"> Gregos</label>
-                    </div>
-
-                    <div class="question" id="question8">
-                        <p>3. O que os egípcios praticavam para preservar os corpos?</p>
-                        <label><input type="radio" name="q8" value="Embalsamamento"> Embalsamamento</label><br>
-                        <label><input type="radio" name="q8" value="Cremacão"> Cremacão</label><br>
-                        <label><input type="radio" name="q8" value="Mumificação"> Mumificação</label><br>
-                        <label ><input id="end_options" type="radio" name="q8" value="Sepultamento"> Sepultamento</label>
-                    </div>
-
-                    <div class="question" id="question9">
-                        <p>4. Qual filósofo grego é conhecido por sua contribuição à ética e à política?</p>
-                        <label><input type="radio" name="q9" value="Aristóteles"> Aristóteles</label><br>
-                        <label><input type="radio" name="q9" value="Platão"> Platão</label><br>
-                        <label><input type="radio" name="q9" value="Sócrates"> Sócrates</label><br>
-                        <label ><input id="end_options" type="radio" name="q9" value="Homero"> Homero</label>
-                    </div>
-
-                    <div class="question" id="question10">
-                        <p>5. Qual estrutura é um exemplo da engenharia romana?</p>
-                        <label><input type="radio" name="q10" value="Pirâmides de Gizé"> Pirâmides de Gizé</label><br>
-                        <label><input type="radio" name="q10" value="Partenon"> Partenon</label><br>
-                        <label><input type="radio" name="q10" value="Coliseu"> Coliseu</label><br>
-                        <label><input id="end_options" type="radio" name="q10" value="Templo de Apolo"> Templo de Apolo</label>
-                    </div>
-
-                    <button id="button-quiz" type="button" onclick="checkAnswers('quizForm', 'result')">Enviar</button>
-                    <button id="button-quiz" type="button" onclick="resetQuiz('quizForm', 'result')">Resetar</button>
-
-                </form>
-
-                <p id="result"></p>
-            </div>
-        </section>
 
 
         <section class="historia">
@@ -351,56 +299,6 @@
 
     <a href="#" class="btn" id="scrollToTopButton"></a>
 
-    <script>
-        const correctAnswers = {
-            q6: "Sumérios",
-            q7: "Babilônios",
-            q8: "Mumificação",
-            q9: "Aristóteles",
-            q10: "Coliseu"
-        };
-
-        function checkAnswers(formId, resultDisplayId) {
-            let score = 0;
-            const form = document.getElementById(formId);
-            const resultDisplay = document.getElementById(resultDisplayId);
-
-            for (let question in correctAnswers) {
-                const userAnswer = form[question] ? form[question].value : ""; 
-                const questionDiv = document.getElementById(`question${question.slice(1)}`); 
-
-                questionDiv.classList.remove('correct', 'incorrect'); 
-
-                if (userAnswer === correctAnswers[question]) {
-                    score++;
-                    questionDiv.classList.add('correct');
-                } else {
-                    questionDiv.classList.add('incorrect');
-
-                    const correctAnswerText = document.createElement('p');
-                    correctAnswerText.classList.add('correct-answer'); 
-                    correctAnswerText.textContent = `Resposta correta: ${correctAnswers[question]}`;
-                    questionDiv.appendChild(correctAnswerText); 
-                }
-            }
-            
-            resultDisplay.textContent = `Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.`; // Exibe a pontuação
-        }
-
-        function resetQuiz(formId, resultDisplayId) {
-            document.getElementById(formId).reset(); 
-            document.getElementById(resultDisplayId).textContent = ''; 
-            
-            document.querySelectorAll('.question').forEach(questionDiv => {
-                questionDiv.classList.remove('correct', 'incorrect');
-
-                const correctAnswerText = questionDiv.querySelector('.correct-answer');
-                if (correctAnswerText) {
-                    questionDiv.removeChild(correctAnswerText); 
-                }
-            });
-        }
-
-    </script>
+    
 </body>
 </html>

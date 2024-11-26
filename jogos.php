@@ -242,7 +242,7 @@
                         <label><input id="end_options" type="radio" name="q10" value="Templo de Apolo"> Templo de Apolo</label>
                     </div>
 
-                    <button id="button-quiz" type="button" onclick="checkAnswers2('quizForm2', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="checkAnswers('quizForm2', 'result')">Enviar</button>
                     <button id="button-quiz" type="button" onclick="resetQuiz('quizForm2', 'result')">Resetar</button>
 
                 </form>
@@ -299,7 +299,7 @@
                         <label><input type="radio" name="q15" value="Queda do Império Romano do Ocidente" id="end_options"> Queda do Império Romano do Ocidente</label>
                     </div>
 
-                    <button id="button-quiz" type="button" onclick="checkAnswers3('quizForm3', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="checkAnswers('quizForm3', 'result')">Enviar</button>
                     <button id="button-quiz" type="button" onclick="resetQuiz('quizForm3', 'result')">Resetar</button>
                 </form>
 
@@ -354,7 +354,7 @@
                         <label><input type="radio" name="q20" value="Iniciar a colonização da América" id="end_options"> Iniciar a colonização da América</label>
                     </div>
 
-                    <button id="button-quiz" type="button" onclick="checkAnswers4('quizForm4', 'result')">Enviar</button>
+                    <button id="button-quiz" type="button" onclick="checkAnswers('quizForm4', 'result')">Enviar</button>
                     <button id="button-quiz" type="button" onclick="resetQuiz('quizForm4', 'result')">Resetar</button>
                 </form>
 
@@ -583,29 +583,6 @@ function checkForMatch() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const correctAnswers = {
     q1: "Descoberta do fogo",
     q2: "Vida nômade com caça, pesca e coleta",
@@ -693,5 +670,11 @@ function checkAnswers(formId, resultDisplayId) {
     
 
     
+const buttons = document.querySelectorAll('.btn');
 
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        resetQuiz('quizForm', 'result')
+    });
+});
 </script>
