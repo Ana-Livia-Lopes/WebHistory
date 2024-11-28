@@ -466,6 +466,37 @@ label{
     display: flex;
 }
 
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #063512b1;
+    border-radius: 100px;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn::after {
+    content: "↑";
+    font-size: 25px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.btn:hover {
+    background-color: #051d0bc6;
+}
+
+.btn.show {
+    opacity: 1;
+}
+
 /* fim */
 
 #edit-secao{
@@ -616,13 +647,62 @@ label{
   
 #div-pesquisa img{
     float:left;
-  }
-  .fa-solid{
+}
+.fa-solid{
     float: left;
     margin-top: 10px;
     font-size: 19px;
     margin-left: 11px;
-  }
+}
+
+/* footer */
+footer {
+    position: static;
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    padding-left: 200px;
+}
+
+#footer {
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p, footer a {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+footer a {
+    text-decoration: none;
+    color: #1e90ff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+ 
+.contato {
+    margin-top: 5px;
+}
+/* fim footer */
 
   @media (max-width: 768px){
     .sidebar.active ~.main-content{
